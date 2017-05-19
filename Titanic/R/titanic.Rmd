@@ -1,0 +1,101 @@
+---
+title: "Kaggle's Titanic Survival Prediction Competition"
+author: "Neill White"
+date: "March 15, 2017"
+output: html_document
+---
+### The problem
+Predict survivors on the Titanic based on the following nine input variables.  We are provided two datasets: (1) train.csv, containing 891 records and (2) test.csv, containing xxx records.  The two datasets are provided with the intent that models are formlated using the train dataset and model performance is evaluated on the test dataset.
+
+### Data Dictionary
+
+Variable|Definition|Key
+------- | ---------- | ---------
+survival|Survival|0 = No, 1 = Yes
+pclass|Ticket|class	1 = 1st, 2 = 2nd, 3 = 3rd
+sex|Sex|
+Age|Age in year|
+sibsp|	# of siblings / spouses aboard the Titanic|
+parch|	# of parents / children aboard the Titanic|
+ticket|Ticket number|
+fare|Passenger fare|
+cabin|Cabin number|
+embarked|Port of Embarkation|C = Cherbourg, Q = Queenstown, S = Southampton|
+
+### Variable Notes
+
+**pclass**: A proxy for socio-economic status (SES)
+1st = Upper
+2nd = Middle
+3rd = Lower
+
+**age**: Age is fractional if less than 1. If the age is estimated, is it in the form of xx.5
+
+**sibsp**: The dataset defines family relations in this way...
+Sibling = brother, sister, stepbrother, stepsister
+Spouse = husband, wife (mistresses and fiancés were ignored)
+
+**parch**: The dataset defines family relations in this way...
+Parent = mother, father
+Child = daughter, son, stepdaughter, stepson
+Some children travelled only with a nanny, therefore parch=0 for them.
+
+https://www.kaggle.com/c/titanic/data
+
+***
+
+## Exploratory Data Analysis
+## Models
+## [Null Model] (#null_model)
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+<!-- Globals -->
+<!-- Data set -->
+
+```{r include = FALSE}
+MAX_HOURS = 10;
+library( assertthat );
+
+# Load raw data
+train <- read.csv("train.csv", header = TRUE);
+test <- read.csv("test.csv", header = TRUE);
+
+# Add a "Survived" variable to the test set to allow for combining data sets
+test.survived <- data.frame(Survived = rep(NA, nrow(test)), test[,]);
+
+# Combine data sets
+data.combined <- rbind(train, test.survived);
+
+#data.combined$survived <- as.factor(data.combined$survived)
+data.combined$pclass <- as.factor(data.combined$Pclass);
+
+# A bit about R data types (e.g., factors)
+summary(data.combined );
+
+```
+
+## Null Model {#null_model}
+
+```{r null1, echo=FALSE}
+#library( ggplot2 );
+numPassengers = length(train$Survived);
+died = sum( train$Survived == 0);
+survived = sum( train$Survived == 1);
+#assert_that( died + survived == numPassengers);
+mean_survived = survived/numPassengers;
+cat( "Of ", numPassengers, " passengers, ", died, " died and ", survived, " survived.\nMean Survivability = ", survived/numPassengers );
+```
+The simplest model would be to assume that all passengers die.  This would yield a prediction accuracy of about 62%.
+
+```{r null2, echo=FALSE}
+# Time strip
+hours = 1;
+par(mfrow=c(2,1));
+barplot( hours, width=0.9, main="Time", xlab="hours", ylim=c(0,1), xlim=c(0,MAX_HOURS), horiz=TRUE );
+#bp = ggplot(data=hours,aes(x=hours,y=1)) + geom_bar(stat="identity") + coord_flip();
+#bp
+### Bias-Variance Strip
+```
