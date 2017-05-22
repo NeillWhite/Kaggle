@@ -2,12 +2,19 @@
 title: "Kaggle's Titanic Survival Prediction Competition"
 author: "Neill White"
 date: "March 15, 2017"
-output: html_document
+output:
+  html_document:
+    toc: TRUE
 ---
-### The problem
-Predict survivors on the Titanic based on the following nine input variables.  We are provided two datasets: (1) train.csv, containing 891 records and (2) test.csv, containing xxx records.  The two datasets are provided with the intent that models are formlated using the train dataset and model performance is evaluated on the test dataset.
 
-### Data Dictionary
+***
+## The Problem Statement
+Predict survivors on the Titanic based on the following nine input variables.  We are provided two datasets: (1) train.csv, containing 891 records and (2) test.csv, containing 418 records.  The two datasets are provided with the intent that models are formulated using the train dataset and model performance is evaluated on the test dataset.
+
+![](http://cbsnews1.cbsistatic.com/hub/i/r/2017/01/04/b1b74071-3301-49ee-93bd-82e47c67d3a8/thumbnail/1200x630/0f08f16522eb0723e8d147cc809bc3d1/0103-eve-titanicfire-phillips-1223384-640x360.jpg)
+
+***
+## About the Data
 
 Variable|Definition|Key
 ------- | ---------- | ---------
@@ -40,13 +47,30 @@ Parent = mother, father
 Child = daughter, son, stepdaughter, stepson
 Some children travelled only with a nanny, therefore parch=0 for them.
 
-https://www.kaggle.com/c/titanic/data
+source: https://www.kaggle.com/c/titanic/data
 
+### Sample Records
+#### Training Data
+```{r trainsample}
+# Load raw data
+train <- read.csv("train.csv", header = TRUE);
+knitr::kable( head(train), format="markdown", caption="train.csv", longtable=TRUE)
+```
+
+#### Test Data
+```{r testsample}
+# Load raw data
+test <- read.csv("test.csv", header = TRUE);
+knitr::kable( head(test), format="markdown", caption="test.csv", longtable=TRUE)
+sapply( test, function(x) sum( is.na(x)) );
+```
 ***
-
 ## Exploratory Data Analysis
+***
+## Feature Engineering
+***
 ## Models
-## [Null Model] (#null_model)
+This is a classification problem with two classes: { Died, Survived }.  This is encoded in the 'Survived' variable in the train dataset. 
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
@@ -58,11 +82,6 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r include = FALSE}
 MAX_HOURS = 10;
 library( assertthat );
-
-# Load raw data
-train <- read.csv("train.csv", header = TRUE);
-test <- read.csv("test.csv", header = TRUE);
-
 # Add a "Survived" variable to the test set to allow for combining data sets
 test.survived <- data.frame(Survived = rep(NA, nrow(test)), test[,]);
 
@@ -77,8 +96,7 @@ summary(data.combined );
 
 ```
 
-## Null Model {#null_model}
-
+### Null Model
 ```{r null1, echo=FALSE}
 #library( ggplot2 );
 numPassengers = length(train$Survived);
@@ -88,7 +106,7 @@ survived = sum( train$Survived == 1);
 mean_survived = survived/numPassengers;
 cat( "Of ", numPassengers, " passengers, ", died, " died and ", survived, " survived.\nMean Survivability = ", survived/numPassengers );
 ```
-The simplest model would be to assume that all passengers die.  This would yield a prediction accuracy of about 62%.
+The simplest model would be to assume that all test subjects are members of the most common class in the train dataset.  In the train dataset, 62% of the subjects died, so we would assume that all the test passengers die.  This would yield a prediction accuracy of about 62%, and a corresponding misclassification rate of 38%, all false negatives.
 
 ```{r null2, echo=FALSE}
 # Time strip
@@ -99,3 +117,5 @@ barplot( hours, width=0.9, main="Time", xlab="hours", ylim=c(0,1), xlim=c(0,MAX_
 #bp
 ### Bias-Variance Strip
 ```
+
+### Logistic Regression Model
