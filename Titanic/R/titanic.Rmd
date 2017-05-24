@@ -11,7 +11,8 @@ output:
 ## The Problem Statement
 Predict survivors on the Titanic based on the following nine input variables.  We are provided two datasets: (1) train.csv, containing 891 records and (2) test.csv, containing 418 records.  The two datasets are provided with the intent that models are formulated using the train dataset and model performance is evaluated on the test dataset.
 
-![](http://cbsnews1.cbsistatic.com/hub/i/r/2017/01/04/b1b74071-3301-49ee-93bd-82e47c67d3a8/thumbnail/1200x630/0f08f16522eb0723e8d147cc809bc3d1/0103-eve-titanicfire-phillips-1223384-640x360.jpg)
+<!--![](http://cbsnews1.cbsistatic.com/hub/i/r/2017/01/04/b1b74071-3301-49ee-93bd-82e47c67d3a8/thumbnail/1200x630/0f08f16522eb0723e8d147cc809bc3d1/0103-eve-titanicfire-phillips-1223384-640x360.jpg)-->
+![](../titanic.jpg)
 
 ***
 ## About the Data
@@ -51,23 +52,151 @@ source: https://www.kaggle.com/c/titanic/data
 
 ### Sample Records
 #### Training Data
-```{r trainsample}
+
+```{r trainsample, echo=FALSE}
 # Load raw data
 train <- read.csv("train.csv", header = TRUE);
-knitr::kable( head(train), format="markdown", caption="train.csv", longtable=TRUE)
+knitr::kable( head(train), format="markdown", longtable=TRUE)
 ```
-
 #### Test Data
-```{r testsample}
+
+```{r testsample, echo=FALSE}
 # Load raw data
 test <- read.csv("test.csv", header = TRUE);
-knitr::kable( head(test), format="markdown", caption="test.csv", longtable=TRUE)
-sapply( test, function(x) sum( is.na(x)) );
+knitr::kable( head(test), format="markdown", longtable=TRUE)
 ```
 ***
 ## Exploratory Data Analysis
+### Missing Values
+The first step is to find any and all missing data in the train and test sets.  
+
+#### Train Dataset
+```{r eda1}
+# go through each variable and if it's an empty factor or numeric NA, sum each column
+nlTrainNA = sapply( train, function(x) switch( class(x), factor = sum(x==""), sum( is.na(x) ) ) );
+tTrainNA = t(nlTrainNA);                                 # transpose named list
+dfTrainNA = data.frame( tTrainNA );                      # convert to dataframe
+```
+The train.csv dataset had 3 columns with missing values: Age, Cabin, and Embarked.  Age is likely to be an important predictor of survival and we have data for 80% of the training subjects so imputing the missing values is likely to be beneficial.  The source of embarkation may not have obvious predictive power, but given that we have data for over 99% of the training subjects, imputing the missing values could provide value.  The Cabin variable is missing from over 77% of the test subjects.  At first impression, this variable seems like an unlikely candidate to impute values since so much source data is missing.
+```{r eda1table, echo=FALSE}
+knitr::kable( dfTrainNA, format="markdown", longtable=TRUE);
+```
+
+#### Test Dataset
+```{r eda2}
+nlTestNA = sapply( test, function(x) switch( class(x), factor = sum(x==""), sum( is.na(x) ) ) );
+tTestNA = t(nlTestNA);                                 # transpose named list
+dfTestNA = data.frame( tTestNA );                      # convert to dataframe
+```
+The test.csv dataset also had 3 columns with missing values: Age, Fare, and Cabin.  Like the train dataset, the Cabin variable is sparse, with over 78% subjects missing values.  The Age variable is populated for over 79% of the train subjects, and likely has good predictive power so it will likely be beneficial to impute values for subjects missing Age.  The Fare variable is missing for a single subject.  While Fare may not be an obvious predictor for survival, the fact that the dataset is over 99% complete for this variable indicates that it is a good candidate for imputation.
+```{r eda2table, echo=FALSE}
+library( ggplot2 );
+knitr::kable( dfTestNA, format="markdown", longtable=TRUE);
+```
+
+### Variable Features
+
+#### PassengerId
+PassengerId is a primary key for each row of data in the train and test sets.  This variable will not be included in any of the predictive models.
+
+#### Survived
+Survived is the class we're trying to predict.
+
+#### Pclass
+Passenger class is either 1st, 2nd, or 3rd.
+```{r eda_pclass1}
+ggplot(train, aes(x = factor(Pclass), fill = factor(Pclass))) +
+  geom_bar( show.legend=FALSE) +
+  xlab("Pclass") +
+  ylab("Total Count")
+```
+
+The Pclass variable shows that most passengers in the train set held a 3rd class ticket.  491 of the 891 passengers were 3rd class, more than 1st and 2nd class combined.  
+```{r eda_pclass2}
+ggplot(train, aes(x = factor(Pclass), fill = factor(Survived))) +
+  geom_bar(width = 0.5, position="dodge") +
+  xlab("Pclass") +
+  ylab("Total Count") +
+  labs(fill = "Survived")
+```
+
+If the Survived variable is plotted as a function of passenger class, it appears that Pclass will be a predictor for survivability.  A higher percentage of first class passengers survived than died, contrary to the overall trend, whereas a far higher percentage of 3rd class passengers died than survived.
+
+#### Name
+It may seem that the passenger name is a lot like the PassengerId in that each name acts as a sort of primary key into the data and using name as a model feature would not generalize well.  However, the name field could possibly provide value.  The first twenty names in the train dataset:
+```{r eda_name}
+head(as.character(train$Name),n=20);
+```
+Each name begins with a surname before a comma and a title.  If the passenger is a married woman, her maiden name appears in parentheses.  Some of the titles may help infer age (Master and Miss) and surnames could help determine extended family travelling together, even if they've purchased separate tickets and are not in the same cabin.  Additionally, the presence of diacritical marks in a name could indicate that the passenger is a non-English speaker who might have had difficulty understanding instructions or the gravity of the situation.
+
+#### Sex
+Sex is an unordered factor, male or female.
+```{r eda_sex1}
+ggplot(train, aes(x = factor(Sex), fill = factor(Sex))) +
+  geom_bar( show.legend=FALSE) +
+  xlab("Sex") +
+  ylab("Total Count")
+```
+
+The Sex variable shows that most passengers in the training set were male (nearly 2/3 male).  577 of the 891 passengers were male, or 65%.
+```{r eda_sex2}
+ggplot(train, aes(x = factor(Sex), fill = factor(Survived))) +
+  geom_bar(width = 0.5, position="dodge") +
+  xlab("Sex") +
+  ylab("Total Count") +
+  labs(fill = "Survived")
+```
+If the Survived variable is plotted as a function of Sex, it appears that Sex will be a strong predictor for survivability.  Of the 314 female passengers in the training set, 233, or 74% survived.  On the other hand, of the 577 male passengers, only 109 survived, or 19%.
+
+#### Age
+As noted, there are age values for 80% of the training subjects, missing for 177 passengers.  The distribution of ages is slightly skewed right, with a median of 28 years and a mean of 29.7 years.
+```{r eda_age1}
+ggplot(subset(train, !is.na(Age)), aes(x = Age)) +
+  geom_histogram(binwidth=4) +
+  xlab("Age") +
+  ylab("Total Count");
+ggplot(subset(train,!is.na(Age)), aes(y=Age,x="")) + geom_boxplot();
+```
+
+Age as a predictor of survivability:
+```{r eda_age2}
+ggplot(subset(train,!is.na(Age)), aes(x = Age, fill = factor(Survived))) +
+  geom_density( position="stack") +
+  xlab("Age") +
+  ylab("Total Count") +
+  labs(fill = "Survived")
+```
+
+If we plot the Survived value as a function of the Age density, we see that there is a higher likelihood of younger passengers surviving over older passengers.  Up until the mid-to-late teens, a training set passenger is more likely to survive than die, so age is likely to be a useful predictor for survivability.
+
+#### SibSp
+This variable is unique in that it is combination of number of siblings or "1" if the passenger had a spouse on board the ship.  In some cases, it is not clear what the SibSp variable is encoding when a "1" is found - is the passenger travelling a sibling or a spouse?  A SibSp of 2 or more is indicative of siblings.  It will likely be beneficial to disambiguate this variable into separate 'Siblings' and 'Spouses' variables.
+```{r eda_sibsp1}
+ggplot(train, aes(x = SibSp)) +
+   geom_histogram(binwidth=0.5) +
+   xlab("Number of Siblings/Spouses") +
+   ylab("Total Count")
+```
+
+#### Parch
+
+#### Ticket
+
+#### Fare
+
+#### Cabin
+
+#### Embarked
+
 ***
 ## Feature Engineering
+When importing into R, factor/class variables solely composed of numeric entries are interpreted and imported as numeric types, implying an ordering and a distance between entries.  These variables include PassengerId, Survived, and Pclass.  PassengerId is like a primary key for each passenger, so it's not necessary to convert this variable into a factor.  However, the Survived data is encoded as a binary flag where 1=survived and 0=not survived.  Since our goal is to predict classes (i.e., survived or died), it is necessary to convert this value into a factor.  The Pclass variable is a factor, but it is an ordered factor.  An ordered factor indicates that there is an ordering between the classes (1st class, 2nd class, 3rd class), but no magnitude between each class level can be inferred.
+```{r feature1}
+train$Survived = as.factor(train$Survived);
+train$Pclass = as.ordered(train$Pclass);
+```
+***
+### Imputing Missing Data
 ***
 ## Models
 This is a classification problem with two classes: { Died, Survived }.  This is encoded in the 'Survived' variable in the train dataset. 
@@ -98,7 +227,6 @@ summary(data.combined );
 
 ### Null Model
 ```{r null1, echo=FALSE}
-#library( ggplot2 );
 numPassengers = length(train$Survived);
 died = sum( train$Survived == 0);
 survived = sum( train$Survived == 1);
@@ -106,7 +234,7 @@ survived = sum( train$Survived == 1);
 mean_survived = survived/numPassengers;
 cat( "Of ", numPassengers, " passengers, ", died, " died and ", survived, " survived.\nMean Survivability = ", survived/numPassengers );
 ```
-The simplest model would be to assume that all test subjects are members of the most common class in the train dataset.  In the train dataset, 62% of the subjects died, so we would assume that all the test passengers die.  This would yield a prediction accuracy of about 62%, and a corresponding misclassification rate of 38%, all false negatives.
+The simplest model would be to assume that all test subjects are members of the most common class in the train dataset.  In the train dataset, 62% of the subjects died, so this simple model would assume that all the test passengers die.  This would yield a prediction accuracy of about 62%, and a corresponding misclassification rate of 38%, all false negatives.
 
 ```{r null2, echo=FALSE}
 # Time strip
@@ -117,5 +245,8 @@ barplot( hours, width=0.9, main="Time", xlab="hours", ylim=c(0,1), xlim=c(0,MAX_
 #bp
 ### Bias-Variance Strip
 ```
+
+### Gender Submission Model
+Along with the train.csv and test.csv file, Kaggle provides an additional file called 'gender_submission.csv'.  This file is a sample submission to Kaggle in which all the female passengers are predicted to survive while all of the male passengers are predicted to die.
 
 ### Logistic Regression Model
