@@ -56,6 +56,7 @@ source: https://www.kaggle.com/c/titanic/data
 ```{r trainsample, echo=FALSE}
 # Load raw data
 train <- read.csv("train.csv", header = TRUE);
+edaTrain = train;
 knitr::kable( head(train), format="markdown", longtable=TRUE)
 ```
 #### Test Data
@@ -170,21 +171,111 @@ ggplot(subset(train,!is.na(Age)), aes(x = Age, fill = factor(Survived))) +
 If we plot the Survived value as a function of the Age density, we see that there is a higher likelihood of younger passengers surviving over older passengers.  Up until the mid-to-late teens, a training set passenger is more likely to survive than die, so age is likely to be a useful predictor for survivability.
 
 #### SibSp
-This variable is unique in that it is combination of number of siblings or "1" if the passenger had a spouse on board the ship.  In some cases, it is not clear what the SibSp variable is encoding when a "1" is found - is the passenger travelling a sibling or a spouse?  A SibSp of 2 or more is indicative of siblings.  It will likely be beneficial to disambiguate this variable into separate 'Siblings' and 'Spouses' variables.
+This variable is unique in that it is combination of number of siblings or "1" if the passenger had a spouse on board the ship.  In some cases, it is not clear what the SibSp variable is encoding when a "1" is found - is the passenger travelling with a sibling or a spouse?  A SibSp of 2 or more is indicative of siblings.  It will likely be beneficial to disambiguate this variable into separate 'Siblings' and 'Spouses' variables.
 ```{r eda_sibsp1}
-ggplot(train, aes(x = SibSp)) +
+ggplot(train, aes(x = SibSp )) +
    geom_histogram(binwidth=0.5) +
    xlab("Number of Siblings/Spouses") +
    ylab("Total Count")
 ```
 
+Most passengers in the training set (68%) had neither a spouse or sibling on board.  23% of the training set passengers had a single sibling or spouse on board.  The remaining 9% of the passengers had two or more (presumably) siblings on board.
+```{r eda_sibsp2}
+ggplot(train, aes(x = SibSp, fill = factor(Survived))) +
+   geom_histogram(binwidth=0.5, position="dodge") +
+   xlab("Number of Siblings/Spouses") +
+   ylab("Total Count") +
+   labs(fill = "Survived")
+```
+
+Survivability does appear to trend with the number of siblings/spouses on board.  A passenger having no siblings or spouses is most likely to have died, whereas a passenger with one or two siblings/spouses has around a 50% likelihood of surviving.  The remaining cases of three to eight siblings are likely too few from which to draw inferences individually, so it might make sense to pool the SibSp values as follows: 0, 1, 2, 3> to avoid overfitting to specific training cases.  A close examination of the seven instances of the SibSp variable in which SibSp equals 8 reveals that all the subjects were from the same family and were in the same cabin.  Predicting that all families of size 8 will perish is unlikley to generalize well.
+
 #### Parch
+Similar to SibSp, this variable convolves two separate pieces of data: the number of parents and the number of children this passenger has on board.  In some cases, it is not clear what the Parch variable is encoding when a "1" is found - is the passenger travelling with a parent or a child?  This can be inferred if the Age variable is present for the passenger, but if the Age is missing, it will be ambiguous and may need further analysis.  Perhaps the passenger's title (Mr., Miss., Master) could help.  Like SibSp, it will likely be beneficial to disambiguate this variable into separate 'Parents' and 'Children' variables.
+```{r eda_parch1}
+ggplot(train, aes(x = Parch )) +
+   geom_histogram(binwidth=0.5) +
+   xlab("Number of Parents/Children") +
+   ylab("Total Count")
+```
+
+Most passengers in the training set (76%) had neither a parent or child on board.  13% of the training set passengers had a single parent or child on board.  About 9% of the passengers in the training set (80) had two or more parents or children on board.  The remaining 2% of the passengers had either 3, 4, 5, or 6 (presumably) children on board.
+```{r eda_parch2}
+ggplot(train, aes(x = Parch, fill = factor(Survived))) +
+   geom_histogram(binwidth=0.5, position="dodge") +
+   xlab("Number of Parents/Children") +
+   ylab("Total Count") +
+   labs(fill = "Survived")
+```
+
+Survivability does appear to trend with the number of parents/children on board.  A passenger having no parents or children is most likely to have died, whereas a passenger with one or two parents/children has around a 50% likelihood of surviving.  The remaining cases of three to six children are likely too few from which to draw inferences individually, so it might make sense to group the Parch values as follows: 0, 1, 2, 3>= to avoid overfitting to specific training cases.  
 
 #### Ticket
+The entries in the Ticket column do not seem to be of a uniform format.  Some ticket entries are just numbers - ranging from 693-392096.  Other ticket entries have character prefixes like "C.A." or "SOTON/O2", followed by a (presumably) ticket number.  
+```{r eda_ticket}
+head(as.character(train$Ticket),n=20);
+```
+An inspection of the set of tickets shows that presumed families tend to share a single ticket number.  The first impression is that the ticket number seems an unlikely predictor for survivability and could lead to overfitting the training set.  However, the ticket number might help populate the missing Cabin information - and Cabin might be a good predictor for survivability.
 
 #### Fare
+The fare (price paid per ticket) ranges from 0 to 512.3292.  The units are unclear, but are likely in English pounds.  The distribution is skewed to the right, with a median of 14.4542 and a mean of 32.20421.  A log transform of the data may be necessary to normalize the distribution of fares.  However, first the fare for passenger must be determined.  It appears to be the case that individual ticket numbers are not assigned per passenger, but rather a single ticket number is given to the purchaser of an allotment of tickets.  That is, families travelling together seem to be under the same ticket with the same fare.  So, it may be necessary to get to create an "Amount Paid for Ticket" feature that takes into account the number of people for which a fare was purchased on a single ticket.  
+
+```{r eda_fare1}
+ggplot(train, aes(x = Fare)) +
+  geom_histogram(binwidth=4) +
+  xlab("Fare") +
+  ylab("Total Count");
+ggplot(train, aes(y=Fare,x="")) + geom_boxplot();
+```
+
+Fare could conceivably be an important factor in determining survivability.  Perhaps the higher paying passengers received the first opportunity to board lifeboats.  Or perhaps, those higher paying passengers were more initially unwilling to leave their more comfortable accomodations for the plebian conditions aboard a lifeboat.  Fare as a predictor of survivability:
+```{r eda_fare2}
+ggplot(train, aes(x = Fare, fill = factor(Survived))) +
+  geom_density( position="stack") +
+  xlab("Fare") +
+  ylab("Total Count") +
+  labs(fill = "Survived")
+```
 
 #### Cabin
+The Cabin feature could be another strong predictor for survivability.  Perhaps cabins located nearest the lifeboats afforded the best survivability.  But, the Cabin variable has many empty values.  The empty values could mean that the information was not captured or it could mean that not all passengers received cabins and stayed in other accomodations.  Being assigned a cabin could be a proxy for one's social status and wealth.  If so, the Pclass variable might be co-linear.
+```{r eda_cabin1}
+levels(train$Cabin);
+```
+
+The cabin name mostly adheres to the rule of a single letter A-F,G,T, followed by a number up to 3 digits.  There are cases where a passenger has multiple cabins, each separated by whitespace.  The beginning letter of each cabin could denote a deck or particular region of the ship - which could help with predicting survivability.  Alternatively, the number of the cabin could be more informative than the beginning letter.  Perhaps cabins "A19" and "B19" are located right next to one another, for instance.  
+```{r eda_cabin2}
+cabinLetter = ifelse(train$Cabin == "", NA, substr(train$Cabin,1,1));
+edaTrain$CabinLetter <- as.factor(cabinLetter);
+ggplot(subset(edaTrain, !is.na(cabinLetter)), aes(x = CabinLetter, fill = as.factor(Survived))) +
+  geom_bar() +
+  ggtitle("Survivability by Ticket Letter") +
+  xlab("Cabin Letter") +
+  ylab("Total Count") +
+  labs(fill = "Survived");
+```
+
+It's not immediately obvious if there is a benefit to categorizing the cabins according to their first letter.  Are these groups statistically different from one another?  A Chi-Squared test should show if survivability is dependent on cabin letter or not.
+```{r eda_cabin3}
+tbl = table( edaTrain$Survived, edaTrain$CabinLetter);
+tbl
+chisq.test(tbl);
+```
+
+The p-value is 0.17 so at a confidence level of 0.05, we cannot reject the null hypothesis that survivability is independent of the starting cabin letter.
+```{r eda_cabin4}
+edaTrain$CabinAssignment[ edaTrain$Cabin != "" ] <- "Assigned";
+edaTrain$CabinAssignment[ edaTrain$Cabin == "" ] <- "Unassigned";
+ggplot(edaTrain, aes(x=CabinAssignment, fill=factor(Survived))) +
+  geom_bar() + 
+  facet_wrap(~Pclass) + 
+  ggtitle("Pclass") + 
+  xlab("Cabin Assignment") +
+  ylab("Total Count") +
+  labs(fill="Survived");
+```
+
+From the graph, it appears that for each passenger class, if a passenger is assigned a cabin, their chances of surviving the disaster are better than if they had not been assigned a cabin.
 
 #### Embarked
 
