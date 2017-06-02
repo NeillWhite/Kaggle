@@ -253,6 +253,12 @@ for ( i in 1:length(cnMatches) ){
   cabinNumber[i] = mean( as.numeric( unlist( cnMatches[i] )));
 }
 edaTrain$CabinLetter <- as.factor(cabinLetter);
+edaTrain$CabinNumber <- cabinNumber;
+ggplot( edaTrain, aes(x=CabinNumber,y=Survived,color=Survived ) ) + 
+  geom_point( shape=1,position=position_jitter(height=0.25)) +
+  ggtitle("Survivability by Cabin Number") +
+  xlab("Cabin Number") +
+  ylab("Survived");
 ggplot(subset(edaTrain, !is.na(cabinLetter)), aes(x = CabinLetter, fill = as.factor(Survived))) +
   geom_bar() +
   ggtitle("Survivability by Ticket Letter") +
@@ -261,7 +267,9 @@ ggplot(subset(edaTrain, !is.na(cabinLetter)), aes(x = CabinLetter, fill = as.fac
   labs(fill = "Survived");
 ```
 
-It's not immediately obvious if there is a benefit to categorizing the cabins according to their first letter.  Are these groups statistically different from one another?  A Chi-Squared test should show if survivability is dependent on cabin letter or not.
+When grouping the passengers by cabin number, there does not appear to be a relationship where survivability depends on cabin number.  If so, there should be identifiable pockets of clusters where there is a higher incidence of survivability.  If such clusters appeared to exist, the clusters could be defined and the group of clusters tested with a Chi-Square test to measure if survivability depends on cabin cluster.
+
+It's not immediately obvious if there is a benefit to categorizing the cabins according to their first letter.  Are these groups statistically different from one another?  A Chi-Square test of independence should show if survivability is dependent on cabin letter or not.
 ```{r eda_cabin3}
 tbl = table( edaTrain$Survived, edaTrain$CabinLetter);
 tbl
@@ -285,6 +293,21 @@ From the graph, it appears that for each passenger class, if a passenger is assi
 
 #### Embarked
 
+Passengers boarded the Titanic from one of three ports: (S)outhampton, England; (C)herbourg, France, or (Q)ueenstown, Ireland.  As noted, two passengers in the training set have no record of port of Embarkation.
+```{r eda_embarked1, echo=FALSE}
+knitr::kable( train[train$Embarked == "",], format="markdown", longtable=TRUE);
+```
+
+The two passengers are both female and in first class.
+```{r eda_embarked2}
+ggplot( edaTrain, aes(x=factor(Pclass),fill=factor(Survived)))+
+  geom_bar() + 
+  facet_wrap(~Embarked) +
+  ggtitle("Survivability by Port of Embarkation and Passenger Class") +
+  xlab("Passenger Class") +
+  ylab("Count") +
+  labs(fill="Survived");
+```
 ***
 ## Feature Engineering
 When importing into R, factor/class variables solely composed of numeric entries are interpreted and imported as numeric types, implying an ordering and a distance between entries.  These variables include PassengerId, Survived, and Pclass.  PassengerId is like a primary key for each passenger, so it's not necessary to convert this variable into a factor.  However, the Survived data is encoded as a binary flag where 1=survived and 0=not survived.  Since our goal is to predict classes (i.e., survived or died), it is necessary to convert this value into a factor.  The Pclass variable is a factor, but it is an ordered factor.  An ordered factor indicates that there is an ordering between the classes (1st class, 2nd class, 3rd class), but no magnitude between each class level can be inferred.
