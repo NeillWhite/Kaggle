@@ -62,8 +62,21 @@ knitr::kable( head(train), format="markdown", longtable=TRUE)
 #### Test Data
 
 ```{r testsample, echo=FALSE}
+# Load libraries
+library(stringr);
+library(assertthat);
+library(dplyr);
+setwd( "GitHub/Kaggle/Titanic");
 # Load raw data
 test <- read.csv("test.csv", header = TRUE);
+
+# Add a "Survived" variable to the test set to allow for combining data sets
+test.survived <- data.frame(Survived = rep(NA, nrow(test)), test[,]);
+
+# Combine data sets
+data_combined <- rbind(train, test.survived);
+#data_combined$survived <- as.factor(data_combined$survived)
+
 knitr::kable( head(test), format="markdown", longtable=TRUE)
 ```
 ***
@@ -128,7 +141,7 @@ It may seem that the passenger name is a lot like the PassengerId in that each n
 ```{r eda_name}
 head(as.character(train$Name),n=20);
 ```
-Each name begins with a surname before a comma and a title.  If the passenger is a married woman, her maiden name appears in parentheses.  Some of the titles may help infer age (Master and Miss) and surnames could help determine extended family travelling together, even if they've purchased separate tickets and are not in the same cabin.  Additionally, the presence of diacritical marks in a name could indicate that the passenger is a non-English speaker who might have had difficulty understanding instructions or the gravity of the situation.
+Each name begins with a surname before a comma and a title.  If the passenger is a married woman, her maiden name appears in parentheses.  Some of the titles may help infer age (Master. and Miss.) and surnames could help determine extended family travelling together, even if they've purchased separate tickets and are not in the same cabin.  Additionally, the presence of diacritical marks in a name could indicate that the passenger is a non-English speaker who might have had difficulty understanding instructions or the gravity of the situation.
 
 #### Sex
 Sex is an unordered factor, male or female.
@@ -218,7 +231,7 @@ head(as.character(train$Ticket),n=20);
 An inspection of the set of tickets shows that presumed families tend to share a single ticket number.  The first impression is that the ticket number seems an unlikely predictor for survivability and could lead to overfitting the training set.  However, the ticket number might help populate the missing Cabin information - and Cabin might be a good predictor for survivability.
 
 #### Fare
-The fare (price paid per ticket) ranges from 0 to 512.3292.  The units are unclear, but are likely in English pounds.  The distribution is skewed to the right, with a median of 14.4542 and a mean of 32.20421.  A log transform of the data may be necessary to normalize the distribution of fares.  However, first the fare for passenger must be determined.  It appears to be the case that individual ticket numbers are not assigned per passenger, but rather a single ticket number is given to the purchaser of an allotment of tickets.  That is, families travelling together seem to be under the same ticket with the same fare.  So, it may be necessary to get to create an "Amount Paid for Ticket" feature that takes into account the number of people for which a fare was purchased on a single ticket.  
+The fare (price paid per ticket) ranges from 0 to 512.3292.  The units are unclear, but are likely in English pounds.  The distribution is skewed to the right, with a median of 14.4542 and a mean of 32.20421.  A log transform of the data may be necessary to normalize the distribution of fares.  However, first the fare for passenger must be determined.  It appears to be the case that individual ticket numbers are not assigned per passenger, but rather a single ticket number is given to the purchaser of an allotment of tickets.  That is, families travelling together seem to be under the same ticket with the same fare.  So, it may be necessary to get to create an "Amount Paid per Passenger" feature that takes into account the number of people for which a fare was purchased on a single ticket.  
 
 ```{r eda_fare1}
 ggplot(train, aes(x = Fare)) +
@@ -280,6 +293,8 @@ The p-value is 0.17 so at a confidence level of 0.05, we cannot reject the null 
 ```{r eda_cabin4}
 edaTrain$CabinAssignment[ edaTrain$Cabin != "" ] <- "Assigned";
 edaTrain$CabinAssignment[ edaTrain$Cabin == "" ] <- "Unassigned";
+data_combined$CabinAssignment[ data_combined$Cabin != "" ] <- "Assigned";
+data_combined$CabinAssignment[ data_combined$Cabin == "" ] <- "Unassigned";
 ggplot(edaTrain, aes(x=CabinAssignment, fill=factor(Survived))) +
   geom_bar() + 
   facet_wrap(~Pclass) + 
@@ -308,15 +323,459 @@ ggplot( edaTrain, aes(x=factor(Pclass),fill=factor(Survived)))+
   ylab("Count") +
   labs(fill="Survived");
 ```
+
 ***
+
+### Errors in the Data
+
+Errors in the input dataset are often not apparent until deeper analyses are performed, such as feature engineering and imputing missing data.  However, once the data is corrected, it is necessary to regenerate the columns and feature analyses that will feed the predictive models.  In this dataset, it was found that a 16-year-old member of a family was incorrectly identified as being the father:
+```{r errors1, echo=FALSE}
+knitr::kable( data_combined[ data_combined$Ticket == "W./C. 6608", ], format="markdown", longtable=TRUE)
+```
+In the Ford family, Mr. William Neal Ford has the value '1' for SibSp and '3' for Parch.  The value of '1' for SibSp would imply that William has either one spouse or one sibling.  In addition, William has a value of '3' for Parch.  This indicates that William has either 3 children, 1 parent and 2 children, 2 parents and 1 child, or 3 parents, which is clearly not possible according to the variable definition.  Since two of the children in the family, Miss. Doolina Margaret Ford (21), and Mr. Edward Watson Ford (18) are actually *older* than William, it is clear that he cannot be their father.  The other child, Miss. Robina Maggie Ford (9) is only 7 years younger than William, also indicating that William cannot be her father.  The matriarch of the family is Mrs. Edward Ford - not Mrs. William Neal Ford, which indicates that it's likely not a simple case of getting William Neal Ford's age wrong (for instance, 46 instead of 16).
+
+Therefore, the best fix would be to change the Parch variables for Miss. Robina Maggie Ford, Miss. Doolina Margaret Ford, and Mr. Edward Watson Ford from '2' to '1' (due to the inclusion of Mr. William Neal as a brother).  In addition, the Parch variable of Mrs. Edward Ford would rise from '3' to '4', indicating she's travelling with four of her children and the Parch variable of Mr. William Neal Ford would change from '3' to '1' indicating that he's travelling with a single parent, his mother.  The SibSp variables would change from '2' to '3' for Miss. Robina Maggie Ford, Miss. Doolina Margaret Ford, and Mr. Edward Watson Ford, indicating that each of them are travelling with 3 siblings.  Similarly, Mr. William Neal Ford's SibSp variable would change from '1' to '3'.  Finally, Mrs. Edward Ford's SibSp would change from '1' to '0', indicating she was travelling without her husband (Mr. Edward Ford).  The changes appear below.
+```{r errors2, echo=FALSE}
+# Mr. William Neal Ford
+data_combined[ data_combined$PassengerId ==  87,"SibSp"] = 3;  # From 1
+data_combined[ data_combined$PassengerId ==  87,"Parch"] = 1;  # From 3
+# Miss. Robina Maggie Ford
+data_combined[ data_combined$PassengerId == 148,"SibSp"] = 3;  # From 2
+data_combined[ data_combined$PassengerId == 148,"Parch"] = 1;  # From 2
+# Miss. Doolina Margaret Ford
+data_combined[ data_combined$PassengerId == 437,"SibSp"] = 3;  # From 2
+data_combined[ data_combined$PassengerId == 437,"Parch"] = 1;  # From 2
+# Mrs. Edward Ford
+data_combined[ data_combined$PassengerId == 737,"SibSp"] = 1;  # From 1; Note: sister is Mrs. Eliza Johnston
+data_combined[ data_combined$PassengerId == 737,"Parch"] = 4;  # From 3
+# Mr. Edward Watson Ford
+data_combined[ data_combined$PassengerId == 1059,"SibSp"] = 3;  # From 2
+data_combined[ data_combined$PassengerId == 1059,"Parch"] = 1;  # From 2
+knitr::kable( data_combined[ data_combined$Ticket == "W./C. 6608", ], format="markdown", longtable=TRUE)
+```
+
+Additionally, there are problems with the Abbott family with ticket C.A., 2673:
+```{r errors3, echo=FALSE}
+knitr::kable( data_combined[ data_combined$Ticket == "C.A. 2673", ], format="markdown", longtable=TRUE)
+```
+
+Thirteen year old Master. Eugene Joseph Abbott has a Parch value of '2', meaning he has two parents on board.  A female on the same ticket, Mrs. Stanton Abbott, is 22 years older than Eugene at 35 years of age.  Mrs. Stanton Abbott has a SibSp of '1' and a Parch of '1'.  The other person on the ticket is 16-year-old Mr. Rossmore Edward Abbott, with a SibSp of '1' and a Parch of '1'.  It appears that 16-year-old Mr. Rossmore Edward Abbott was incorrectly designated the spouse of Mrs. Stanton Abbott instead of her son.  The corrections appear below.
+```{r errors4, echo=FALSE}
+# Master. Eugene Joseph Abbott
+data_combined[ data_combined$PassengerId == 1284,"SibSp"] = 1;  # From 0
+data_combined[ data_combined$PassengerId == 1284,"Parch"] = 1;  # From 2
+# Mrs. Stanton (Rosa Hunt)
+data_combined[ data_combined$PassengerId == 280,"SibSp"] = 0;  # From 1
+data_combined[ data_combined$PassengerId == 280,"Parch"] = 2;  # From 1
+knitr::kable( data_combined[ data_combined$Ticket == "C.A. 2673", ], format="markdown", longtable=TRUE)
+```
+
 ## Feature Engineering
 When importing into R, factor/class variables solely composed of numeric entries are interpreted and imported as numeric types, implying an ordering and a distance between entries.  These variables include PassengerId, Survived, and Pclass.  PassengerId is like a primary key for each passenger, so it's not necessary to convert this variable into a factor.  However, the Survived data is encoded as a binary flag where 1=survived and 0=not survived.  Since our goal is to predict classes (i.e., survived or died), it is necessary to convert this value into a factor.  The Pclass variable is a factor, but it is an ordered factor.  An ordered factor indicates that there is an ordering between the classes (1st class, 2nd class, 3rd class), but no magnitude between each class level can be inferred.
 ```{r feature1}
 train$Survived = as.factor(train$Survived);
 train$Pclass = as.ordered(train$Pclass);
 ```
-***
+
 ### Imputing Missing Data
+
+#### Embarked
+Two passengers had no information for their port of embarcation, Miss. Amelie Icard and Mrs. George Nelson Stone.  These first class passengers were both on the same ticket (113572) and stayed in Cabin B28.  The majority of passengers boarded at Southampton (70%), as compared to Cherbourg (21%) and Queenstown (9%).  There is quite a variety in the ticket numbers on the Titanic.  Their ticket number, 113572, is one in a series of similar ticket numbers, all in the 113XXX format.  There are 56 tickets in the 113XXX format and of the 54 that have a valid port of embarcation, 81% were from Southampton.  Considering the different data points, the two missing Embarked values will be considered 'S' for Southampton.
+```{r impute_embarked}
+data_combined[62,"Embarked"] = as.factor("S");
+data_combined[830,"Embarked"] = as.factor("S");
+```
+
+#### Cabin
+As determined in the EDA section, over 77% of the passengers have no recorded cabin information.  In addition, the assigned cabins did not seem to have a predictable pattern from the available data.  Further, cursory analyses did not indicate that cabin assignments were a good predictor of survivability.  As such, the missing cabin data will not be imputed.
+
+#### Fare
+Out of 1309 records, one fare is missing:
+```{r impute_fare1, echo=FALSE}
+knitr::kable( data_combined[1044,], format="markdown", longtable=TRUE)
+```
+
+The fare can be estimated by considering the variables that most likely affect the Fare variable, such as passenger class (Pclass), port of Embarcation (Embarked), Cabin, and how many other people are on the same ticket.  The passenger class and port of embarkation are readily available in each data row.  The Cabin variable, however, is not useful in this case since the Cabin variable is not defined for passenger 1044.  However, the fact that no Cabin was recorded for this passenger is significant since perhaps not all passengers were assigned cabins (i.e., wealthy passengers would be assigned cabins, and hence pay higher fares, while less privileged passengers may have to had large, unassigned community accomodations with a comparatively lower fare).  
+
+```{r impute_fare2}
+ticketChar = as.character( data_combined$Ticket );
+numPassengers = nrow( data_combined );
+data_combined$NumPassengersOnTicket = 1;
+for (i in 1:numPassengers ){
+    thisTicket = as.character( data_combined[i,"Ticket"] );
+    idxPeople = which( thisTicket == ticketChar );
+    numPeople = length( idxPeople );
+    data_combined$NumPassengersOnTicket[i] = numPeople;
+}
+# now constrain to those that have just 1 person on the ticket, as passenger 1044
+singlePassengers = data_combined$NumPassengersOnTicket == 1;
+embarkedS = data_combined$Embarked == 'S';
+unassignedCabins = data_combined$CabinAssignment == 'Unassigned';
+pClass3 = data_combined$Pclass == 3;
+similarPassengers = which( singlePassengers & embarkedS & unassignedCabins & pClass3 );
+similarPassengersFareData = data_combined[similarPassengers,];  # include all columns but the one we have no Fare info
+similarPassengersFareData = similarPassengersFareData[ similarPassengersFareData$PassengerId != 1044,];  # include all columns but the one we have no Fare info
+medianFare = median( similarPassengersFareData$Fare );
+data_combined[1044,"Fare"] = medianFare;
+hist(similarPassengersFareData$Fare, xlab = "Fare", ylab = "Passengers", main = "Fare of Similar Passengers");
+summary( similarPassengersFareData$Fare );
+```
+
+There are 318 passengers that share the same characteristics as passenger 1044: passenger class 3, port of embarkation Southampton, cabin assignment (unassigned), and the number of people with the same ticket (1).  Excluding a fare of 3.1708 and two at 19.9667, the remaining fares are between 6.2375 and 10.5167.  Passenger 1044 is assigned the median fare of 7.896.
+
+#### Age
+As found above, the Age data is missing for 177 of the train set cases and 86 of the test set cases.  Since Age is likely to be an important predictor of survival, the missing data should be imputed.  As will be shown in the next section on Feature Engineering, the passenger's title can be extracted from their name.  The title should allow for a better estimate of a passenger's age.
+
+The missing passengers have the following titles:
+```{r impute_age1, echo=FALSE}
+data_combined$FixedAge = data_combined$Age;
+passenger_names = as.character(data_combined$Name);
+num_commas = unname(sapply( passenger_names, str_count, ","));
+all_commas = assert_that( all( num_commas == 1 ) );  # Make sure each row has a comma
+# Now, extract titles.  Split on comma and take the tail end of the character string
+surnames = sapply( strsplit(as.character(passenger_names), ","), head, 1);
+data_combined$Surname = as.factor( surnames );
+given_name_string = sapply( strsplit(as.character(passenger_names), ","), tail, 1);
+# Remove leading whitespace, if any
+given_name_string = trimws( given_name_string, "left");
+# To extract the title from the Name character string, split each string 
+name_tokens = strsplit( given_name_string, "\\s+");
+# Exract first token as the title
+titles = lapply(name_tokens,"[[",1);
+given_names = lapply(name_tokens,"[[",2);
+data_combined$GivenName = as.factor( unlist( given_names ) );
+title_regs = regexpr( "[\\w+]+\\.", given_name_string, perl=TRUE );
+re_titles = regmatches( given_name_string, title_regs );
+data_combined$Title = as.factor( unlist( re_titles ));
+# The set of titles that have missing age values
+ageNA = is.na( data_combined$Age );
+titleNA = data_combined$Title[ageNA];
+# The set of titles that have missing age values
+data_combined$AgeTitle = data_combined$Title;
+data_combined$AgeTitle[ which( data_combined$Title == "Ms." & ageNA )] = as.factor( "Mrs." );
+age_lm = lm( Age~AgeTitle, data=data_combined);
+missingAgeIndices = which( is.na( data_combined$Age ) );
+missingTitles = data_combined[missingAgeIndices,"AgeTitle"];
+missingCount = table( missingTitles );
+summary( missingTitles )
+```
+
+The resultant linear model uses the following average ages for each missing passenger title:
+```{r impute_age2}
+# model is simple: use the passenger's title (i.e., Mr., Master., Mrs.) to determine age
+# May want to better this by using age of parents (if travelling with parents), age of siblings, spouse, etc.
+age_lm = lm( Age~AgeTitle, data=data_combined);
+
+missingAges = predict( age_lm, data_combined[missingAgeIndices,]);
+data_combined[missingAgeIndices,"FixedAge"] = missingAges;
+coeffs = coefficients( age_lm );
+coeffNames = names(coeffs);
+coeffValues = unname(coeffs);
+# find (Intercept)
+idxIntercept = match( "(Intercept)", coeffNames );
+interceptValue = coeffValues[idxIntercept];
+allOtherCoeffIndices = setdiff(1:length(coeffNames),idxIntercept);
+allOtherCoeffValues = coeffValues[allOtherCoeffIndices];
+titleAges = interceptValue + allOtherCoeffValues;
+names(titleAges) =  gsub( "AgeTitle", "", coeffNames[allOtherCoeffIndices] );
+knitr::kable( bind_rows(titleAges), format="markdown", longtable=TRUE)
+```
+***
+### New Features
+
+#### Title and AgeTitle
+The Name variable in the test and train datasets has some structure - surname followed by a comma, then a title and a given name.  Additionally, a maiden name will be present in parentheses if the passenger is a married woman.
+```{r feature2}
+passenger_names = as.character(data_combined$Name);
+head(passenger_names);
+```
+The implied structure is [SURNAME] COMMA [TITLE] [GIVEN NAME] (MAIDEN NAME if applicable).  Since the goal is to extract the title information from each row programmatically, it is  necessary to enforce some error checking - namely, that each row contain one and only one comma.  If this condition does not hold true, the title extraction task will be more tedious.
+
+```{r feature3}
+num_commas = unname(sapply( passenger_names, str_count, ","));
+all_commas = assert_that( all( num_commas == 1 ) );  # Make sure each row has a comma
+# Now, extract titles.  Split on comma and take the tail end of the character string
+surnames = sapply( strsplit(as.character(passenger_names), ","), head, 1);
+data_combined$Surname = as.factor( surnames );
+given_name_string = sapply( strsplit(as.character(passenger_names), ","), tail, 1);
+# Remove leading whitespace, if any
+given_name_string = trimws( given_name_string, "left");
+# To extract the title from the Name character string, split each string 
+name_tokens = strsplit( given_name_string, "\\s+");
+# Exract first token as the title
+titles = lapply(name_tokens,"[[",1);
+given_names = lapply(name_tokens,"[[",2);
+data_combined$GivenName = as.factor( unlist( given_names ) );
+```
+
+The full set of extracted titles:
+```{r feature4}
+summary( data_combined$Title );
+```
+
+Most of these look correct and reasonable as titles ("Don." and "Dona." are Italian honorifics, as is "Jonkheer." a Dutch honorific).  However, the title "the" is suspicious.  The complete row is as follows:
+```{r feature5}
+data_combined[ which( data_combined$Title == "the" ), ]
+```
+
+Although it makes little difference in this case since there is only a single "the Countess. of Rothes" on board, the title of this passenger should be changed from "the" to "Countess.".  This could be fixed by changing the single record, but the fact that this incorrect title occurred in the first place indicates that the methodology for finding titles isn't robust enough.  Since it appears that the only time a "." appears in the Name field is at the end of a title, that information could be used to find all titles.
+```{r feature6}
+title_regs = regexpr( "[\\w+]+\\.", given_name_string, perl=TRUE );
+re_titles = regmatches( given_name_string, title_regs );
+data_combined$Title = as.factor( unlist( re_titles ));
+summary( data_combined$Title );
+```
+
+Of particular interest are the titles that are underrepresented and how they might relate to the most abundant titles (Mr., Mrs., Miss., and Master.).  For instance, the title "Ms." has only two occurences and as such, has limited predictive power.  "Ms." generally refers to an adult woman, either married or unmarried and so is much closer to either a "Mrs." or "Miss." title than a "Mr.", for instance.  Additionally, the French designations for "Miss." and "Mrs." appear as Madamoiselle ("Mlle.") and Madame ("Mme.").  These titles would likely provide better predictive power if they were switched to their English equivalents.
+
+Additionally, many of the Age attributes are missing from the dataset and since it seems likely that Age would be a strong predictor of survivability.  Title should be a fairly robust predictor for Age, so engineering a title feature that is reflective of Age could be beneficial (i.e., a Doctor with a missing Age value is much more likely to be an adult than a child and adults have a generally lower survival rate than children).  The titles of the passengers missing Age information are as follows:
+```{r feature7}
+# The set of titles that have missing age values
+ageNA = is.na( data_combined$Age );
+titleNA = data_combined$Title[ageNA];
+summary( titleNA );
+```
+
+For the purposes of estimating the Age variable for this group, the "Ms." entry is better suited as a "Mrs.".  Although the "Dr." title has a relatively small number of instances, it is likely enough from which to draw a reasonable age estimate.
+```{r feature8}
+# The set of titles that have missing age values
+data_combined$AgeTitle = data_combined$Title;
+data_combined$AgeTitle[ which( data_combined$Title == "Ms." & ageNA )] = as.factor( "Mrs." );
+summary( data_combined$AgeTitle );
+```
+
+#### Parents and Children
+Next, the Parch variable encodes two different measures: the number of parents a passenger has on board AND/OR the number of children a passenger has on board.  Since this variable is overloaded, a more informative variable set might disambiguate these measures into NumParents and NumChildren (aboard).  Such a set of variables may provide more predictive power than the single Parch variable.
+```{r feature9}
+numParents = integer( nrow( data_combined ) );
+numChildren = integer( nrow( data_combined ) );
+
+MAX_CHILD_AGE = 14;
+
+# Find all Parch > 0
+posParch = data_combined$Parch > 0;
+idxParch = which( posParch );
+counter = 0;
+numCases = length( idxParch );
+for (thisRow in idxParch){
+  sibsp = data_combined[thisRow,"Sibsp"];
+  # if sibsp > 1, then the passenger is travelling with siblings (and therefore, likely parents)
+  counter = counter + 1;
+  numParch = data_combined[thisRow,"Parch"];
+  thisSurname = data_combined[thisRow,"Surname"];
+  thisTicket = data_combined[thisRow,"Ticket"];
+  thisTitle = as.character( data_combined[thisRow,"Title"] );
+  thisAge = data_combined[thisRow,"Age"];
+  if ( (thisTitle == "Master.") || (thisTitle == "Miss.") ){
+    # if this passenger is a "Master." or Miss. and numParch <= 2, he/she must be someone's child
+    numParents[thisRow] = numParch;
+    #next;
+  }
+  if (!is.na( thisAge ) && thisAge <= MAX_CHILD_AGE ){
+    # if this passenger is young, declare they cannot be parents, must be a child
+    numParents[thisRow] = numParch;
+    #next;
+  }
+  # get passenger rows on same ticket
+  sameTickets = data_combined$Ticket == thisTicket;
+  sameSurnames = data_combined$Surname == thisSurname;
+  sameSurnameSameTicket = sameTickets & sameSurnames & posParch;
+  ticketTitles = as.character( data_combined[ sameSurnameSameTicket, "Title"] );
+  ticketParches = data_combined[ sameSurnameSameTicket, "Parch"];
+  # now, look for passengers with the same surname on the ticket and check their titles and ages
+  numSame = length( sameSurnameSameTicket );
+  ages = sort( data_combined[sameSurnameSameTicket,"Age"] );
+  thisAgePos = which( thisAge == ages )[1];  # find index of thisAge in sorted ages
+  gaps = diff( ages );
+  numGenerationalGaps = length( which( gaps > MAX_CHILD_AGE) );
+  if ( numGenerationalGaps == 0 ){
+    if ( !is.na( thisAge )){
+      if ( ( thisAge >= 40 ) || (thisTitle == "Mrs." ) ){
+        numChildren[thisRow] = numParch;
+      }
+      else if (numParch > 2 ){
+        numChildren[thisRow] = numParch;
+      }
+      else{
+        numParents[thisRow] = numParch;
+      }
+    }
+    else{
+      # no age information. If travelling with "kids", and title isn't a kid, then parent
+      if ( ! ( thisTitle %in% c("Master.","Miss.") ) ){
+        if( any( c("Master.","Miss.") %in% ticketTitles ) ){
+          # now, if there are two Mr. in this group, we need to choose the real father
+          # If there are three or more children, then Parch will be greater than 2 and
+          # will indicate this is the father.  Else, it will be a child
+          if( thisTitle == "Mr."){
+            maxParches = max( ticketParches );
+            if ( ( maxParches > 2 ) && ( maxParches == numParch ) ){
+              numChildren[thisRow] = numParch;
+            }
+            else{
+              numParents[thisRow] = numParch;
+            }
+          }
+          else{
+            numChildren[thisRow] = numParch;
+          }
+        }
+        else{
+          # all we have is a non Mr. or Miss. title.  Make them a child
+            numChildren[thisRow] = numParch;
+        }
+      }
+      else{
+        numParents[thisRow] = numParch;
+      }
+    }
+  }
+  else{
+    if ( !is.na(thisAge) ){  # use age in comparison to generation gap to classify kids/parents
+      maxGapPos = which.max( gaps ) + 0.5;  # the 0.5 puts it in the middle of the kids/parents
+      if ( thisAgePos < maxGapPos ){
+        numParents[thisRow] = numParch;
+      }
+      else{
+        numChildren[thisRow] = numParch;
+      }
+    }
+    else{
+      # no age info, have to go with titles
+    }
+  }
+  totalParch = numParents[thisRow] + numChildren[thisRow];
+  if ( totalParch != numParch ){
+    stop( "Number of Parents/Children assigned (", totalParch, ") does not equal the Parch variable (", numParch, ") for passenger ", data_combined[thisRow,"PassengerId"], "\n");
+  }
+  data_combined$NumParents = numParents;
+  data_combined$NumChildren = numChildren;
+}
+```
+
+#### Siblings and Spouses
+Similar to Parch, the SibSp variable indicates the number of Siblings AND/OR Spouses a passenger has on board.  A better set of variables would be separate variables for Siblings and Spouses as it would be possible to model the original SibSp vector as a simple combination of the separate columns.
+```{r feature10}
+numSiblings = integer( nrow( data_combined ) );
+numSpouses = integer( nrow( data_combined ) );
+
+MAX_CHILD_AGE = 14;
+
+posSibSp = data_combined$SibSp > 0;
+idxSibSp = which( posSibSp );
+counter = 0;
+numCases = length( idxSibSp );
+for (thisRow in idxSibSp){
+  counter = counter + 1;
+  numSibSp = data_combined[thisRow,"SibSp"];
+  numParch = data_combined[thisRow,"Parch"];
+  thisSurname = data_combined[thisRow,"Surname"];
+  thisTicket = data_combined[thisRow,"Ticket"];
+  thisTitle = as.character( data_combined[thisRow,"Title"] );
+  thisAge = data_combined[thisRow,"Age"];
+  thisSex = as.character( data_combined[thisRow,"Sex"] );
+  thisGivenName = as.character( data_combined[thisRow,"GivenName"] );
+  thisPassengerId = data_combined[thisRow,"PassengerId"];
+  if ( (thisTitle == "Master.") || (thisTitle == "Miss.") ){
+    # if this passenger is a "Master." or Miss., this passenger is not married, so must be spouse
+    numSiblings[thisRow] = numSibSp;
+    next;
+  }
+  if (!is.na( thisAge ) && thisAge <= 10 ){
+    # if this passenger is young, declare they cannot be parents, must be a child
+    numSiblings[thisRow] = numSibSp;
+    next;
+  }
+  # get passenger rows on same ticket
+  sameTickets = data_combined$Ticket == thisTicket;
+  sameSurnames = data_combined$Surname == thisSurname;
+  sameSurnameSameTicket = sameTickets & sameSurnames & posSibSp;
+  # if married, look for spouse on the same ticket
+  # get given names on same ticket
+  same_ticket_rows = data_combined[which(sameSurnameSameTicket),];
+  given_names = as.character( same_ticket_rows$GivenName );
+  titles = as.character( same_ticket_rows$Title );
+  sexes = as.character( same_ticket_rows$Sex );
+  passengerIds = same_ticket_rows$PassengerId;
+  master_mask = ( titles != "Master." );  
+  sex_mask = ( sexes != thisSex );  # opposite sex marriage
+  miss_mask = ( titles != "Miss." );
+  this_mask = ( passengerIds != thisPassengerId );
+  idxMatch = which( ( thisGivenName == given_names ) & master_mask & sex_mask & miss_mask & this_mask);
+  if ( length( idxMatch ) == 1 ){
+    numSpouses[thisRow] = 1;
+    next;
+  }
+  ticketTitles = as.character( data_combined[ sameSurnameSameTicket, "Title"] );
+  ticketParches = data_combined[ sameSurnameSameTicket, "Parch"];
+  # now, look for passengers with the same surname on the ticket and check their titles and ages
+  numSame = length( sameSurnameSameTicket );
+  ages = sort( data_combined[sameSurnameSameTicket,"Age"] );
+  thisAgePos = which( thisAge == ages )[1];  # find index of thisAge in sorted ages
+  gaps = diff( ages );
+  numGenerationalGaps = length( which( gaps > MAX_CHILD_AGE) );
+}
+
+# do some manual corrections
+numSiblings[168] = 0;  # Mrs. William Skoog
+numSpouses[168] = 1;  # Mrs. William Skoog
+numSiblings[361] = 0;  # Mr. Wilhelm Skoog
+numSpouses[361] = 1;  # Mr. Wilhelm Skoog
+numSiblings[679] = 0;  # Mrs. Frederick Goodwin
+numSpouses[679] = 1;  # Mrs. Frederick Goodwin
+numSiblings[1031] = 0;  # Mr. Charles Frederick Goodwin
+numSpouses[1031] = 1;  # Mr. Charles Frederick Goodwin
+numSiblings[557] = 0;  # Lady. Duff Gordon
+numSpouses[557] = 1;  # Lady. Duff Gordon
+numSiblings[600] = 0;  # Sir. Duff Gordon
+numSpouses[600] = 1;  # Sir. Duff Gordon
+numSiblings[746] = 0;  # Capt. Edward Gifford Crosby
+numSpouses[746] = 1;  # Capt. Edward Gifford Crosby
+numSiblings[1197] = 0;  # Mrs. Edward Gifford Crosby
+numSpouses[1197] = 1;  # Mrs. Edward Gifford Crosby
+numSiblings[1059] = 3;  # Mr. Edward Watson Ford
+numSpouses[1059] = 0;  # Mr. Edward Watson Ford
+
+counter = 0;
+for (thisRow in idxSibSp){
+  counter = counter + 1;
+  numSibSp = data_combined[thisRow,"SibSp"];
+  numParch = data_combined[thisRow,"Parch"];
+  thisSurname = data_combined[thisRow,"Surname"];
+  thisTicket = data_combined[thisRow,"Ticket"];
+  thisTitle = as.character( data_combined[thisRow,"Title"] );
+  thisAge = data_combined[thisRow,"Age"];
+  thisSex = as.character( data_combined[thisRow,"Sex"] );
+  thisGivenName = as.character( data_combined[thisRow,"GivenName"] );
+  thisPassengerId = data_combined[thisRow,"PassengerId"];
+  numSiblings[thisRow] = numSibSp - numSpouses[thisRow];
+}
+
+data_combined$Spouses = numSpouses;
+data_combined$Siblings = numSiblings;
+```
+
+#### FarePerPassenger
+As determined in the EDA section, the Fare variable is not per passenger, it is the price paid for the ticket the passenger is traveling under (and multiple passengers may travel on the same ticket).  
+```{r feature11}
+ticketChar = as.character( data_combined$Ticket );
+uniqueTickets = unique( ticketChar );
+farePerPassenger = data_combined$Fare;
+for (i in 1:length(uniqueTickets) ){
+    thisTicket = uniqueTickets[i];
+    idxPeople = which( ticketChar == thisTicket );
+    theseFares = data_combined[idxPeople,"Fare"];
+    #if ( !all( theseFares == theseFares[1] ) ){
+    #    cat( thisTicket )
+    #}
+    # should only be a single fare
+    
+    numPeople = length( idxPeople );
+    farePerPassenger[idxPeople] = theseFares[1]/numPeople;
+}
+data_combined$FarePerPassenger = farePerPassenger;
+```
+
 ***
 ## Models
 This is a classification problem with two classes: { Died, Survived }.  This is encoded in the 'Survived' variable in the train dataset. 
@@ -331,17 +790,10 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r include = FALSE}
 MAX_HOURS = 10;
 library( assertthat );
-# Add a "Survived" variable to the test set to allow for combining data sets
-test.survived <- data.frame(Survived = rep(NA, nrow(test)), test[,]);
-
-# Combine data sets
-data.combined <- rbind(train, test.survived);
-
-#data.combined$survived <- as.factor(data.combined$survived)
-data.combined$pclass <- as.factor(data.combined$Pclass);
+data_combined$pclass <- as.factor(data_combined$Pclass);
 
 # A bit about R data types (e.g., factors)
-summary(data.combined );
+summary(data_combined );
 
 ```
 
@@ -358,12 +810,16 @@ The simplest model would be to assume that all test subjects are members of the 
 
 ```{r null2, echo=FALSE}
 # Time strip
+nullModel = data.frame(PassengerId=test$PassengerId, Survived=0);
+write.csv( nullModel, "titanicNullModel.csv", row.names=FALSE, quote=FALSE );
+
 hours = 1;
 par(mfrow=c(2,1));
 barplot( hours, width=0.9, main="Time", xlab="hours", ylim=c(0,1), xlim=c(0,MAX_HOURS), horiz=TRUE );
 #bp = ggplot(data=hours,aes(x=hours,y=1)) + geom_bar(stat="identity") + coord_flip();
 #bp
 ### Bias-Variance Strip
+
 ```
 
 ### Gender Submission Model
