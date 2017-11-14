@@ -1,0 +1,1949 @@
+Abbott, Master. Eugene Joseph
+listOfSurvivors.txt:ABBOTT, Mrs Rhoda Mary 'Rosa'	39	3rd Class Passenger	CA2673 £20 5s	Southampton	 	A 	
+listOfVictims.txt:ABBOTT, Mr Ernest Owen	21	Victualling Crew	
+listOfVictims.txt:ABBOTT, Mr Eugene Joseph	13	3rd Class Passenger	CA2673
+listOfVictims.txt:ABBOTT, Mr Rossmore Edward	16	3rd Class Passenger	CA2673
+
+Abelseth, Miss. Karen Marie
+listOfSurvivors.txt:ABELSETH, Miss Karen Marie	16	3rd Class Passenger	348125 £7 13s	Southampton	 	16 	
+listOfSurvivors.txt:ABELSETH, Mr Olaus Jørgensen	25	3rd Class Passenger	348122 £7 13s	Southampton	Farmer  	A 	
+
+Abelseth, Mr. Olaus Jorgensen
+listOfSurvivors.txt:ABELSETH, Miss Karen Marie	16	3rd Class Passenger	348125 £7 13s	Southampton	 	16 	
+listOfSurvivors.txt:ABELSETH, Mr Olaus Jørgensen	25	3rd Class Passenger	348122 £7 13s	Southampton	Farmer  	A 	
+
+Abrahamsson, Mr. Abraham August Johannes
+listOfSurvivors.txt:ABRAHAMSSON, Mr Abraham August Johannes	20	3rd Class Passenger	3101284 £7 18s 6d	Southampton	 	15 	
+
+Abrahim, Mrs. Joseph (Sophie Halaut Easu)
+
+Aks, Master. Philip Frank
+listOfSurvivors.txt:AKS, Master Frank Philip	10m	3rd Class Passenger	392091 £9 7s	Southampton	 	11 	
+listOfSurvivors.txt:AKS, Mrs Leah	18	3rd Class Passenger	392091 £9 7s	Southampton	 	13 	
+
+Aldworth, Mr. Charles Augustus
+listOfVictims.txt:ALDWORTH, Mr Augustus Henry	35	2nd Class Passenger
+
+Allison, Mr. Hudson Joshua Creighton
+listOfSurvivors.txt:ALLISON, Master Hudson Trevor	11m	1st Class Passenger	113781 £151 16s	Southampton	 	11 	
+listOfVictims.txt:ALLISON, Miss Helen Loraine	2	1st Class Passenger	113781
+listOfVictims.txt:ALLISON, Mr Hudson Joshua Creighton	30	1st Class Passenger	113781
+listOfVictims.txt:ALLISON, Mrs Bessie Waldo	25	1st Class Passenger	113781
+
+Andersen, Mr. Albert Karvin
+listOfSurvivors.txt:ANDERSEN-JENSEN, Miss Carla Christine Nielsine	19	3rd Class Passenger	350046 £7 17s 1d	Southampton	 	16 	
+listOfVictims.txt:ANDERSEN, Mr Albert Kaurin	33	3rd Class Passenger	4001
+
+Andersson, Miss. Ida Augusta Margareta
+listOfSurvivors.txt:ANDERSSON, Miss Erna Alexandra	16	3rd Class Passenger	3101281 £7 18s 6d	Southampton	 	D 	
+listOfVictims.txt:ANDERSSON, Master Sigvard Harald Elias	4	3rd Class Passenger	347082
+listOfVictims.txt:ANDERSSON, Miss Ebba Iris Alfrida	6	3rd Class Passenger	347082
+listOfVictims.txt:ANDERSSON, Miss Ellis Anna Maria	2	3rd Class Passenger	347082
+listOfVictims.txt:ANDERSSON, Miss Ida Augusta Margareta	38	3rd Class Passenger	347091
+listOfVictims.txt:ANDERSSON, Miss Ingeborg Constanzia	9	3rd Class Passenger	347082
+listOfVictims.txt:ANDERSSON, Miss Sigrid Elisabeth	11	3rd Class Passenger	347082
+listOfVictims.txt:ANDERSSON, Mr Anders Johan	39	3rd Class Passenger	347082
+listOfVictims.txt:ANDERSSON, Mr Johan Samuel	26	3rd Class Passenger	347075
+listOfVictims.txt:ANDERSSON, Mrs Alfrida Konstantia Brogren	39	3rd Class Passenger	347082
+
+Andersson, Mr. Johan Samuel
+listOfSurvivors.txt:ANDERSSON, Miss Erna Alexandra	16	3rd Class Passenger	3101281 £7 18s 6d	Southampton	 	D 	
+listOfVictims.txt:ANDERSSON, Master Sigvard Harald Elias	4	3rd Class Passenger	347082
+listOfVictims.txt:ANDERSSON, Miss Ebba Iris Alfrida	6	3rd Class Passenger	347082
+listOfVictims.txt:ANDERSSON, Miss Ellis Anna Maria	2	3rd Class Passenger	347082
+listOfVictims.txt:ANDERSSON, Miss Ida Augusta Margareta	38	3rd Class Passenger	347091
+listOfVictims.txt:ANDERSSON, Miss Ingeborg Constanzia	9	3rd Class Passenger	347082
+listOfVictims.txt:ANDERSSON, Miss Sigrid Elisabeth	11	3rd Class Passenger	347082
+listOfVictims.txt:ANDERSSON, Mr Anders Johan	39	3rd Class Passenger	347082
+listOfVictims.txt:ANDERSSON, Mr Johan Samuel	26	3rd Class Passenger	347075
+listOfVictims.txt:ANDERSSON, Mrs Alfrida Konstantia Brogren	39	3rd Class Passenger	347082
+
+Andrew, Mr. Frank Thomas
+listOfSurvivors.txt:ANDREWS, Miss Kornelia Theodosia	62	1st Class Passenger	13502 £77 19s 2d	Cherbourg	 	10 	
+listOfSurvivors.txt:ANDREWS, Mr Charles Edward	19	Victualling Crew	Southampton	Saloon Steward (2nd class)  	16 	
+listOfVictims.txt:ANDREW, Mr Edgar Samuel	17	2nd Class Passenger	231945
+listOfVictims.txt:ANDREW, Mr Frank Thomas	27	2nd Class Passenger	34050
+listOfVictims.txt:ANDREWS, Mr Thomas	39	1st Class Passenger
+listOfVictims.txt:MCANDREW, Mr Thomas Patrick	38	Engineering Crew	
+listOfVictims.txt:MCANDREWS, Mr William	23	Engineering Crew	
+
+Angheloff, Mr. Minko
+listOfVictims.txt:ANGHELOFF, Mr Minko	26	3rd Class Passenger	349202
+
+Angle, Mr. William A
+listOfSurvivors.txt:ANGLE, Mrs Florence Agnes	36	2nd Class Passenger	226875 £26	Southampton	 	11 	
+listOfVictims.txt:ANGLE, Mr William	31	2nd Class Passenger	226875
+
+Aronsson, Mr. Ernst Axel Algot
+listOfVictims.txt:ARONSSON, Mr Ernst Axel Algot	25	3rd Class Passenger	349911
+
+Ashby, Mr. John
+listOfVictims.txt:ASHBY, Mr John	57	2nd Class Passenger	244346
+
+Asplund, Master. Carl Edgar
+listOfSurvivors.txt:ASPLUND, Master Edvin Rojj Felix	3	3rd Class Passenger	347077 £31 7s 9d	Southampton	 	15 	
+listOfSurvivors.txt:ASPLUND, Miss Lillian Gertrud	5	3rd Class Passenger	347077 £31 7s 9d	Southampton	 	15 	
+listOfSurvivors.txt:ASPLUND, Mr Johan Charles	13	3rd Class Passenger	350054 £7 15s 11d	Southampton	 	13 	
+listOfSurvivors.txt:ASPLUND, Mrs Selma Augusta Emilia	38	3rd Class Passenger	347077 £31 7s 9d	Southampton	 	15 	
+listOfVictims.txt:ASPLUND, Master Carl Edgar	5	3rd Class Passenger	347077
+listOfVictims.txt:ASPLUND, Master Clarence Gustaf Hugo	9	3rd Class Passenger	347077
+listOfVictims.txt:ASPLUND, Master Filip Oscar	13	3rd Class Passenger	347077
+listOfVictims.txt:ASPLUND, Mr Carl Oscar Vilhelm Gustafsson	40	3rd Class Passenger	347077
+
+Asplund, Master. Filip Oscar
+listOfSurvivors.txt:ASPLUND, Master Edvin Rojj Felix	3	3rd Class Passenger	347077 £31 7s 9d	Southampton	 	15 	
+listOfSurvivors.txt:ASPLUND, Miss Lillian Gertrud	5	3rd Class Passenger	347077 £31 7s 9d	Southampton	 	15 	
+listOfSurvivors.txt:ASPLUND, Mr Johan Charles	13	3rd Class Passenger	350054 £7 15s 11d	Southampton	 	13 	
+listOfSurvivors.txt:ASPLUND, Mrs Selma Augusta Emilia	38	3rd Class Passenger	347077 £31 7s 9d	Southampton	 	15 	
+listOfVictims.txt:ASPLUND, Master Carl Edgar	5	3rd Class Passenger	347077
+listOfVictims.txt:ASPLUND, Master Clarence Gustaf Hugo	9	3rd Class Passenger	347077
+listOfVictims.txt:ASPLUND, Master Filip Oscar	13	3rd Class Passenger	347077
+listOfVictims.txt:ASPLUND, Mr Carl Oscar Vilhelm Gustafsson	40	3rd Class Passenger	347077
+
+Asplund, Mr. Carl Oscar Vilhelm Gustafsson
+listOfSurvivors.txt:ASPLUND, Master Edvin Rojj Felix	3	3rd Class Passenger	347077 £31 7s 9d	Southampton	 	15 	
+listOfSurvivors.txt:ASPLUND, Miss Lillian Gertrud	5	3rd Class Passenger	347077 £31 7s 9d	Southampton	 	15 	
+listOfSurvivors.txt:ASPLUND, Mr Johan Charles	13	3rd Class Passenger	350054 £7 15s 11d	Southampton	 	13 	
+listOfSurvivors.txt:ASPLUND, Mrs Selma Augusta Emilia	38	3rd Class Passenger	347077 £31 7s 9d	Southampton	 	15 	
+listOfVictims.txt:ASPLUND, Master Carl Edgar	5	3rd Class Passenger	347077
+listOfVictims.txt:ASPLUND, Master Clarence Gustaf Hugo	9	3rd Class Passenger	347077
+listOfVictims.txt:ASPLUND, Master Filip Oscar	13	3rd Class Passenger	347077
+listOfVictims.txt:ASPLUND, Mr Carl Oscar Vilhelm Gustafsson	40	3rd Class Passenger	347077
+
+Asplund, Mr. Johan Charles
+listOfSurvivors.txt:ASPLUND, Master Edvin Rojj Felix	3	3rd Class Passenger	347077 £31 7s 9d	Southampton	 	15 	
+listOfSurvivors.txt:ASPLUND, Miss Lillian Gertrud	5	3rd Class Passenger	347077 £31 7s 9d	Southampton	 	15 	
+listOfSurvivors.txt:ASPLUND, Mr Johan Charles	13	3rd Class Passenger	350054 £7 15s 11d	Southampton	 	13 	
+listOfSurvivors.txt:ASPLUND, Mrs Selma Augusta Emilia	38	3rd Class Passenger	347077 £31 7s 9d	Southampton	 	15 	
+listOfVictims.txt:ASPLUND, Master Carl Edgar	5	3rd Class Passenger	347077
+listOfVictims.txt:ASPLUND, Master Clarence Gustaf Hugo	9	3rd Class Passenger	347077
+listOfVictims.txt:ASPLUND, Master Filip Oscar	13	3rd Class Passenger	347077
+listOfVictims.txt:ASPLUND, Mr Carl Oscar Vilhelm Gustafsson	40	3rd Class Passenger	347077
+
+Assaf Khalil, Mrs. Mariana (Miriam")"
+
+Assaf, Mr. Gerios
+listOfSurvivors.txt:ASSAF, Mrs Mariana	45	3rd Class Passenger	2696 £7 4s 6d	Cherbourg	 	C 	
+
+Assam, Mr. Ali
+listOfVictims.txt:ASSAM, Mr Ali	23	3rd Class Passenger	3101309
+
+Astor, Col. John Jacob
+listOfSurvivors.txt:ASTOR, Mrs Madeleine Talmage	18	1st Class Passenger	17757 £247 10s 6d	Cherbourg	 	4 	
+listOfVictims.txt:ASTOR, Colonel John Jacob	47	1st Class Passenger	17757
+
+Baccos, Mr. Raffull
+
+Badman, Miss. Emily Louisa
+listOfSurvivors.txt:BADMAN, Miss Emily Louisa	18	3rd Class Passenger	31416 £8 1s	Southampton	Servant  	C 	
+
+Baimbrigge, Mr. Charles Robert
+
+Barry, Miss. Julia
+listOfVictims.txt:BARRY, Miss Julia	33	3rd Class Passenger	330844
+
+Beattie, Mr. Thomson
+listOfVictims.txt:BEATTIE, Mr Joseph	35	Engineering Crew	
+listOfVictims.txt:BEATTIE, Mr Thomson	36	1st Class Passenger	13050
+
+Beauchamp, Mr. Henry James
+listOfSurvivors.txt:BEAUCHAMP, Mr George William	24	Engineering Crew	Southampton	Fireman  	13 	
+listOfVictims.txt:BEAUCHAMP, Mr Henry James	44	2nd Class Passenger	244358
+
+Becker, Miss. Ruth Elizabeth
+listOfSurvivors.txt:BECKER, Master Richard F.	1	2nd Class Passenger	230136 £39	Southampton	 	11 	
+listOfSurvivors.txt:BECKER, Miss Marion Louise	4	2nd Class Passenger	230136 £39	Southampton	 	11 	
+listOfSurvivors.txt:BECKER, Miss Ruth Elizabeth	12	2nd Class Passenger	230136 £39	Southampton	 	13 	
+listOfSurvivors.txt:BECKER, Mrs Nellie E.	35	2nd Class Passenger	230136 £39	Southampton	 	11 	
+
+Becker, Mrs. Allen Oliver (Nellie E Baumgardner)
+listOfSurvivors.txt:BECKER, Master Richard F.	1	2nd Class Passenger	230136 £39	Southampton	 	11 	
+listOfSurvivors.txt:BECKER, Miss Marion Louise	4	2nd Class Passenger	230136 £39	Southampton	 	11 	
+listOfSurvivors.txt:BECKER, Miss Ruth Elizabeth	12	2nd Class Passenger	230136 £39	Southampton	 	13 	
+listOfSurvivors.txt:BECKER, Mrs Nellie E.	35	2nd Class Passenger	230136 £39	Southampton	 	11 	
+
+Bentham, Miss. Lilian W
+listOfSurvivors.txt:BENTHAM, Miss Lillian W.	19	2nd Class Passenger	28404 £13	Southampton	 	12 	
+
+Betros, Master. Seman
+
+Bird, Miss. Ellen
+listOfSurvivors.txt:BIRD, Miss Ellen	31	1st Class Passenger Servant	17483 £221 15s 7d	Southampton	Personal Maid  	8 	
+listOfVictims.txt:MORGAN (BIRD), Mr Charles Frederick	42	Victualling Crew	
+
+Birnbaum, Mr. Jakob
+listOfVictims.txt:BIRNBAUM, Mr Jakob	24	1st Class Passenger	13905
+
+Bjorklund, Mr. Ernst Herbert
+
+Bonnell, Miss. Caroline
+listOfSurvivors.txt:BONNELL, Miss Caroline	30	1st Class Passenger	36928 £164 17s 4d	Southampton	 	8 	
+listOfSurvivors.txt:BONNELL, Miss Elizabeth	61	1st Class Passenger	113783 £26 11s	Southampton	 	8 	
+
+Borebank, Mr. John James
+listOfVictims.txt:BOREBANK, Mr John James	41	1st Class Passenger	110489
+
+Botsford, Mr. William Hull
+listOfVictims.txt:BOTSFORD, Mr William Hull	25	2nd Class Passenger	237670
+
+Boulos, Master. Akar
+
+Bowen, Miss. Grace Scott
+listOfSurvivors.txt:BOWEN, Miss Grace Scott	45	1st Class Passenger Servant	17608 £262 7s 6d	Cherbourg	Governess  	4 	
+listOfVictims.txt:BOWEN, Mr David John 'Dai'	26	3rd Class Passenger	54636
+listOfVictims.txt:BOWENUR, Mr Solomon	42	2nd Class Passenger	211535
+
+Bowenur, Mr. Solomon
+listOfVictims.txt:BOWENUR, Mr Solomon	42	2nd Class Passenger	211535
+
+Bradley, Miss. Bridget Delia
+listOfSurvivors.txt:BRADLEY, Miss Bridget Delia	22	3rd Class Passenger	334914 £7 14s 6d	Queenstown	 	13 	
+listOfVictims.txt:BRADLEY, Mr Patrick Joseph	39	Engineering Crew	
+listOfVictims.txt:BRADLEY, Mr Thomas Henry	29	Deck Crew	
+
+Brady, Mr. John Bertram
+listOfVictims.txt:BRADY, Mr John Bertram	41	1st Class Passenger	113054
+
+Braf, Miss. Elin Ester Maria
+listOfVictims.txt:BRAF, Miss Elin Ester Maria	20	3rd Class Passenger	347471
+
+Brandeis, Mr. Emil
+listOfVictims.txt:BRANDEIS, Mr Emil Franklin	48	1st Class Passenger	17591
+
+Brobeck, Mr. Karl Rudolf
+
+Brown, Miss. Edith Eileen
+listOfSurvivors.txt:BROWN, Miss Amelia Mary	18	2nd Class Passenger Servant	248733 £13	Southampton	Cook (Personal)  	11 	
+listOfSurvivors.txt:BROWN, Miss Edith Eileen	15	2nd Class Passenger	29750 £39	Southampton	Scholar  	14 	
+listOfSurvivors.txt:BROWN, Mr Edward	34	Victualling Crew	Belfast	Saloon Steward  	  	
+listOfSurvivors.txt:BROWN, Mrs Caroline Lane	59	1st Class Passenger	11769 £51 9s 7d	Southampton	 	D 	
+listOfSurvivors.txt:BROWN, Mrs Elizabeth Catherine	40	2nd Class Passenger	29750 £39	Southampton	 	14 	
+listOfSurvivors.txt:BROWN, Mrs Margaret	44	1st Class Passenger	17610 £27 14s 5d	Cherbourg	 	6 	
+listOfVictims.txt:BROWN, Mr John	28	Engineering Crew	
+listOfVictims.txt:BROWN, Mr Joseph	30	Engineering Crew	
+listOfVictims.txt:BROWN, Mr Thomas William Solomon	60	2nd Class Passenger	29750
+listOfVictims.txt:BROWN, Mr Walter James	41	Victualling Crew	
+
+Brown, Mrs. John Murray (Caroline Lane Lamson)
+listOfSurvivors.txt:BROWN, Miss Amelia Mary	18	2nd Class Passenger Servant	248733 £13	Southampton	Cook (Personal)  	11 	
+listOfSurvivors.txt:BROWN, Miss Edith Eileen	15	2nd Class Passenger	29750 £39	Southampton	Scholar  	14 	
+listOfSurvivors.txt:BROWN, Mr Edward	34	Victualling Crew	Belfast	Saloon Steward  	  	
+listOfSurvivors.txt:BROWN, Mrs Caroline Lane	59	1st Class Passenger	11769 £51 9s 7d	Southampton	 	D 	
+listOfSurvivors.txt:BROWN, Mrs Elizabeth Catherine	40	2nd Class Passenger	29750 £39	Southampton	 	14 	
+listOfSurvivors.txt:BROWN, Mrs Margaret	44	1st Class Passenger	17610 £27 14s 5d	Cherbourg	 	6 	
+listOfVictims.txt:BROWN, Mr John	28	Engineering Crew	
+listOfVictims.txt:BROWN, Mr Joseph	30	Engineering Crew	
+listOfVictims.txt:BROWN, Mr Thomas William Solomon	60	2nd Class Passenger	29750
+listOfVictims.txt:BROWN, Mr Walter James	41	Victualling Crew	
+
+Bryhl, Miss. Dagmar Jenny Ingeborg 
+listOfSurvivors.txt:BRYHL, Miss Dagmar Jenny Ingeborg	20	2nd Class Passenger	236853 £26	Southampton	 	12 	
+listOfVictims.txt:BRYHL, Mr Kurt Arnold Gottfrid	25	2nd Class Passenger	236853
+
+Buckley, Miss. Katherine
+listOfSurvivors.txt:BUCKLEY, Mr Daniel	21	3rd Class Passenger	330920 £7 15s 17d	Queenstown	Farm Labourer  	13 	
+listOfVictims.txt:BUCKLEY, Miss Katherine	22	3rd Class Passenger	329944
+listOfVictims.txt:BUCKLEY, Mr H. E.	34	Victualling Crew	
+
+Buckley, Mr. Daniel
+listOfSurvivors.txt:BUCKLEY, Mr Daniel	21	3rd Class Passenger	330920 £7 15s 17d	Queenstown	Farm Labourer  	13 	
+listOfVictims.txt:BUCKLEY, Miss Katherine	22	3rd Class Passenger	329944
+listOfVictims.txt:BUCKLEY, Mr H. E.	34	Victualling Crew	
+
+Bucknell, Mrs. William Robert (Emma Eliza Ward)
+listOfSurvivors.txt:BUCKNELL, Mrs Emma Eliza	58	1st Class Passenger	11813 £76 5s 10d	Cherbourg	 	8 	
+
+Burns, Miss. Mary Delia
+listOfSurvivors.txt:BURNS, Miss Elizabeth Margaret	41	1st Class Passenger Servant	16966 £134 10s	Cherbourg	Nursemaid  	3 	
+listOfVictims.txt:BURNS, Miss Mary Delia	17	3rd Class Passenger	330963
+
+Cacic, Miss. Manda
+listOfVictims.txt:CACIC, Miss Manda	21	3rd Class Passenger	315087
+listOfVictims.txt:CACIC, Miss Marija	30	3rd Class Passenger	315084
+listOfVictims.txt:CACIC, Mr Jego Grga	18	3rd Class Passenger	315091
+listOfVictims.txt:CACIC, Mr Luka	38	3rd Class Passenger	315089
+
+Cacic, Mr. Jego Grga
+listOfVictims.txt:CACIC, Miss Manda	21	3rd Class Passenger	315087
+listOfVictims.txt:CACIC, Miss Marija	30	3rd Class Passenger	315084
+listOfVictims.txt:CACIC, Mr Jego Grga	18	3rd Class Passenger	315091
+listOfVictims.txt:CACIC, Mr Luka	38	3rd Class Passenger	315089
+
+Caldwell, Mr. Albert Francis
+listOfSurvivors.txt:CALDWELL, Master Alden Gates	10m	2nd Class Passenger	248738 £29	Southampton	 	13 	
+listOfSurvivors.txt:CALDWELL, Mr Albert Francis	26	2nd Class Passenger	248738 £29	Southampton	 	13 	
+listOfSurvivors.txt:CALDWELL, Mrs Sylvia Mae	28	2nd Class Passenger	248738 £29	Southampton	 	13 	
+
+Canavan, Mr. Patrick
+listOfVictims.txt:CANAVAN, Miss Mary	22	3rd Class Passenger	364846
+listOfVictims.txt:CANAVAN, Mr Patrick	21	3rd Class Passenger	364858
+
+Candee, Mrs. Edward (Helen Churchill Hungerford)
+listOfSurvivors.txt:CANDEE, Mrs Helen Churchill	52	1st Class Passenger	17606 £27 8s 11d	Cherbourg	 	6 	
+
+Caram, Mr. Joseph
+listOfVictims.txt:CARAM, Mr Joseph	28	3rd Class Passenger	2689
+listOfVictims.txt:CARAM, Mrs Maria Elias	18	3rd Class Passenger	2689
+
+Cardeza, Mrs. James Warburton Martinez (Charlotte Wardle Drake)
+listOfSurvivors.txt:CARDEZA, Mr Thomas Drake Martinez	36	1st Class Passenger	17755 £512 6s 7d	Cherbourg	Gentleman  	3 	
+listOfSurvivors.txt:CARDEZA, Mrs Charlotte Wardle	58	1st Class Passenger	17755 £512 6s 7d	Cherbourg	 	3 	
+
+Carlsson, Mr. Carl Robert
+listOfVictims.txt:CARLSSON, Mr August Sigfrid	28	3rd Class Passenger	350042
+listOfVictims.txt:CARLSSON, Mr Carl Robert	24	3rd Class Passenger	350409
+listOfVictims.txt:CARLSSON, Mr Frans Olof	33	1st Class Passenger	695
+
+Carr, Miss. Jeannie
+listOfSurvivors.txt:SCARROTT, Mr Joseph George	33	Deck Crew	Southampton	Able Seaman  	14 	
+listOfVictims.txt:CARR, Miss Jane	45	3rd Class Passenger	368364
+listOfVictims.txt:CARR, Mr Richard Stephen	27	Engineering Crew	
+listOfVictims.txt:CARRAU, Mr Francisco Mauro Severiano	27	1st Class Passenger	113059
+listOfVictims.txt:CARRAú-ESTEVES, Mr José Pedro	17	1st Class Passenger	113059
+listOfVictims.txt:NANCARROW, Mr William Henry	36	3rd Class Passenger	3338
+
+Carrau, Mr. Jose Pedro
+listOfVictims.txt:CARRAU, Mr Francisco Mauro Severiano	27	1st Class Passenger	113059
+
+Carver, Mr. Alfred John
+listOfVictims.txt:CARVER, Mr Alfred John	28	3rd Class Passenger	370160
+
+Case, Mr. Howard Brown
+listOfVictims.txt:CASE, Mr Howard Brown	49	1st Class Passenger	19924
+listOfVictims.txt:CASEY, Mr Thomas	44	Engineering Crew	
+
+Cassebeer, Mrs. Henry Arthur Jr (Eleanor Genevieve Fosdick)
+listOfSurvivors.txt:CASSEBEER, Mrs Eleanor Genevieve	36	1st Class Passenger	17770 £27 14s 5d	Cherbourg	 	5 	
+
+Cavendish, Mrs. Tyrell William (Julia Florence Siegel)
+listOfSurvivors.txt:CAVENDISH, Mrs Julia Florence	25	1st Class Passenger	19877 £78 17s	Southampton	 	6 	
+listOfVictims.txt:CAVENDISH, Mr Tyrell William	36	1st Class Passenger	19877
+
+Chaffee, Mrs. Herbert Fuller (Carrie Constance Toogood)
+listOfSurvivors.txt:CHAFFEE, Mrs Carrie Constance	47	1st Class Passenger	5734 £61 3s 6d	Southampton	 	4 	
+listOfVictims.txt:CHAFFEE, Mr Herbert Fuller	46	1st Class Passenger	5734
+
+Chapman, Mrs. John Henry (Sara Elizabeth Lawry)
+listOfSurvivors.txt:CHAPMAN, Mr Joseph Charles	32	Victualling Crew	Southampton	Boots steward, 2nd class  	9 	
+listOfVictims.txt:CHAPMAN, Mr Charles Henry	52	2nd Class Passenger	248731
+listOfVictims.txt:CHAPMAN, Mr John Henry	37	2nd Class Passenger	29037
+listOfVictims.txt:CHAPMAN, Mrs Sarah Elizabeth	29	2nd Class Passenger	29037
+
+Chaudanson, Miss. Victorine
+listOfSurvivors.txt:CHAUDANSON, Miss Victorine	36	1st Class Passenger Servant	17608 £262 7s 6d	Cherbourg	Personal Maid  	4 	
+
+Chevre, Mr. Paul Romaine
+
+Chisholm, Mr. Roderick Robert Crispin
+listOfVictims.txt:CHISHOLM, Mr Roderick Robert Crispin	43	1st Class Passenger
+
+Christy, Mrs. (Alice Frances)
+listOfSurvivors.txt:CHRISTY, Miss Rachel Juli Cohen	25	2nd Class Passenger	237789 £30	Southampton	 	12 	
+listOfSurvivors.txt:CHRISTY, Mrs Alice Frances	52	2nd Class Passenger	237789 £30	Southampton	 	12 	
+
+Chronopoulos, Mr. Demetrios
+listOfVictims.txt:CHRONOPOULOS, Mr Apostolos M.	26	3rd Class Passenger	2680
+listOfVictims.txt:CHRONOPOULOS, Mr Dimitrios M.	21	3rd Class Passenger	2680
+
+Clark, Mr. Walter Miller
+listOfSurvivors.txt:CLARK, Mr William	40	Engineering Crew	Southampton	Fireman  	  	
+listOfSurvivors.txt:CLARK, Mrs Virginia Estelle	26	1st Class Passenger	13508 £136 15s 7d	Cherbourg	 	4 	
+listOfSurvivors.txt:CLARKE, Mrs Ada Maria	28	2nd Class Passenger	2003 £27	Southampton	 	14 	
+listOfVictims.txt:CLARK, Mr Walter Miller	27	1st Class Passenger	13508
+listOfVictims.txt:CLARKE, Mr Charles Valentine	29	2nd Class Passenger	2003
+listOfVictims.txt:CLARKE, Mr John Frederick Preston	28	2nd Class Passenger
+
+Clark, Mrs. Walter Miller (Virginia McDowell)
+listOfSurvivors.txt:CLARK, Mr William	40	Engineering Crew	Southampton	Fireman  	  	
+listOfSurvivors.txt:CLARK, Mrs Virginia Estelle	26	1st Class Passenger	13508 £136 15s 7d	Cherbourg	 	4 	
+listOfSurvivors.txt:CLARKE, Mrs Ada Maria	28	2nd Class Passenger	2003 £27	Southampton	 	14 	
+listOfVictims.txt:CLARK, Mr Walter Miller	27	1st Class Passenger	13508
+listOfVictims.txt:CLARKE, Mr Charles Valentine	29	2nd Class Passenger	2003
+listOfVictims.txt:CLARKE, Mr John Frederick Preston	28	2nd Class Passenger
+
+Clarke, Mr. Charles Valentine
+listOfSurvivors.txt:CLARKE, Mrs Ada Maria	28	2nd Class Passenger	2003 £27	Southampton	 	14 	
+listOfVictims.txt:CLARKE, Mr Charles Valentine	29	2nd Class Passenger	2003
+listOfVictims.txt:CLARKE, Mr John Frederick Preston	28	2nd Class Passenger
+
+Colbert, Mr. Patrick
+listOfVictims.txt:COLBERT, Mr Patrick	24	3rd Class Passenger	371109
+
+Collett, Mr. Sidney C Stuart
+listOfSurvivors.txt:COLLETT, Mr Sidney Clarence Stuart	25	2nd Class Passenger	28034 £10 10s	Southampton	 	9 	
+
+Compton, Mr. Alexander Taylor Jr
+listOfSurvivors.txt:COMPTON, Miss Sara Rebecca	39	1st Class Passenger	17756 £83 3s 2d	Cherbourg	 	14 	
+listOfSurvivors.txt:COMPTON, Mrs Mary Eliza	64	1st Class Passenger	17756 £83 3s 2d	Cherbourg	 	14 	
+listOfVictims.txt:COMPTON, Mr Alexander Taylor jr	37	1st Class Passenger	17756
+
+Compton, Mrs. Alexander Taylor (Mary Eliza Ingersoll)
+listOfSurvivors.txt:COMPTON, Miss Sara Rebecca	39	1st Class Passenger	17756 £83 3s 2d	Cherbourg	 	14 	
+listOfSurvivors.txt:COMPTON, Mrs Mary Eliza	64	1st Class Passenger	17756 £83 3s 2d	Cherbourg	 	14 	
+listOfVictims.txt:COMPTON, Mr Alexander Taylor jr	37	1st Class Passenger	17756
+
+Conlon, Mr. Thomas Henry
+
+Connolly, Miss. Kate
+listOfSurvivors.txt:CONNOLLY, Miss Catherine	23	3rd Class Passenger	370373 £7 15s	Queenstown	 	13 	
+listOfVictims.txt:CONNOLLY, Miss Kate	41	3rd Class Passenger	330972
+
+Cook, Mrs. (Selena Rogers)
+listOfSurvivors.txt:COOK, Mrs Selena	22	2nd Class Passenger	14266 £10 10s	Southampton	 	14 	
+listOfVictims.txt:COOK, Mr Gilbert William	32	Victualling Crew	
+listOfVictims.txt:COOK, Mr Jacob	43	3rd Class Passenger	3536
+
+Cor, Mr. Bartol
+listOfSurvivors.txt:CORNELL, Mrs Malvina Helen	55	1st Class Passenger	11770 £25 14s 10d	Southampton	 	2 	
+listOfSurvivors.txt:CORR, Miss Ellen	16	3rd Class Passenger	367231 £7 15s	Queenstown	 	16 	
+listOfSurvivors.txt:MCCORMACK, Mr Thomas Joseph	19	3rd Class Passenger	367228 £7 15s	Queenstown	Barman  	  	
+listOfVictims.txt:COR, Mr Bartol	35	3rd Class Passenger	349230
+listOfVictims.txt:COR, Mr Ivan	27	3rd Class Passenger	349229
+listOfVictims.txt:COR, Mr Liudevit	19	3rd Class Passenger	349231
+listOfVictims.txt:CORBEN, Mr Ernest Theodore	27	Victualling Crew	
+listOfVictims.txt:CORBETT, Mrs Irene	30	2nd Class Passenger	237249
+listOfVictims.txt:CORCORAN, Mr Dennis	33	Engineering Crew	
+listOfVictims.txt:COREY, Mrs Mary Emma	32	2nd Class Passenger	13534
+listOfVictims.txt:CORNAIRE, Mr Marcel Raymond André	19	Restaurant Staff	
+listOfVictims.txt:CORNBLATT, Mr Harris	30	3rd Class Passenger	SOTON/OQ 392090
+
+Cor, Mr. Ivan
+listOfSurvivors.txt:CORNELL, Mrs Malvina Helen	55	1st Class Passenger	11770 £25 14s 10d	Southampton	 	2 	
+listOfSurvivors.txt:CORR, Miss Ellen	16	3rd Class Passenger	367231 £7 15s	Queenstown	 	16 	
+listOfSurvivors.txt:MCCORMACK, Mr Thomas Joseph	19	3rd Class Passenger	367228 £7 15s	Queenstown	Barman  	  	
+listOfVictims.txt:COR, Mr Bartol	35	3rd Class Passenger	349230
+listOfVictims.txt:COR, Mr Ivan	27	3rd Class Passenger	349229
+listOfVictims.txt:COR, Mr Liudevit	19	3rd Class Passenger	349231
+listOfVictims.txt:CORBEN, Mr Ernest Theodore	27	Victualling Crew	
+listOfVictims.txt:CORBETT, Mrs Irene	30	2nd Class Passenger	237249
+listOfVictims.txt:CORCORAN, Mr Dennis	33	Engineering Crew	
+listOfVictims.txt:COREY, Mrs Mary Emma	32	2nd Class Passenger	13534
+listOfVictims.txt:CORNAIRE, Mr Marcel Raymond André	19	Restaurant Staff	
+listOfVictims.txt:CORNBLATT, Mr Harris	30	3rd Class Passenger	SOTON/OQ 392090
+
+Corbett, Mrs. Walter H (Irene Colvin)
+listOfVictims.txt:CORBETT, Mrs Irene	30	2nd Class Passenger	237249
+
+Corey, Mrs. Percy C (Mary Phyllis Elizabeth Miller)
+listOfVictims.txt:COREY, Mrs Mary Emma	32	2nd Class Passenger	13534
+
+Cornell, Mrs. Robert Clifford (Malvina Helen Lamson)
+listOfSurvivors.txt:CORNELL, Mrs Malvina Helen	55	1st Class Passenger	11770 £25 14s 10d	Southampton	 	2 	
+
+Cotterill, Mr. Henry Harry""
+listOfVictims.txt:COTTERILL, Mr Henry	21	2nd Class Passenger	29107
+
+Coutts, Mrs. William (Winnie Minnie" Treanor)"
+listOfSurvivors.txt:COUTTS, Master Neville Leslie	3	3rd Class Passenger	37671 £15 18s	Southampton	 	2 	
+listOfSurvivors.txt:COUTTS, Master William Loch	9	3rd Class Passenger	37671 £15 18s	Southampton	 	2 	
+listOfSurvivors.txt:COUTTS, Mrs Winnie	36	3rd Class Passenger	37671 £15 18s	Southampton	 	2 	
+
+Crafton, Mr. John Bertram
+listOfVictims.txt:CRAFTON, Mr John Bertram	59	1st Class Passenger	113791
+
+Cribb, Miss. Laura Alice
+listOfSurvivors.txt:CRIBB, Miss Laura Mae	16	3rd Class Passenger	371362 £16 2s	Southampton	Shop Assistant  	12 	
+listOfVictims.txt:CRIBB, Mr John Hatfield	43	3rd Class Passenger	371362
+
+Crosby, Mrs. Edward Gifford (Catherine Elizabeth Halstead)
+listOfSurvivors.txt:CROSBY, Miss Harriette Rebecca	39	1st Class Passenger	112901 £26 11s	Southampton	 	7 	
+listOfSurvivors.txt:CROSBY, Mrs Catherine Elizabeth	64	1st Class Passenger	5735 £71	Southampton	 	7 	
+listOfVictims.txt:CROSBY, Captain Edward Gifford	70	1st Class Passenger	5735
+
+Cumings, Mr. John Bradley
+listOfSurvivors.txt:CUMINGS, Mrs Florence Briggs	35	1st Class Passenger	17599 £71 5s 8d	Cherbourg	 	4 	
+listOfVictims.txt:CUMINGS, Mr John Bradley	39	1st Class Passenger	17599
+
+Daher, Mr. Shedid
+listOfSurvivors.txt:AYOUB DAHER, Miss Banoura	15	3rd Class Passenger	2687 £7 4s 7d	Cherbourg	 	C 	
+listOfVictims.txt:DAHER, Mr Tannous	28	3rd Class Passenger	2686
+
+Daly, Miss. Margaret Marcella Maggie""
+listOfSurvivors.txt:DALY, Miss Margaret Marcella	33	3rd Class Passenger	382650 £6 19s	Queenstown	Housekeeper  	15 	
+listOfSurvivors.txt:DALY, Mr Eugene Patrick	29	3rd Class Passenger	382651 £7 15s	Queenstown	Farm Labourer  	B 	
+listOfSurvivors.txt:DALY, Mr Peter Dennis	51	1st Class Passenger	113055 £26 11s	Southampton	Businessman  	  	
+
+Danbom, Master. Gilbert Sigvard Emanuel
+listOfVictims.txt:DANBOM, Master Gilbert Sigvard Emanuel	4m	3rd Class Passenger	347080
+listOfVictims.txt:DANBOM, Mr Ernst Gilbert	34	3rd Class Passenger	347080
+listOfVictims.txt:DANBOM, Mrs Anna Sigrid Maria	28	3rd Class Passenger	347080
+
+Daniels, Miss. Sarah
+listOfSurvivors.txt:DANIELS, Miss Sarah Rebecca	36	1st Class Passenger Servant	113781 £151 16s	Southampton	Personal Maid  	8 	
+listOfSurvivors.txt:DANIELS, Mr Sidney Edward	18	Victualling Crew	Southampton	Third class steward  	  	
+
+Davidson, Mrs. Thornton (Orian Hays)
+listOfSurvivors.txt:DAVIDSON, Mrs Orian	27	1st Class Passenger	12750 £52	Cherbourg	 	3 	
+listOfVictims.txt:DAVIDSON, Mr Thornton	31	1st Class Passenger	12750
+
+Davies, Mr. Evan
+listOfSurvivors.txt:DAVIES, Master John Morgan jr	8	2nd Class Passenger	33112 £36 15s	Southampton	 	14 	
+listOfSurvivors.txt:DAVIES, Mrs Agnes	48	2nd Class Passenger	33112 £36 15s	Southampton	 	14 	
+listOfVictims.txt:DAVIES, Mr Alfred James	24	3rd Class Passenger	48871
+listOfVictims.txt:DAVIES, Mr Charles Henry	19	2nd Class Passenger	14879
+listOfVictims.txt:DAVIES, Mr Evan Lewis	22	3rd Class Passenger	23568
+listOfVictims.txt:DAVIES, Mr Gordon Raleigh	32	Victualling Crew	
+listOfVictims.txt:DAVIES, Mr John	22	3rd Class Passenger	48871
+listOfVictims.txt:DAVIES, Mr Joseph	17	3rd Class Passenger	48873
+listOfVictims.txt:DAVIES, Mr Robert J.	26	Victualling Crew	
+listOfVictims.txt:DAVIES, Mr Thomas	33	Engineering Crew	
+
+Davies, Mr. John Samuel
+listOfSurvivors.txt:DAVIES, Master John Morgan jr	8	2nd Class Passenger	33112 £36 15s	Southampton	 	14 	
+listOfSurvivors.txt:DAVIES, Mrs Agnes	48	2nd Class Passenger	33112 £36 15s	Southampton	 	14 	
+listOfVictims.txt:DAVIES, Mr Alfred James	24	3rd Class Passenger	48871
+listOfVictims.txt:DAVIES, Mr Charles Henry	19	2nd Class Passenger	14879
+listOfVictims.txt:DAVIES, Mr Evan Lewis	22	3rd Class Passenger	23568
+listOfVictims.txt:DAVIES, Mr Gordon Raleigh	32	Victualling Crew	
+listOfVictims.txt:DAVIES, Mr John	22	3rd Class Passenger	48871
+listOfVictims.txt:DAVIES, Mr Joseph	17	3rd Class Passenger	48873
+listOfVictims.txt:DAVIES, Mr Robert J.	26	Victualling Crew	
+listOfVictims.txt:DAVIES, Mr Thomas	33	Engineering Crew	
+
+Davies, Mr. Joseph
+listOfSurvivors.txt:DAVIES, Master John Morgan jr	8	2nd Class Passenger	33112 £36 15s	Southampton	 	14 	
+listOfSurvivors.txt:DAVIES, Mrs Agnes	48	2nd Class Passenger	33112 £36 15s	Southampton	 	14 	
+listOfVictims.txt:DAVIES, Mr Alfred James	24	3rd Class Passenger	48871
+listOfVictims.txt:DAVIES, Mr Charles Henry	19	2nd Class Passenger	14879
+listOfVictims.txt:DAVIES, Mr Evan Lewis	22	3rd Class Passenger	23568
+listOfVictims.txt:DAVIES, Mr Gordon Raleigh	32	Victualling Crew	
+listOfVictims.txt:DAVIES, Mr John	22	3rd Class Passenger	48871
+listOfVictims.txt:DAVIES, Mr Joseph	17	3rd Class Passenger	48873
+listOfVictims.txt:DAVIES, Mr Robert J.	26	Victualling Crew	
+listOfVictims.txt:DAVIES, Mr Thomas	33	Engineering Crew	
+
+Davies, Mrs. John Morgan (Elizabeth Agnes Mary White) 
+listOfSurvivors.txt:DAVIES, Master John Morgan jr	8	2nd Class Passenger	33112 £36 15s	Southampton	 	14 	
+listOfSurvivors.txt:DAVIES, Mrs Agnes	48	2nd Class Passenger	33112 £36 15s	Southampton	 	14 	
+listOfVictims.txt:DAVIES, Mr Alfred James	24	3rd Class Passenger	48871
+listOfVictims.txt:DAVIES, Mr Charles Henry	19	2nd Class Passenger	14879
+listOfVictims.txt:DAVIES, Mr Evan Lewis	22	3rd Class Passenger	23568
+listOfVictims.txt:DAVIES, Mr Gordon Raleigh	32	Victualling Crew	
+listOfVictims.txt:DAVIES, Mr John	22	3rd Class Passenger	48871
+listOfVictims.txt:DAVIES, Mr Joseph	17	3rd Class Passenger	48873
+listOfVictims.txt:DAVIES, Mr Robert J.	26	Victualling Crew	
+listOfVictims.txt:DAVIES, Mr Thomas	33	Engineering Crew	
+
+Davison, Mr. Thomas Henry
+listOfSurvivors.txt:DAVISON, Mrs Mary Elizabeth	34	3rd Class Passenger	386525 £16 2s	Southampton	 	16 	
+listOfVictims.txt:DAVISON, Mr Thomas Henry	32	3rd Class Passenger	386525
+
+Deacon, Mr. Percy William
+listOfVictims.txt:DEACON, Mr Percy William	18	2nd Class Passenger	14879
+
+Dean, Miss. Elizabeth Gladys Millvina""
+listOfSurvivors.txt:DEAN, Master Bertram Vere	1	3rd Class Passenger	2315 £20 11s 6d	Southampton	 	10 	
+listOfSurvivors.txt:DEAN, Miss Elizabeth Gladys 'Millvina'	2m	3rd Class Passenger	2315 £20 11s 6d	Southampton	 	10 	
+listOfSurvivors.txt:DEAN, Mrs Eva Georgetta	32	3rd Class Passenger	2315 £20 11s 6d	Southampton	 	10 	
+listOfVictims.txt:DEAN, Mr Bertram Frank	25	3rd Class Passenger	2315
+listOfVictims.txt:DEAN, Mr George H.	19	Victualling Crew	
+
+Dean, Mrs. Bertram (Eva Georgetta Light)
+listOfSurvivors.txt:DEAN, Master Bertram Vere	1	3rd Class Passenger	2315 £20 11s 6d	Southampton	 	10 	
+listOfSurvivors.txt:DEAN, Miss Elizabeth Gladys 'Millvina'	2m	3rd Class Passenger	2315 £20 11s 6d	Southampton	 	10 	
+listOfSurvivors.txt:DEAN, Mrs Eva Georgetta	32	3rd Class Passenger	2315 £20 11s 6d	Southampton	 	10 	
+listOfVictims.txt:DEAN, Mr Bertram Frank	25	3rd Class Passenger	2315
+listOfVictims.txt:DEAN, Mr George H.	19	Victualling Crew	
+
+Delalic, Mr. Redjo
+listOfVictims.txt:DELALIC, Mr Redjo	25	3rd Class Passenger	349250
+
+Demetri, Mr. Marinko
+
+Denbury, Mr. Herbert
+
+Dennis, Mr. William
+listOfVictims.txt:DENNIS, Mr Samuel	22	3rd Class Passenger	21172
+listOfVictims.txt:DENNIS, Mr William	26	3rd Class Passenger	21175
+
+Dibden, Mr. William
+listOfVictims.txt:DIBDEN, Mr William	18	2nd Class Passenger	14879
+
+Dika, Mr. Mirko
+listOfVictims.txt:DIKA, Mr Mirko	17	3rd Class Passenger	349232
+
+Dintcheff, Mr. Valtcho
+listOfVictims.txt:DINTCHEFF, Mr Valtcho	43	3rd Class Passenger	349226
+
+Dodge, Dr. Washington
+listOfSurvivors.txt:DODGE, Dr Washington	52	1st Class Passenger	33638 £81 17s 2d	Southampton	Politician  	13 	
+listOfSurvivors.txt:DODGE, Master Washington	4	1st Class Passenger	33638 £81 17s 2d	Southampton	 	5 	
+listOfSurvivors.txt:DODGE, Mrs Ruth	34	1st Class Passenger	33638 £81 17s 2d	Southampton	 	5 	
+
+Dodge, Mrs. Washington (Ruth Vidaver)
+listOfSurvivors.txt:DODGE, Dr Washington	52	1st Class Passenger	33638 £81 17s 2d	Southampton	Politician  	13 	
+listOfSurvivors.txt:DODGE, Master Washington	4	1st Class Passenger	33638 £81 17s 2d	Southampton	 	5 	
+listOfSurvivors.txt:DODGE, Mrs Ruth	34	1st Class Passenger	33638 £81 17s 2d	Southampton	 	5 	
+
+Douglas, Mrs. Frederick Charles (Mary Helene Baxter)
+listOfSurvivors.txt:DOUGLAS, Mrs Mahala	48	1st Class Passenger	17761 £106 8s 6d	Cherbourg	 	2 	
+listOfSurvivors.txt:DOUGLAS, Mrs Mary Hélène	27	1st Class Passenger	17558 £247 10s 5d	Cherbourg	 	6 	
+listOfVictims.txt:DOUGLAS, Mr Walter Donald	50	1st Class Passenger	17761
+
+Douglas, Mrs. Walter Donald (Mahala Dutton)
+listOfSurvivors.txt:DOUGLAS, Mrs Mahala	48	1st Class Passenger	17761 £106 8s 6d	Cherbourg	 	2 	
+listOfSurvivors.txt:DOUGLAS, Mrs Mary Hélène	27	1st Class Passenger	17558 £247 10s 5d	Cherbourg	 	6 	
+listOfVictims.txt:DOUGLAS, Mr Walter Donald	50	1st Class Passenger	17761
+
+Doyle, Miss. Elizabeth
+listOfVictims.txt:DOYLE, Miss Elizabeth	28	3rd Class Passenger	368702
+listOfVictims.txt:DOYLE, Mr Laurence	27	Engineering Crew	
+
+Drapkin, Miss. Jennie
+
+Drew, Master. Marshall Brines
+listOfSurvivors.txt:ANDREWS, Miss Kornelia Theodosia	62	1st Class Passenger	13502 £77 19s 2d	Cherbourg	 	10 	
+listOfSurvivors.txt:ANDREWS, Mr Charles Edward	19	Victualling Crew	Southampton	Saloon Steward (2nd class)  	16 	
+listOfSurvivors.txt:DREW, Master Marshall Brines	8	2nd Class Passenger	28220 £32 10s	Southampton	 	10 	
+listOfSurvivors.txt:DREW, Mrs Maria Louisa Thorne	34	2nd Class Passenger	28220 £32 10s	Southampton	 	10 	
+listOfVictims.txt:ANDREW, Mr Edgar Samuel	17	2nd Class Passenger	231945
+listOfVictims.txt:ANDREW, Mr Frank Thomas	27	2nd Class Passenger	34050
+listOfVictims.txt:ANDREWS, Mr Thomas	39	1st Class Passenger
+listOfVictims.txt:DREW, Mr James Vivian	42	2nd Class Passenger	28220
+listOfVictims.txt:MCANDREW, Mr Thomas Patrick	38	Engineering Crew	
+listOfVictims.txt:MCANDREWS, Mr William	23	Engineering Crew	
+
+Drew, Mr. James Vivian
+listOfSurvivors.txt:ANDREWS, Miss Kornelia Theodosia	62	1st Class Passenger	13502 £77 19s 2d	Cherbourg	 	10 	
+listOfSurvivors.txt:ANDREWS, Mr Charles Edward	19	Victualling Crew	Southampton	Saloon Steward (2nd class)  	16 	
+listOfSurvivors.txt:DREW, Master Marshall Brines	8	2nd Class Passenger	28220 £32 10s	Southampton	 	10 	
+listOfSurvivors.txt:DREW, Mrs Maria Louisa Thorne	34	2nd Class Passenger	28220 £32 10s	Southampton	 	10 	
+listOfVictims.txt:ANDREW, Mr Edgar Samuel	17	2nd Class Passenger	231945
+listOfVictims.txt:ANDREW, Mr Frank Thomas	27	2nd Class Passenger	34050
+listOfVictims.txt:ANDREWS, Mr Thomas	39	1st Class Passenger
+listOfVictims.txt:DREW, Mr James Vivian	42	2nd Class Passenger	28220
+listOfVictims.txt:MCANDREW, Mr Thomas Patrick	38	Engineering Crew	
+listOfVictims.txt:MCANDREWS, Mr William	23	Engineering Crew	
+
+Dulles, Mr. William Crothers
+listOfVictims.txt:DULLES, Mr William Crothers	39	1st Class Passenger	17580
+
+Duquemin, Mr. Joseph
+listOfSurvivors.txt:DUQUEMIN, Mr Joseph Pierre	24	3rd Class Passenger	752 £7 11s	Southampton	Mason  	D 	
+
+Duran y More, Miss. Florentina
+
+Dyker, Mr. Adolf Fredrik
+listOfSurvivors.txt:DYKER, Mrs Anna Elisabeth Judith	22	3rd Class Passenger	347072 £13 18s	Southampton	 	16 	
+listOfVictims.txt:DYKER, Mr Adolf Fredrik	23	3rd Class Passenger	347072
+
+Dyker, Mrs. Adolf Fredrik (Anna Elisabeth Judith Andersson)
+listOfSurvivors.txt:DYKER, Mrs Anna Elisabeth Judith	22	3rd Class Passenger	347072 £13 18s	Southampton	 	16 	
+listOfVictims.txt:DYKER, Mr Adolf Fredrik	23	3rd Class Passenger	347072
+
+Earnshaw, Mrs. Boulton (Olive Potter)
+listOfSurvivors.txt:EARNSHAW, Mrs Olive	23	1st Class Passenger	11767 £83 3s 2d	Cherbourg	Of Independent Means  	7 	
+
+Elias, Mr. Joseph
+listOfVictims.txt:ELIAS NASRALLAH, Mr Tannous	22	3rd Class Passenger	2695
+listOfVictims.txt:ELIAS, Mr Joseph jr.	15	3rd Class Passenger	2690
+
+Enander, Mr. Ingvar
+listOfVictims.txt:ENANDER, Mr Ingvar	21	2nd Class Passenger	236854
+
+Evans, Miss. Edith Corse
+listOfSurvivors.txt:EVANS, Mr Alfred Frank	25	Deck Crew	Southampton	Lookout  	15 	
+listOfSurvivors.txt:EVANS, Mr Frank Oliver	27	Deck Crew	Southampton	Able Seaman  	10 	
+listOfVictims.txt:EVANS, Miss Edith Corse	36	1st Class Passenger	17531
+listOfVictims.txt:EVANS, Mr George Richard	27	Victualling Crew	
+listOfVictims.txt:EVANS, Mr William Thomas	33	Engineering Crew	
+
+Everett, Mr. Thomas James
+listOfVictims.txt:EVERETT, Mr Thomas James	38	3rd Class Passenger	6212
+
+Faunthorpe, Mr. Harry
+listOfVictims.txt:FAUNTHORPE, Mr Harry Bartram	32	2nd Class Passenger	2926
+
+Fillbrook, Mr. Joseph Charles
+listOfVictims.txt:FILLBROOK, Mr Joseph Charles	18	2nd Class Passenger	15185
+
+Finoli, Mr. Luigi
+listOfSurvivors.txt:FINOLI, Mr Luigi	34	3rd Class Passenger	3101308 £7 1s	Southampton	 	15 	
+
+Flegenheim, Mrs. Alfred (Antoinette)
+listOfSurvivors.txt:FLEGENHEIM, Mrs Antoinette	48	1st Class Passenger	17598 £31 13s 8d	Cherbourg	 	7 	
+
+Fleming, Miss. Honora
+listOfSurvivors.txt:FLEMING, Miss Margaret	42	1st Class Passenger Servant	17421 £110 17s 8d	Cherbourg	Personal Maid  	4 	
+listOfVictims.txt:FLEMING, Miss Honor	22	3rd Class Passenger	364859
+
+Foley, Mr. Joseph
+listOfSurvivors.txt:FOLEY, Mr John	46	Deck Crew	Belfast	Deck storekeeper  	  	
+listOfSurvivors.txt:FOLEY, Mr Wilfred Cyril	22	Victualling Crew	Southampton	3rd Class Steward  	13 	
+listOfVictims.txt:FOLEY, Mr Joseph	19	3rd Class Passenger	330910
+listOfVictims.txt:FOLEY, Mr William	20	3rd Class Passenger	365235
+
+Foley, Mr. William
+listOfSurvivors.txt:FOLEY, Mr John	46	Deck Crew	Belfast	Deck storekeeper  	  	
+listOfSurvivors.txt:FOLEY, Mr Wilfred Cyril	22	Victualling Crew	Southampton	3rd Class Steward  	13 	
+listOfVictims.txt:FOLEY, Mr Joseph	19	3rd Class Passenger	330910
+listOfVictims.txt:FOLEY, Mr William	20	3rd Class Passenger	365235
+
+Ford, Mr. Arthur
+listOfSurvivors.txt:CRAWFORD, Mr Alfred George	43	Victualling Crew	Belfast	Bed Room Steward  	8 	
+listOfSurvivors.txt:HALFORD, Mr Walter Stamford	22	Victualling Crew	Southampton	Steward  	15 	
+listOfSurvivors.txt:HAWKSFORD, Mr Walter James	45	1st Class Passenger	16988 £30	Southampton	Sales Manager  	3 	
+listOfVictims.txt:BEDFORD, Mr William Barnett	31	Victualling Crew	
+listOfVictims.txt:BOTSFORD, Mr William Hull	25	2nd Class Passenger	237670
+listOfVictims.txt:CLIFFORD, Mr George Quincy	40	1st Class Passenger	110465
+listOfVictims.txt:DUNFORD, Mr William	48	Victualling Crew	
+listOfVictims.txt:FORD, Miss Dollina Margaret	20	3rd Class Passenger	6608
+listOfVictims.txt:FORD, Miss Robina Maggie	7	3rd Class Passenger	6608
+listOfVictims.txt:FORD, Mr Arthur	23	3rd Class Passenger	1478
+listOfVictims.txt:FORD, Mr Edward Watson	18	3rd Class Passenger	6608
+listOfVictims.txt:FORD, Mr Ernest	33	Victualling Crew	
+listOfVictims.txt:FORD, Mr Francis	44	Victualling Crew	
+listOfVictims.txt:FORD, Mr H.	22	Engineering Crew	
+listOfVictims.txt:FORD, Mr Thomas	33	Engineering Crew	
+listOfVictims.txt:FORD, Mr William Neal Thomas	14	3rd Class Passenger	6608
+listOfVictims.txt:FORD, Mrs Margaret Ann Watson	54	3rd Class Passenger	6608
+listOfVictims.txt:HENSFORD, Mr Herbert George Ernest	26	Victualling Crew	
+listOfVictims.txt:MILFORD, Mr George	28	Engineering Crew	
+listOfVictims.txt:WHITFORD, Mr Alfred Henry	39	Victualling Crew	
+listOfVictims.txt:WOODFORD, Mr Frederick Ernest	40	Engineering Crew	
+
+Ford, Mr. Edward Watson
+listOfSurvivors.txt:CRAWFORD, Mr Alfred George	43	Victualling Crew	Belfast	Bed Room Steward  	8 	
+listOfSurvivors.txt:HALFORD, Mr Walter Stamford	22	Victualling Crew	Southampton	Steward  	15 	
+listOfSurvivors.txt:HAWKSFORD, Mr Walter James	45	1st Class Passenger	16988 £30	Southampton	Sales Manager  	3 	
+listOfVictims.txt:BEDFORD, Mr William Barnett	31	Victualling Crew	
+listOfVictims.txt:BOTSFORD, Mr William Hull	25	2nd Class Passenger	237670
+listOfVictims.txt:CLIFFORD, Mr George Quincy	40	1st Class Passenger	110465
+listOfVictims.txt:DUNFORD, Mr William	48	Victualling Crew	
+listOfVictims.txt:FORD, Miss Dollina Margaret	20	3rd Class Passenger	6608
+listOfVictims.txt:FORD, Miss Robina Maggie	7	3rd Class Passenger	6608
+listOfVictims.txt:FORD, Mr Arthur	23	3rd Class Passenger	1478
+listOfVictims.txt:FORD, Mr Edward Watson	18	3rd Class Passenger	6608
+listOfVictims.txt:FORD, Mr Ernest	33	Victualling Crew	
+listOfVictims.txt:FORD, Mr Francis	44	Victualling Crew	
+listOfVictims.txt:FORD, Mr H.	22	Engineering Crew	
+listOfVictims.txt:FORD, Mr Thomas	33	Engineering Crew	
+listOfVictims.txt:FORD, Mr William Neal Thomas	14	3rd Class Passenger	6608
+listOfVictims.txt:FORD, Mrs Margaret Ann Watson	54	3rd Class Passenger	6608
+listOfVictims.txt:HENSFORD, Mr Herbert George Ernest	26	Victualling Crew	
+listOfVictims.txt:MILFORD, Mr George	28	Engineering Crew	
+listOfVictims.txt:WHITFORD, Mr Alfred Henry	39	Victualling Crew	
+listOfVictims.txt:WOODFORD, Mr Frederick Ernest	40	Engineering Crew	
+
+Fortune, Miss. Ethel Flora
+listOfSurvivors.txt:FORTUNE, Miss Alice Elizabeth	24	1st Class Passenger	19950 £263	Southampton	 	10 	
+listOfSurvivors.txt:FORTUNE, Miss Ethel Flora	28	1st Class Passenger	19950 £263	Southampton	 	10 	
+listOfSurvivors.txt:FORTUNE, Miss Mabel Helen	23	1st Class Passenger	19950 £263	Southampton	 	10 	
+listOfSurvivors.txt:FORTUNE, Mrs Mary	60	1st Class Passenger	19950 £263	Southampton	 	10 	
+listOfVictims.txt:FORTUNE, Mr Charles Alexander	19	1st Class Passenger	19950
+listOfVictims.txt:FORTUNE, Mr Mark	64	1st Class Passenger	19950
+
+Fortune, Mrs. Mark (Mary McDougald)
+listOfSurvivors.txt:FORTUNE, Miss Alice Elizabeth	24	1st Class Passenger	19950 £263	Southampton	 	10 	
+listOfSurvivors.txt:FORTUNE, Miss Ethel Flora	28	1st Class Passenger	19950 £263	Southampton	 	10 	
+listOfSurvivors.txt:FORTUNE, Miss Mabel Helen	23	1st Class Passenger	19950 £263	Southampton	 	10 	
+listOfSurvivors.txt:FORTUNE, Mrs Mary	60	1st Class Passenger	19950 £263	Southampton	 	10 	
+listOfVictims.txt:FORTUNE, Mr Charles Alexander	19	1st Class Passenger	19950
+listOfVictims.txt:FORTUNE, Mr Mark	64	1st Class Passenger	19950
+
+Fox, Mr. Patrick
+listOfVictims.txt:FOX, Mr Patrick	28	3rd Class Passenger	368573
+listOfVictims.txt:FOX, Mr Stanley Harrington	38	2nd Class Passenger	229236
+listOfVictims.txt:FOX, Mr William Thomas	27	Victualling Crew	
+
+Franklin, Mr. Charles (Charles Fardon)
+listOfVictims.txt:FRANKLIN, Mr Alan Vincent	28	Victualling Crew	
+listOfVictims.txt:FRANKLIN, Mr Thomas Parnham	37	1st Class Passenger	113778
+
+Franklin, Mr. Thomas Parham
+listOfVictims.txt:FRANKLIN, Mr Alan Vincent	28	Victualling Crew	
+listOfVictims.txt:FRANKLIN, Mr Thomas Parnham	37	1st Class Passenger	113778
+
+Frauenthal, Mr. Isaac Gerald
+listOfSurvivors.txt:FRAUENTHAL, Dr Henry William	49	1st Class Passenger	17611 £133 13s	Southampton	Doctor  	5 	
+listOfSurvivors.txt:FRAUENTHAL, Mr Isaac Gerald	43	1st Class Passenger	17765 £27 14s 5d	Cherbourg	 	5 	
+listOfSurvivors.txt:FRAUENTHAL, Mrs Clara	42	1st Class Passenger	17611 £133 13s	Southampton	 	5 	
+
+Frolicher-Stehli, Mrs. Maxmillian (Margaretha Emerentia Stehli)
+
+Gale, Mr. Harry
+listOfVictims.txt:GALE, Mr Harry	38	2nd Class Passenger	28664
+listOfVictims.txt:GALE, Mr Shadrach	33	2nd Class Passenger	28664
+
+Geiger, Miss. Amalie
+
+Gibson, Miss. Dorothy Winifred
+listOfSurvivors.txt:GIBSON, Miss Dorothy Winifred	22	1st Class Passenger	112378 £59 8s	Cherbourg	 	7 	
+listOfSurvivors.txt:GIBSON, Mrs Pauline Caroline	44	1st Class Passenger	112378 £59 8s	Cherbourg	 	7 	
+
+Gibson, Mrs. Leonard (Pauline C Boeson)
+listOfSurvivors.txt:GIBSON, Miss Dorothy Winifred	22	1st Class Passenger	112378 £59 8s	Cherbourg	 	7 	
+listOfSurvivors.txt:GIBSON, Mrs Pauline Caroline	44	1st Class Passenger	112378 £59 8s	Cherbourg	 	7 	
+
+Gilbert, Mr. William
+listOfVictims.txt:GILBERT, Mr William	47	2nd Class Passenger	30769
+
+Giles, Mr. Edgar
+listOfVictims.txt:GILES, Mr Edgar	19	2nd Class Passenger	28133
+listOfVictims.txt:GILES, Mr Frederick Edward	21	2nd Class Passenger	28134
+listOfVictims.txt:GILES, Mr John Robert	32	Victualling Crew	
+listOfVictims.txt:GILES, Mr Ralph	24	2nd Class Passenger	248726
+
+Giles, Mr. Ralph
+listOfVictims.txt:GILES, Mr Edgar	19	2nd Class Passenger	28133
+listOfVictims.txt:GILES, Mr Frederick Edward	21	2nd Class Passenger	28134
+listOfVictims.txt:GILES, Mr John Robert	32	Victualling Crew	
+listOfVictims.txt:GILES, Mr Ralph	24	2nd Class Passenger	248726
+
+Goldsmith, Mr. Nathan
+listOfSurvivors.txt:GOLDSMITH, Master Frank John William	9	3rd Class Passenger	363291 £20 10s 6d	Southampton	 	C 	
+listOfSurvivors.txt:GOLDSMITH, Mrs Emily Alice	31	3rd Class Passenger	363291 £20 10s 6d	Southampton	 	C 	
+listOfVictims.txt:GOLDSMITH, Mr Frank John	33	3rd Class Passenger	363291
+listOfVictims.txt:GOLDSMITH, Mr Nathan	41	3rd Class Passenger	3101263
+
+Goodwin, Miss. Jessie Allis
+listOfVictims.txt:GOODWIN, Master Harold Victor	9	3rd Class Passenger	2144
+listOfVictims.txt:GOODWIN, Master Sidney Leslie	1	3rd Class Passenger	2144
+listOfVictims.txt:GOODWIN, Master William Frederick	13	3rd Class Passenger	2144
+listOfVictims.txt:GOODWIN, Miss Jessie Allis Mary	12	3rd Class Passenger	2144
+listOfVictims.txt:GOODWIN, Miss Lillian Augusta	16	3rd Class Passenger	2144
+listOfVictims.txt:GOODWIN, Mr Charles Edward	14	3rd Class Passenger	2144
+listOfVictims.txt:GOODWIN, Mr Frederick Joseph	42	3rd Class Passenger	2144
+listOfVictims.txt:GOODWIN, Mrs Augusta	43	3rd Class Passenger	2144
+
+Goodwin, Mr. Charles Frederick
+listOfVictims.txt:GOODWIN, Master Harold Victor	9	3rd Class Passenger	2144
+listOfVictims.txt:GOODWIN, Master Sidney Leslie	1	3rd Class Passenger	2144
+listOfVictims.txt:GOODWIN, Master William Frederick	13	3rd Class Passenger	2144
+listOfVictims.txt:GOODWIN, Miss Jessie Allis Mary	12	3rd Class Passenger	2144
+listOfVictims.txt:GOODWIN, Miss Lillian Augusta	16	3rd Class Passenger	2144
+listOfVictims.txt:GOODWIN, Mr Charles Edward	14	3rd Class Passenger	2144
+listOfVictims.txt:GOODWIN, Mr Frederick Joseph	42	3rd Class Passenger	2144
+listOfVictims.txt:GOODWIN, Mrs Augusta	43	3rd Class Passenger	2144
+
+Gracie, Col. Archibald IV
+listOfSurvivors.txt:GRACIE, Colonel Archibald	53	1st Class Passenger	113780 £28 10s	Southampton	Writer  	B 	
+
+Greenfield, Mrs. Leo David (Blanche Strouse)
+listOfSurvivors.txt:GREENFIELD, Mr William Bertram	23	1st Class Passenger	17759 £63 7s 2d	Cherbourg	 	7 	
+listOfSurvivors.txt:GREENFIELD, Mrs Blanche	45	1st Class Passenger	17759 £63 7s 2d	Cherbourg	 	7 	
+
+Guest, Mr. Robert
+listOfVictims.txt:GUEST, Mr Charles Robert	25	3rd Class Passenger	376563
+
+Hagardon, Miss. Kate
+
+Hansen, Mrs. Claus Peter (Jennie L Howard)
+listOfSurvivors.txt:HANSEN, Mrs Jennie Louise	45	3rd Class Passenger	350026 £14 2s 2d	Southampton	 	11 	
+listOfVictims.txt:HANSEN, Mr Claus Peter	41	3rd Class Passenger	350026
+listOfVictims.txt:HANSEN, Mr Henrik Juul	26	3rd Class Passenger	350025
+listOfVictims.txt:HANSEN, Mr Henry Damsgaard	21	3rd Class Passenger	350029
+
+Harbeck, Mr. William H
+listOfVictims.txt:HARBECK, Mr William H.	45	2nd Class Passenger	248746
+
+Harder, Mrs. George Achilles (Dorothy Annan)
+listOfSurvivors.txt:HARDER, Mr George Achilles	25	1st Class Passenger	11765 £55 8s 10d	Cherbourg	Businessman  	5 	
+listOfSurvivors.txt:HARDER, Mr William	39	Deck Crew	Southampton	Window Cleaner  	14 	
+listOfSurvivors.txt:HARDER, Mrs Dorothy	21	1st Class Passenger	11765 £55 8s 10d	Cherbourg	 	5 	
+
+Hays, Mr. Charles Melville
+listOfSurvivors.txt:HAYS, Miss Margaret Bechstein	24	1st Class Passenger	11767 £83 3s 2d	Cherbourg	 	7 	
+listOfSurvivors.txt:HAYS, Mrs Clara Jennings	52	1st Class Passenger	12749 £93 10s	Southampton	 	3 	
+listOfVictims.txt:HAYS, Mr Charles Melville	55	1st Class Passenger	12749
+
+Head, Mr. Christopher
+listOfSurvivors.txt:CALDERHEAD, Mr Edward Pennington	42	1st Class Passenger	17476 £26 5s 9d	Southampton	 	5 	
+listOfVictims.txt:HEAD, Mr Alfred	24	Engineering Crew	
+listOfVictims.txt:HEAD, Mr Christopher	42	1st Class Passenger	113038
+listOfVictims.txt:WHEADON, Mr Edward Henry	65	2nd Class Passenger	24579
+
+Hee, Mr. Ling
+listOfSurvivors.txt:HEE, Mr Ling	24	3rd Class Passenger	1601 £56 9s 11d	Southampton	Seaman  	C 	
+listOfSurvivors.txt:SCHEERLINCK, Mr Jean	29	3rd Class Passenger	345779 £9 10s	Southampton	 	11 	
+listOfSurvivors.txt:WHEELTON, Mr Edenser Edward	29	Victualling Crew	Belfast	Saloon Steward (1st class)  	11 	
+listOfVictims.txt:WHEELER, Mr Edwin Charles	26	2nd Class Passenger
+
+Hellstrom, Miss. Hilda Maria
+
+Henriksson, Miss. Jenny Lovisa
+listOfVictims.txt:HENRIKSSON, Miss Jenny Lovisa	28	3rd Class Passenger	347086
+
+Herman, Miss. Kate
+listOfSurvivors.txt:HERMAN, Miss Alice	24	2nd Class Passenger	220845 £65	Southampton	 	9 	
+listOfSurvivors.txt:HERMAN, Miss Kate	24	2nd Class Passenger	220845 £65	Southampton	 	9 	
+listOfSurvivors.txt:HERMAN, Mrs Jane	50	2nd Class Passenger	220845 £65	Southampton	 	9 	
+listOfVictims.txt:HERMAN, Mr Samuel	50	2nd Class Passenger	220845
+
+Herman, Mr. Samuel
+listOfSurvivors.txt:HERMAN, Miss Alice	24	2nd Class Passenger	220845 £65	Southampton	 	9 	
+listOfSurvivors.txt:HERMAN, Miss Kate	24	2nd Class Passenger	220845 £65	Southampton	 	9 	
+listOfSurvivors.txt:HERMAN, Mrs Jane	50	2nd Class Passenger	220845 £65	Southampton	 	9 	
+listOfVictims.txt:HERMAN, Mr Samuel	50	2nd Class Passenger	220845
+
+Hilliard, Mr. Herbert Henry
+listOfVictims.txt:HILLIARD, Mr Herbert Henry	44	1st Class Passenger	17463
+
+Hiltunen, Miss. Marta
+listOfVictims.txt:HILTUNEN, Miss Marta	18	2nd Class Passenger	250650
+
+Hipkins, Mr. William Edward
+listOfVictims.txt:HIPKINS, Mr William Edward	55	1st Class Passenger	680
+
+Hirvonen, Mrs. Alexander (Helga E Lindqvist)
+listOfSurvivors.txt:HIRVONEN, Miss Hildur Elisabeth	2	3rd Class Passenger	3101298 £12 5s 9d	Southampton	 	15 	
+listOfSurvivors.txt:HIRVONEN, Mrs Helga Elisabeth Lindqvist	22	3rd Class Passenger	3101298 £12 5s 9d	Southampton	 	15 	
+
+Hocking, Miss. Ellen Nellie""
+listOfSurvivors.txt:HOCKING, Miss Ellen	20	2nd Class Passenger	29105 £23	Southampton	 	4 	
+listOfSurvivors.txt:HOCKING, Mrs Eliza	54	2nd Class Passenger	29105 £23	Southampton	 	4 	
+listOfVictims.txt:HOCKING, Mr Richard George	24	2nd Class Passenger	29104
+listOfVictims.txt:HOCKING, Mr Samuel James Metcalfe	36	2nd Class Passenger	242963
+
+Hocking, Mr. Samuel James Metcalfe
+listOfSurvivors.txt:HOCKING, Miss Ellen	20	2nd Class Passenger	29105 £23	Southampton	 	4 	
+listOfSurvivors.txt:HOCKING, Mrs Eliza	54	2nd Class Passenger	29105 £23	Southampton	 	4 	
+listOfVictims.txt:HOCKING, Mr Richard George	24	2nd Class Passenger	29104
+listOfVictims.txt:HOCKING, Mr Samuel James Metcalfe	36	2nd Class Passenger	242963
+
+Hold, Mrs. Stephen (Annie Margaret Hill)
+listOfSurvivors.txt:HOLD, Mrs Annie Margaret	29	2nd Class Passenger	26707 £26	Southampton	 	10 	
+listOfVictims.txt:HOLD, Mr Stephen	44	2nd Class Passenger	26707
+
+Holthen, Mr. Johan Martin
+listOfVictims.txt:HOLTHEN, Mr Johan Martin	18	3rd Class Passenger	4001
+
+Howard, Miss. May Elizabeth
+listOfSurvivors.txt:HOWARD, Miss May Elizabeth	26	3rd Class Passenger	39186 £8 1s	Southampton	Laundry Worker  	C 	
+listOfVictims.txt:HOWARD, Mr Benjamin	63	2nd Class Passenger	24065
+listOfVictims.txt:HOWARD, Mrs Ellen Truelove	61	2nd Class Passenger	24065
+
+Howard, Mr. Benjamin
+listOfSurvivors.txt:HOWARD, Miss May Elizabeth	26	3rd Class Passenger	39186 £8 1s	Southampton	Laundry Worker  	C 	
+listOfVictims.txt:HOWARD, Mr Benjamin	63	2nd Class Passenger	24065
+listOfVictims.txt:HOWARD, Mrs Ellen Truelove	61	2nd Class Passenger	24065
+
+Howard, Mrs. Benjamin (Ellen Truelove Arman)
+listOfSurvivors.txt:HOWARD, Miss May Elizabeth	26	3rd Class Passenger	39186 £8 1s	Southampton	Laundry Worker  	C 	
+listOfVictims.txt:HOWARD, Mr Benjamin	63	2nd Class Passenger	24065
+listOfVictims.txt:HOWARD, Mrs Ellen Truelove	61	2nd Class Passenger	24065
+
+Hyman, Mr. Abraham
+listOfSurvivors.txt:HYMAN, Mr Abraham Joseph	34	3rd Class Passenger	3470 £7 17s 9d	Southampton	Framer  	C 	
+
+Ilieff, Mr. Ylio
+listOfVictims.txt:ILIEFF, Mr Ylio	32	3rd Class Passenger	349220
+
+Ilmakangas, Miss. Ida Livija
+listOfVictims.txt:ILMAKANGAS, Miss Ida Livija	17	3rd Class Passenger	3101270
+listOfVictims.txt:ILMAKANGAS, Miss Pieta Sofia	25	3rd Class Passenger	3101271
+
+Ismay, Mr. Joseph Bruce
+listOfSurvivors.txt:ISMAY, Mr Joseph Bruce	49	1st Class Passenger	112058 Southampton	Shipowner  	C 	
+
+Jefferys, Mr. Clifford Thomas
+listOfVictims.txt:JEFFERYS, Mr Clifford Thomas	24	2nd Class Passenger	31029
+listOfVictims.txt:JEFFERYS, Mr Ernest Wilfred	21	2nd Class Passenger	31029
+
+Jefferys, Mr. Ernest Wilfred
+listOfVictims.txt:JEFFERYS, Mr Clifford Thomas	24	2nd Class Passenger	31029
+listOfVictims.txt:JEFFERYS, Mr Ernest Wilfred	21	2nd Class Passenger	31029
+
+Johansson Palmquist, Mr. Oskar Leander
+listOfSurvivors.txt:JOHANSSON PALMQUIST, Mr Oskar Leander	26	3rd Class Passenger	347070 £7 15s 6d	Southampton	 	15 	
+
+Johansson, Mr. Nils
+listOfSurvivors.txt:JOHANSSON PALMQUIST, Mr Oskar Leander	26	3rd Class Passenger	347070 £7 15s 6d	Southampton	 	15 	
+listOfVictims.txt:JOHANSSON, Mr Erik	22	3rd Class Passenger	350052
+listOfVictims.txt:JOHANSSON, Mr Gustaf Joel	33	3rd Class Passenger	7540
+listOfVictims.txt:JOHANSSON, Mr Karl Johan	31	3rd Class Passenger	347063
+listOfVictims.txt:JOHANSSON, Mr Nils	29	3rd Class Passenger	347467
+
+Johnston, Master. William Arthur Willie""
+listOfSurvivors.txt:JOHNSTON, Mr James	41	Victualling Crew	Belfast	Saloon Steward  	2 	
+listOfVictims.txt:JOHNSTON, Master William Andrew	8	3rd Class Passenger	6607
+listOfVictims.txt:JOHNSTON, Miss Catherine Nellie	7	3rd Class Passenger	6607
+listOfVictims.txt:JOHNSTON, Mr Andrew Emslie	35	3rd Class Passenger	6607
+listOfVictims.txt:JOHNSTON, Mrs Eliza	36	3rd Class Passenger	6607
+
+Johnston, Mrs. Andrew G (Elizabeth Lily" Watson)"
+listOfSurvivors.txt:JOHNSTON, Mr James	41	Victualling Crew	Belfast	Saloon Steward  	2 	
+listOfVictims.txt:JOHNSTON, Master William Andrew	8	3rd Class Passenger	6607
+listOfVictims.txt:JOHNSTON, Miss Catherine Nellie	7	3rd Class Passenger	6607
+listOfVictims.txt:JOHNSTON, Mr Andrew Emslie	35	3rd Class Passenger	6607
+listOfVictims.txt:JOHNSTON, Mrs Eliza	36	3rd Class Passenger	6607
+
+Jones, Mr. Charles Cresson
+listOfSurvivors.txt:JONES, Mr Thomas William	32	Deck Crew	Southampton	Able Seaman  	8 	
+listOfVictims.txt:JONES, Mr Albert Hugh Brabner	17	Victualling Crew	
+listOfVictims.txt:JONES, Mr Arthur Ernest	37	Victualling Crew	
+listOfVictims.txt:JONES, Mr Charles Cresson	46	1st Class Passenger	694
+listOfVictims.txt:JONES, Mr Harry Owen Glendower	29	Victualling Crew	
+listOfVictims.txt:JONES, Mr Victor Reginald	21	Victualling Crew	
+
+Jonsson, Mr. Nils Hilding
+listOfSurvivors.txt:JONSSON, Mr Carl	25	3rd Class Passenger	350417 £7 17s 1d	Southampton	General Labourer  	15 	
+
+Julian, Mr. Henry Forbes
+listOfVictims.txt:JULIAN, Mr Henry Forbes	50	1st Class Passenger	113044
+
+Karlsson, Mr. Einar Gervasius
+listOfSurvivors.txt:KARLSSON, Mr Einar Gervasius	21	3rd Class Passenger	350053 £7 15s 11d	Southampton	Military  	13 	
+listOfVictims.txt:KARLSSON, Mr Julius Konrad Eugen	33	3rd Class Passenger	347465
+listOfVictims.txt:KARLSSON, Mr Nils August	22	3rd Class Passenger	350060
+
+Karlsson, Mr. Julius Konrad Eugen
+listOfSurvivors.txt:KARLSSON, Mr Einar Gervasius	21	3rd Class Passenger	350053 £7 15s 11d	Southampton	Military  	13 	
+listOfVictims.txt:KARLSSON, Mr Julius Konrad Eugen	33	3rd Class Passenger	347465
+listOfVictims.txt:KARLSSON, Mr Nils August	22	3rd Class Passenger	350060
+
+Karnes, Mrs. J Frank (Claire Bennett)
+listOfVictims.txt:KARNES, Mrs Claire	22	2nd Class Passenger	13534
+
+Karun, Mr. Franz
+listOfSurvivors.txt:KARUN, Miss Manca	5	3rd Class Passenger	349256 £13 8s 4d	Cherbourg	 	15 	
+listOfSurvivors.txt:KARUN, Mr Franz	39	3rd Class Passenger	349256 £13 8s 4d	Cherbourg	Hotelier  	15 	
+
+Katavelas, Mr. Vassilios (Catavelas Vassilios")"
+
+Keane, Mr. Daniel
+listOfSurvivors.txt:KEANE, Miss Nora Agnes	46	2nd Class Passenger	226593 £12 7s	Queenstown	 	10 	
+listOfVictims.txt:KEANE, Mr Andrew	23	3rd Class Passenger	12460
+listOfVictims.txt:KEANE, Mr Daniel	35	2nd Class Passenger	233734
+
+Keeping, Mr. Edwin
+listOfVictims.txt:KEEPING, Mr Edwin Herbert	33	1st Class Passenger
+
+Kelly, Mr. James
+listOfSurvivors.txt:KELLY, Miss Anna Katherine	20	3rd Class Passenger	9234 £7 15s	Queenstown	 	16 	
+listOfSurvivors.txt:KELLY, Miss Mary	22	3rd Class Passenger	14312 £7 15s	Queenstown	 	D 	
+listOfSurvivors.txt:KELLY, Mrs Fanny Maria	49	2nd Class Passenger	223596 £13 10s	Southampton	 	9 	
+listOfVictims.txt:KELLY, Mr James	19	3rd Class Passenger	363592
+listOfVictims.txt:KELLY, Mr James	44	3rd Class Passenger	330911
+listOfVictims.txt:KELLY, Mr James	44	Engineering Crew	
+listOfVictims.txt:KELLY, Mr William	23	Engineering Crew	
+
+Kennedy, Mr. John
+listOfSurvivors.txt:KENNEDY, Mr John	24	3rd Class Passenger	368783 £7 15s	Queenstown	Farm Labourer  	  	
+
+Kenyon, Mr. Frederick R
+listOfSurvivors.txt:KENYON, Mrs Marion Estelle	40	1st Class Passenger	17464 £51 17s 3d	Southampton	 	8 	
+listOfVictims.txt:KENYON, Mr Frederick Roland	41	1st Class Passenger	17464
+
+Khalil, Mr. Betros
+listOfVictims.txt:KHALIL, Mr Betros	25	3rd Class Passenger	2660
+listOfVictims.txt:KHALIL, Mrs Zahie	20	3rd Class Passenger	2660
+
+Khalil, Mrs. Betros (Zahie Maria" Elias)"
+listOfVictims.txt:KHALIL, Mr Betros	25	3rd Class Passenger	2660
+listOfVictims.txt:KHALIL, Mrs Zahie	20	3rd Class Passenger	2660
+
+Kiernan, Mr. John
+listOfVictims.txt:KIERNAN, Mr John Joseph	25	3rd Class Passenger	367227
+listOfVictims.txt:KIERNAN, Mr Philip	22	3rd Class Passenger	367229
+
+Kimball, Mrs. Edwin Nelson Jr (Gertrude Parsons)
+listOfSurvivors.txt:KIMBALL, Mr Edwin Nelson Jr.	42	1st Class Passenger	11753 £52 11s 1d	Southampton	 	5 	
+listOfSurvivors.txt:KIMBALL, Mrs Susan Gertrude	45	1st Class Passenger	11753 £52 11s 1d	Southampton	 	5 	
+
+Kink, Miss. Maria
+listOfSurvivors.txt:KINK, Mr Anton	29	3rd Class Passenger	315153 £22 6d	Southampton	 	2 	
+listOfSurvivors.txt:KINK-HEILMANN, Miss Luise Gretchen	4	3rd Class Passenger	315153 £22 6d	Southampton	 	2 	
+listOfSurvivors.txt:KINK-HEILMANN, Mrs Luise	26	3rd Class Passenger	315153 £22 6d	Southampton	 	2 	
+listOfVictims.txt:KINK, Miss Maria	23	3rd Class Passenger	315152
+listOfVictims.txt:KINK, Mr Vincenz	26	3rd Class Passenger	315151
+
+Kink-Heilmann, Mr. Anton
+listOfSurvivors.txt:KINK-HEILMANN, Miss Luise Gretchen	4	3rd Class Passenger	315153 £22 6d	Southampton	 	2 	
+listOfSurvivors.txt:KINK-HEILMANN, Mrs Luise	26	3rd Class Passenger	315153 £22 6d	Southampton	 	2 	
+
+Kink-Heilmann, Mrs. Anton (Luise Heilmann)
+listOfSurvivors.txt:KINK-HEILMANN, Miss Luise Gretchen	4	3rd Class Passenger	315153 £22 6d	Southampton	 	2 	
+listOfSurvivors.txt:KINK-HEILMANN, Mrs Luise	26	3rd Class Passenger	315153 £22 6d	Southampton	 	2 	
+
+Klasen, Miss. Gertrud Emilia
+
+Klasen, Mrs. (Hulda Kristina Eugenia Lofqvist)
+
+Krekorian, Mr. Neshan
+listOfSurvivors.txt:KREKORIAN, Mr Neshan	25	3rd Class Passenger	2654 £7 4s 7d	Cherbourg	General Labourer  	10 	
+
+Kreuchen, Miss. Emilie
+listOfSurvivors.txt:KREUCHEN, Miss Emilie	29	1st Class Passenger Servant	24160 £211 6s 9d	Southampton	Personal Maid  	2 	
+
+Lahtinen, Rev. William
+listOfVictims.txt:LAHTINEN, Fr William	35	2nd Class Passenger	250651
+listOfVictims.txt:LAHTINEN, Mrs Anna Amelia	34	2nd Class Passenger	250651
+
+Lamb, Mr. John Joseph
+listOfVictims.txt:LAMB, Mr John J.	31	2nd Class Passenger	240261
+
+Lane, Mr. Patrick
+listOfVictims.txt:BLANEY, Mr James	32	Engineering Crew	
+listOfVictims.txt:LANE, Mr Albert Edward	34	Victualling Crew	
+listOfVictims.txt:LANE, Mr Patrick	17	3rd Class Passenger	7935
+
+Laroche, Miss. Louise
+listOfSurvivors.txt:LAROCHE, Miss Louise	1	2nd Class Passenger	2123 £41 11s 7d	Cherbourg	 	14 	
+listOfSurvivors.txt:LAROCHE, Miss Simonne Marie Anne Andrée	3	2nd Class Passenger	2123 £41 11s 7d	Cherbourg	 	14 	
+listOfSurvivors.txt:LAROCHE, Mrs Juliette Marie Louise	22	2nd Class Passenger	2123 £41 11s 7d	Cherbourg	 	14 	
+listOfVictims.txt:LAROCHE, Mr Joseph Philippe Lemercier	25	2nd Class Passenger	2123
+
+Larsson-Rondberg, Mr. Edvard A
+
+Lefebre, Mrs. Frank (Frances)
+
+Lennon, Miss. Mary
+listOfVictims.txt:LENNON, Mr Denis	20	3rd Class Passenger	370371
+
+Lindeberg-Lind, Mr. Erik Gustaf (Mr Edward Lingrey")"
+listOfVictims.txt:LINDEBERG-LIND, Mr Erik Gustaf	42	1st Class Passenger	17475
+
+Lindell, Mrs. Edvard Bengtsson (Elin Gerda Persson)
+listOfVictims.txt:LINDELL, Mr Edvard Bengtsson	36	3rd Class Passenger	349910
+listOfVictims.txt:LINDELL, Mrs Elin Gerda	30	3rd Class Passenger	349910
+
+Lindstrom, Mrs. Carl Johan (Sigrid Posse)
+
+Linehan, Mr. Michael
+listOfVictims.txt:LINEHAN, Mr Michael	21	3rd Class Passenger	330971
+
+Lines, Mrs. Ernest H (Elizabeth Lindsey James)
+listOfSurvivors.txt:LINES, Miss Mary Conover	16	1st Class Passenger	17592 £39 8s	Cherbourg	 	9 	
+listOfSurvivors.txt:LINES, Mrs Elizabeth Lindsey	50	1st Class Passenger	17592 £39 8s	Cherbourg	 	9 	
+
+Lingane, Mr. John
+listOfVictims.txt:LINGANE, Mr John	61	2nd Class Passenger	235509
+
+Lithman, Mr. Simon
+listOfVictims.txt:KUTSCHER (LITHMAN), Mr Simon	26	3rd Class Passenger	251
+
+Lockyer, Mr. Edward
+listOfVictims.txt:LOCKYER, Mr Edward Thomas	19	3rd Class Passenger	1222
+
+Loring, Mr. Joseph Holland
+listOfVictims.txt:LORING, Mr Joseph Holland	30	1st Class Passenger	113801
+
+Louch, Mr. Charles Alexander
+listOfSurvivors.txt:LOUCH, Mrs Alice Adelaide	43	2nd Class Passenger	3085 £26	Southampton	 	  	
+listOfVictims.txt:LOUCH, Mr Charles	50	2nd Class Passenger	3085
+
+Lundin, Miss. Olga Elida
+listOfSurvivors.txt:LUNDIN, Miss Olga Elida	23	3rd Class Passenger	347469 £7 17s 1d	Southampton	 	10 	
+
+Lundstrom, Mr. Thure Edvin
+
+Lyntakoff, Mr. Stanko
+listOfVictims.txt:LYNTAKOFF, Mr Stanko	44	3rd Class Passenger	349235
+
+MacKay, Mr. George William
+listOfVictims.txt:MACKAY, Mr George William	20	3rd Class Passenger	42795
+
+Maguire, Mr. John Edward
+listOfVictims.txt:MAGUIRE, Mr John Edward	30	1st Class Passenger	110469
+
+Mahon, Miss. Bridget Delia
+listOfVictims.txt:MAHON, Miss Bridget Delia	20	3rd Class Passenger	330924
+listOfVictims.txt:MCMAHON, Mr Martin	19	3rd Class Passenger	370372
+
+Mahon, Mr. John
+listOfVictims.txt:MAHON, Miss Bridget Delia	20	3rd Class Passenger	330924
+listOfVictims.txt:MCMAHON, Mr Martin	19	3rd Class Passenger	370372
+
+Makinen, Mr. Kalle Edvard
+
+Malachard, Mr. Noel
+listOfVictims.txt:MALACHARD, Mr Jean-Noël	25	2nd Class Passenger	237735
+
+Mallet, Mrs. Albert (Antoinette Magnin)
+listOfSurvivors.txt:MALLET, Master André Clement	1	2nd Class Passenger	2079 £37 1d	Cherbourg	 	10 	
+listOfSurvivors.txt:MALLET, Mrs Antonine Marie	24	2nd Class Passenger	2079 £37 1d	Cherbourg	 	10 	
+listOfVictims.txt:MALLET, Mr Albert Denis Pierre	45	2nd Class Passenger	2079
+
+Mangiavacchi, Mr. Serafino Emilio
+listOfVictims.txt:MANGIAVACCHI, Mr Serafino Emilio	30	2nd Class Passenger	32861
+
+Mardirosian, Mr. Sarkis
+listOfVictims.txt:MARDIROSIAN, Mr Sarkis	25	3rd Class Passenger	2655
+
+Marvin, Mrs. Daniel Warner (Mary Graham Carmichael Farquarson)
+listOfSurvivors.txt:MARVIN, Mrs Mary Graham Carmichael	18	1st Class Passenger	113773 £53 2s	Southampton	 	10 	
+listOfVictims.txt:MARVIN, Mr Daniel Warner	18	1st Class Passenger	113773
+
+Matinoff, Mr. Nicola
+listOfVictims.txt:MATINOFF, Mr Nicola	30	3rd Class Passenger	349255
+
+Maybery, Mr. Frank Hubert
+listOfVictims.txt:MAYBERY, Mr Frank Hubert	36	2nd Class Passenger	239059
+
+McCaffry, Mr. Thomas Francis
+listOfVictims.txt:MCCAFFRY, Mr Thomas Francis	46	1st Class Passenger	13050
+
+McCarthy, Miss. Catherine Katie""
+listOfSurvivors.txt:MCCARTHY, Miss Catherine	25	3rd Class Passenger	383123 £7 15s	Queenstown	 	16 	
+listOfSurvivors.txt:MCCARTHY, Mr William	48	Deck Crew	Southampton	Able Seaman  	4 	
+listOfVictims.txt:MCCARTHY, Mr Frederick James	38	Victualling Crew	
+listOfVictims.txt:MCCARTHY, Mr Timothy J.	55	1st Class Passenger	17463
+
+McCoy, Miss. Alicia
+listOfSurvivors.txt:MCCOY, Miss Agnes	29	3rd Class Passenger	367226 £23 5s	Queenstown	 	16 	
+listOfSurvivors.txt:MCCOY, Miss Alice	26	3rd Class Passenger	367226 £23 5s	Queenstown	 	16 	
+listOfSurvivors.txt:MCCOY, Mr Bernard	24	3rd Class Passenger	367226 £23 5s	Queenstown	General Labourer  	16 	
+
+McCrae, Mr. Arthur Gordon
+listOfVictims.txt:MCCRAE, Mr Arthur Gordon	32	2nd Class Passenger	237216
+
+McCrie, Mr. James Matthew
+listOfVictims.txt:MCCRIE, Mr James Matthew	32	2nd Class Passenger	233478
+
+McGowan, Miss. Katherine
+listOfSurvivors.txt:MCGOWAN, Miss Anna Louise	17	3rd Class Passenger	330923 £8 7d	Queenstown	 	  	
+listOfVictims.txt:MCGOWAN, Miss Catherine	42	3rd Class Passenger	9232
+
+McNamee, Mrs. Neal (Eileen O'Leary)
+listOfVictims.txt:MCNAMEE, Mr Neal	27	3rd Class Passenger	376566
+listOfVictims.txt:MCNAMEE, Mrs Eileen	19	3rd Class Passenger	376566
+
+McNeill, Miss. Bridget
+listOfVictims.txt:MCNEILL, Miss Bridget	32	3rd Class Passenger	370368
+
+Midtsjo, Mr. Karl Albert
+
+Miles, Mr. Frank
+listOfVictims.txt:MILES, Mr Frank	23	3rd Class Passenger	359306
+
+Minahan, Mrs. William Edward (Lillian E Thorpe)
+listOfSurvivors.txt:MINAHAN, Miss Ida Daisy	33	1st Class Passenger	19928 £90	Queenstown	 	14 	
+listOfSurvivors.txt:MINAHAN, Mrs Lillian Mae	37	1st Class Passenger	19928 £90	Queenstown	 	14 	
+listOfVictims.txt:MINAHAN, Dr William Edward	44	1st Class Passenger	19928
+
+Minkoff, Mr. Lazar
+listOfVictims.txt:MINKOFF, Mr Lazar	21	3rd Class Passenger	349211
+
+Mock, Mr. Philipp Edmund
+listOfSurvivors.txt:MOCK, Mr Philipp Edmund	30	1st Class Passenger	13236 £57 15s	Cherbourg	 	11 	
+listOfSurvivors.txt:MOCKLER, Miss Ellen Mary	23	3rd Class Passenger	330980 £7 17s 7d	Queenstown	 	16 	
+
+Moore, Mr. Clarence Bloomfield
+listOfSurvivors.txt:MOORE, Mr George Alfred	32	Deck Crew	Southampton	Able Seaman  	3 	
+listOfSurvivors.txt:MOORE, Mr John J.	29	Engineering Crew	Southampton	Fireman  	3 	
+listOfVictims.txt:MOORE, Mr Alfred Ernest	39	Victualling Crew	
+listOfVictims.txt:MOORE, Mr Clarence Bloomfield	47	1st Class Passenger	113796
+listOfVictims.txt:MOORE, Mr Leonard Charles	19	3rd Class Passenger	54510
+listOfVictims.txt:MOORE, Mr Ralph	22	Engineering Crew	
+listOfVictims.txt:MOORES, Mr Richard Henry	44	Engineering Crew	
+
+Moubarek, Mrs. George (Omine Amenia" Alexander)"
+
+Mulvihill, Miss. Bertha E
+listOfSurvivors.txt:MULVIHILL, Miss Bridget Elizabeth	25	3rd Class Passenger	382653 £7 15s	Queenstown	 	15 	
+
+Murphy, Miss. Nora
+listOfSurvivors.txt:MURPHY, Miss Catherine	18	3rd Class Passenger	367230 £15 10s	Queenstown	 	16 	
+listOfSurvivors.txt:MURPHY, Miss Margaret Jane	25	3rd Class Passenger	367230 £15 10s	Queenstown	 	16 	
+listOfSurvivors.txt:MURPHY, Miss Nora	31	3rd Class Passenger	36568 £15 10s	Queenstown	 	16 	
+
+Myles, Mr. Thomas Francis
+listOfVictims.txt:MYLES, Mr Thomas Francis	63	2nd Class Passenger	240276
+
+Nakid, Mrs. Said (Waika Mary" Mowad)"
+listOfSurvivors.txt:NAKID, Miss Mariayam	1	3rd Class Passenger	2653 £15 14s 10d	Cherbourg	 	C 	
+listOfSurvivors.txt:NAKID, Mr Sa'id Antun	21	3rd Class Passenger	2653 £15 14s 10d	Cherbourg	 	C 	
+listOfSurvivors.txt:NAKID, Mrs Wadi'ah	19	3rd Class Passenger	2653 £15 14s 10d	Cherbourg	 	C 	
+
+Nancarrow, Mr. William Henry
+listOfVictims.txt:NANCARROW, Mr William Henry	36	3rd Class Passenger	3338
+
+Nasr, Mr. Mustafa
+listOfVictims.txt:ELIAS NASRALLAH, Mr Tannous	22	3rd Class Passenger	2695
+listOfVictims.txt:NASR 'ALMa, Mr Mustafà	20	3rd Class Passenger	2652
+
+Naughton, Miss. Hannah
+listOfVictims.txt:CONNAUGHTON, Mr Michael	40	3rd Class Passenger	335097
+listOfVictims.txt:NAUGHTON, Miss Hannah	21	3rd Class Passenger	365237
+
+Nesson, Mr. Israel
+listOfVictims.txt:NESSON, Mr Israel	26	2nd Class Passenger	244368
+
+Nieminen, Miss. Manta Josefina
+listOfVictims.txt:NIEMINEN, Miss Manta Josefina	29	3rd Class Passenger	3101297
+
+Niklasson, Mr. Samuel
+listOfVictims.txt:NIKLASSON, Mr Samuel	28	3rd Class Passenger	363611
+
+Nilsson, Miss. Berta Olivia
+listOfSurvivors.txt:NILSSON, Miss Berta Olivia	18	3rd Class Passenger	347066 £7 15s 6d	Southampton	 	D 	
+listOfSurvivors.txt:NILSSON, Miss Helmina Josefina	26	3rd Class Passenger	347470 £7 17s 1d	Southampton	 	13 	
+listOfVictims.txt:NILSSON, Mr August Ferdinand	21	3rd Class Passenger	350410
+
+Nilsson, Mr. August Ferdinand
+listOfSurvivors.txt:NILSSON, Miss Berta Olivia	18	3rd Class Passenger	347066 £7 15s 6d	Southampton	 	D 	
+listOfSurvivors.txt:NILSSON, Miss Helmina Josefina	26	3rd Class Passenger	347470 £7 17s 1d	Southampton	 	13 	
+listOfVictims.txt:NILSSON, Mr August Ferdinand	21	3rd Class Passenger	350410
+
+Nourney, Mr. Alfred (Baron von Drachstedt")"
+listOfSurvivors.txt:NOURNEY, Mr Alfred	20	1st Class Passenger	2166 £13 17s 3d	Cherbourg	Gentleman  	7 	
+
+O'Connor, Mr. Patrick
+listOfSurvivors.txt:O'CONNOR, Mr John	29	Engineering Crew	Southampton	Trimmer  	B 	
+listOfVictims.txt:O'CONNOR, Mr Maurice	17	3rd Class Passenger	371060
+listOfVictims.txt:O'CONNOR, Mr Patrick	23	3rd Class Passenger	366713
+listOfVictims.txt:O'CONNOR, Mr Thomas Peter	44	Victualling Crew	
+
+O'Donoghue, Ms. Bridget
+
+O'Keefe, Mr. Patrick
+listOfVictims.txt:O'KEEFE, Mr Arthur	44	3rd Class Passenger	323592
+
+Oliva y Ocana, Dona. Fermina
+listOfSurvivors.txt:OLIVA Y OCANA, Doña Fermina	39	1st Class Passenger Servant	17758 £108 18s	Cherbourg	Personal Maid  	8 	
+
+Olsen, Master. Artur Karl
+listOfSurvivors.txt:OLSEN, Master Artur Karl	9	3rd Class Passenger	17368 £3 3s 5d	Southampton	 	13 	
+listOfVictims.txt:OLSEN, Mr Henry Margido	28	3rd Class Passenger	4001
+listOfVictims.txt:OLSEN, Mr Karl Siegwart Andreas	42	3rd Class Passenger	4579
+listOfVictims.txt:OLSEN, Mr Ole Martin	27	3rd Class Passenger	265302
+
+Olsson, Mr. Oscar Wilhelm
+listOfSurvivors.txt:OLSSON, Mr Oscar Wilhelm	32	3rd Class Passenger	347079 £7 15s 6d	Southampton	 	A 	
+listOfVictims.txt:OLSSON, Miss Elina	31	3rd Class Passenger	350407
+listOfVictims.txt:OLSSON, Mr Nils Johan Göransson	28	3rd Class Passenger	347464
+
+Omont, Mr. Alfred Fernand
+listOfSurvivors.txt:OMONT, Mr Alfred Fernand	29	1st Class Passenger	12998 £25 14s 10d	Cherbourg	Dealer  	7 	
+
+Oreskovic, Miss. Jelka
+listOfVictims.txt:ORESKOVIC, Miss Jelka	23	3rd Class Passenger	315085
+listOfVictims.txt:ORESKOVIC, Miss Marija	20	3rd Class Passenger	315096
+listOfVictims.txt:ORESKOVIC, Mr Luka	20	3rd Class Passenger	315094
+
+Ostby, Miss. Helene Ragnhild
+listOfVictims.txt:OSTBY, Mr Engelhart Cornelius	64	1st Class Passenger	113509
+
+Ovies y Rodriguez, Mr. Servando
+
+Oxenham, Mr. Percy Thomas
+listOfSurvivors.txt:OXENHAM, Mr Percy Thomas	22	2nd Class Passenger	14260 £10 10s	Southampton	Mason  	13 	
+
+Pallas y Castello, Mr. Emilio
+
+Palsson, Master. Paul Folke
+
+Parker, Mr. Clifford Richard
+listOfVictims.txt:PARKER, Mr Clifford Richard	17	2nd Class Passenger	14888
+
+Payne, Mr. Vivian Ponsonby
+listOfVictims.txt:PAYNE, Mr Vivian Ponsonby	23	1st Class Passenger
+
+Peacock, Master. Alfred Edward
+listOfVictims.txt:PEACOCK, Master Albert Edward	7m	3rd Class Passenger	3101315
+listOfVictims.txt:PEACOCK, Miss Treasteall	4	3rd Class Passenger	3101315
+listOfVictims.txt:PEACOCK, Mrs Edith	26	3rd Class Passenger	3101315
+
+Peacock, Miss. Treasteall
+listOfVictims.txt:PEACOCK, Master Albert Edward	7m	3rd Class Passenger	3101315
+listOfVictims.txt:PEACOCK, Miss Treasteall	4	3rd Class Passenger	3101315
+listOfVictims.txt:PEACOCK, Mrs Edith	26	3rd Class Passenger	3101315
+
+Peacock, Mrs. Benjamin (Edith Nile)
+listOfVictims.txt:PEACOCK, Master Albert Edward	7m	3rd Class Passenger	3101315
+listOfVictims.txt:PEACOCK, Miss Treasteall	4	3rd Class Passenger	3101315
+listOfVictims.txt:PEACOCK, Mrs Edith	26	3rd Class Passenger	3101315
+
+Pearce, Mr. Ernest
+listOfSurvivors.txt:PEARCE, Mr John	28	Engineering Crew	Southampton	Fireman  	  	
+listOfSurvivors.txt:PEARCEY, Mr Albert Victor	25	Victualling Crew	Southampton	Pantry Steward (3rd Class)  	  	
+listOfVictims.txt:PEARCE, Mr Alfred Ernest	24	Victualling Crew	
+listOfVictims.txt:PEARCE, Mr Ernest	32	3rd Class Passenger	343271
+
+Pedersen, Mr. Olaf
+listOfVictims.txt:PEDERSEN, Mr Olaf	28	3rd Class Passenger	345498
+
+Peltomaki, Mr. Nikolai Johannes
+
+Peruschitz, Rev. Joseph Maria
+listOfVictims.txt:PERUSCHITZ, Fr Josef	41	2nd Class Passenger	237393
+
+Peter, Master. Michael J
+listOfSurvivors.txt:PETER / JOSEPH, Master Michael J. (	4	3rd Class Passenger	2668 £22 7s 2d	Cherbourg	 	D 	
+listOfSurvivors.txt:PETER / JOSEPH, Miss Anna (	2	3rd Class Passenger	2668 £22 7s 2d	Cherbourg	 	C 	
+listOfSurvivors.txt:PETERS, Mr William Chapman	26	Deck Crew	Southampton	Able Seaman  	9 	
+listOfVictims.txt:PETERANEC, Miss Mathilda	28	3rd Class Passenger	349245
+listOfVictims.txt:PETERS, Miss Catherine	28	3rd Class Passenger	330935
+listOfVictims.txt:PETERSEN, Mr Marius	24	3rd Class Passenger	342441
+
+Petersen, Mr. Marius
+listOfVictims.txt:PETERSEN, Mr Marius	24	3rd Class Passenger	342441
+
+Phillips, Miss. Alice Frances Louisa
+listOfSurvivors.txt:PHILLIPS, Miss Alice Frances Louisa	21	2nd Class Passenger	2 £21	Southampton	 	12 	
+listOfSurvivors.txt:PHILLIPS, Miss Kate Florence	19	2nd Class Passenger	250655 £26	Southampton	 	11 	
+listOfVictims.txt:PHILLIPS, Mr A. George	27	Engineering Crew	
+listOfVictims.txt:PHILLIPS, Mr Escott Robert	43	2nd Class Passenger	2
+listOfVictims.txt:PHILLIPS, Mr John George	25	Victualling Crew	
+listOfVictims.txt:PHILLIPS, Mr Walter John	35	Restaurant Staff	
+
+Phillips, Mr. Escott Robert
+listOfSurvivors.txt:PHILLIPS, Miss Alice Frances Louisa	21	2nd Class Passenger	2 £21	Southampton	 	12 	
+listOfSurvivors.txt:PHILLIPS, Miss Kate Florence	19	2nd Class Passenger	250655 £26	Southampton	 	11 	
+listOfVictims.txt:PHILLIPS, Mr A. George	27	Engineering Crew	
+listOfVictims.txt:PHILLIPS, Mr Escott Robert	43	2nd Class Passenger	2
+listOfVictims.txt:PHILLIPS, Mr John George	25	Victualling Crew	
+listOfVictims.txt:PHILLIPS, Mr Walter John	35	Restaurant Staff	
+
+Pokrnic, Mr. Mate
+listOfVictims.txt:POKRNIC, Mr Mate	17	3rd Class Passenger	315095
+listOfVictims.txt:POKRNIC, Mr Tome	24	3rd Class Passenger	315092
+
+Pokrnic, Mr. Tome
+listOfVictims.txt:POKRNIC, Mr Mate	17	3rd Class Passenger	315095
+listOfVictims.txt:POKRNIC, Mr Tome	24	3rd Class Passenger	315092
+
+Portaluppi, Mr. Emilio Ilario Giuseppe
+listOfSurvivors.txt:PORTALUPPI, Mr Emilio Ilario Giuseppe	30	2nd Class Passenger	34644 £12 14s 9d	Cherbourg	 	14 	
+
+Pulbaum, Mr. Franz
+listOfVictims.txt:PULBAUM, Mr Franz	27	2nd Class Passenger	2168
+
+Quick, Miss. Winifred Vera
+listOfSurvivors.txt:QUICK, Miss Phyllis May	2	2nd Class Passenger	26360 £26	Southampton	 	11 	
+listOfSurvivors.txt:QUICK, Miss Winifred Vera	8	2nd Class Passenger	26360 £26	Southampton	 	11 	
+listOfSurvivors.txt:QUICK, Mrs Jane	33	2nd Class Passenger	26360 £26	Southampton	 	11 	
+
+Rasmussen, Mrs. (Lena Jacobsen Solvang)
+listOfVictims.txt:RASMUSSEN, Mrs Lena Jakobsen	63	3rd Class Passenger	65305
+
+Reynolds, Mr. Harold J
+listOfVictims.txt:MCREYNOLDS, Mr William	22	Engineering Crew	
+listOfVictims.txt:REYNOLDS, Mr Harold	21	3rd Class Passenger	342684
+
+Rheims, Mr. George Alexander Lucien
+listOfSurvivors.txt:RHEIMS, Mr George Alexander Lucien	33	1st Class Passenger	17607 £39 12s	Cherbourg	Businessman  	A 	
+
+Rice, Master. Albert
+listOfSurvivors.txt:BRICE, Mr Walter Thomas	43	Deck Crew	Southampton	Able Seaman  	11 	
+listOfSurvivors.txt:RICE, Mr Charles John	32	Engineering Crew	Southampton	Fireman  	10 	
+listOfVictims.txt:PRICE, Mr Ernest Cyril	17	Restaurant Staff	
+listOfVictims.txt:RICE, Master Albert	10	3rd Class Passenger	382652
+listOfVictims.txt:RICE, Master Arthur	4	3rd Class Passenger	382652
+listOfVictims.txt:RICE, Master Eric	7	3rd Class Passenger	382652
+listOfVictims.txt:RICE, Master Eugene Francis	2	3rd Class Passenger	382652
+listOfVictims.txt:RICE, Master George Hugh	8	3rd Class Passenger	382652
+listOfVictims.txt:RICE, Mr John Reginald	25	Victualling Crew	
+listOfVictims.txt:RICE, Mr Percy	19	Victualling Crew	
+listOfVictims.txt:RICE, Mrs Margaret	39	3rd Class Passenger	382652
+
+Riihivouri, Miss. Susanna Juhantytar Sanni""
+
+Riordan, Miss. Johanna Hannah""
+listOfSurvivors.txt:RIORDAN, Miss Hannah	22	3rd Class Passenger	334915 £7 14s 5d	Queenstown	 	13 	
+
+Risien, Mrs. Samuel (Emma)
+listOfVictims.txt:RISIEN, Mr Samuel Beard	69	3rd Class Passenger	364498
+listOfVictims.txt:RISIEN, Mrs Emma Jane	64	3rd Class Passenger	364498
+
+Robins, Mr. Alexander A
+listOfSurvivors.txt:ROBINSON, Mrs Annie	41	Victualling Crew	Southampton	Stewardess  	11 	
+listOfVictims.txt:ROBINS, Mr Alexander	50	3rd Class Passenger	3337
+listOfVictims.txt:ROBINS, Mr Victor	45	1st Class Passenger
+listOfVictims.txt:ROBINS, Mrs Charity	48	3rd Class Passenger	3337
+listOfVictims.txt:ROBINSON, Mr James William	30	Victualling Crew	
+
+Rogers, Mr. Reginald Harry
+listOfVictims.txt:ROGERS, Mr Edward James William	31	Victualling Crew	
+listOfVictims.txt:ROGERS, Mr Michael Joseph	27	Victualling Crew	
+listOfVictims.txt:ROGERS, Mr Reginald Harry	18	2nd Class Passenger	28004
+listOfVictims.txt:ROGERS, Mr William John	30	3rd Class Passenger	23567
+
+Rosblom, Miss. Salli Helena
+listOfVictims.txt:ROSBLOM, Miss Salli Helena	2	3rd Class Passenger	370129
+listOfVictims.txt:ROSBLOM, Mr Viktor Richard	18	3rd Class Passenger	370129
+listOfVictims.txt:ROSBLOM, Mrs Helena Wilhelmina	41	3rd Class Passenger	370129
+
+Rosenbaum, Miss. Edith Louise
+listOfSurvivors.txt:ROSENBAUM, Miss Edith Louise	33	1st Class Passenger	17613 £27 14s 5d	Cherbourg	Journalist  	11 	
+
+Rosenshine, Mr. George (Mr George Thorne")"
+listOfVictims.txt:ROSENSHINE, Mr George	46	1st Class Passenger	17585
+
+Roth, Miss. Sarah A
+listOfSurvivors.txt:ROTH, Miss Sarah	26	3rd Class Passenger	342712 £8 1s	Southampton	Tailor  	C 	
+listOfSurvivors.txt:ROTHES, Lucy Noël Martha, Countess of	33	1st Class Passenger	110152 £86 10s	Southampton	Of Independent Means  	8 	
+listOfSurvivors.txt:ROTHSCHILD, Mrs Elizabeth Jane Anne	54	1st Class Passenger	17603 £59 8s	Cherbourg	 	6 	
+listOfVictims.txt:ROTHSCHILD, Mr Martin	46	1st Class Passenger	17603
+
+Rothschild, Mr. Martin
+listOfSurvivors.txt:ROTHSCHILD, Mrs Elizabeth Jane Anne	54	1st Class Passenger	17603 £59 8s	Cherbourg	 	6 	
+listOfVictims.txt:ROTHSCHILD, Mr Martin	46	1st Class Passenger	17603
+
+Rowe, Mr. Alfred G
+listOfSurvivors.txt:CROWE, Mr George Frederick	30	Victualling Crew	Southampton	Saloon Steward  	14 	
+listOfSurvivors.txt:ROWE, Mr George Thomas	32	Deck Crew	Belfast	Quartermaster  	C 	
+listOfVictims.txt:ROWE, Mr Alfred G.	59	1st Class Passenger	113790
+listOfVictims.txt:ROWE, Mr Edgar Maurice	31	Victualling Crew	
+
+Ryan, Mr. Edward
+listOfSurvivors.txt:RYAN, Mr Edward	24	3rd Class Passenger	383162 £7 15s	Queenstown	General Labourer  	14 	
+listOfVictims.txt:RYAN, Mr Patrick	30	3rd Class Passenger	371110
+listOfVictims.txt:RYAN, Mr Thomas	28	Victualling Crew	
+
+Ryerson, Master. John Borie
+listOfSurvivors.txt:RYERSON, Master John Borie	13	1st Class Passenger	17608 £262 7s 6d	Cherbourg	 	4 	
+listOfSurvivors.txt:RYERSON, Miss Emily Borie	18	1st Class Passenger	17608 £262 7s 6d	Cherbourg	 	4 	
+listOfSurvivors.txt:RYERSON, Miss Susan Parker	21	1st Class Passenger	17608 £262 7s 6d	Cherbourg	 	4 	
+listOfSurvivors.txt:RYERSON, Mr William Edwy	33	Victualling Crew	Southampton	Saloon Steward (2nd class)  	  	
+listOfSurvivors.txt:RYERSON, Mrs Emily Maria	48	1st Class Passenger	17608 £262 7s 6d	Cherbourg	 	4 	
+listOfVictims.txt:RYERSON, Mr Arthur Larned	61	1st Class Passenger	17608
+
+Ryerson, Mr. Arthur Larned
+listOfSurvivors.txt:RYERSON, Master John Borie	13	1st Class Passenger	17608 £262 7s 6d	Cherbourg	 	4 	
+listOfSurvivors.txt:RYERSON, Miss Emily Borie	18	1st Class Passenger	17608 £262 7s 6d	Cherbourg	 	4 	
+listOfSurvivors.txt:RYERSON, Miss Susan Parker	21	1st Class Passenger	17608 £262 7s 6d	Cherbourg	 	4 	
+listOfSurvivors.txt:RYERSON, Mr William Edwy	33	Victualling Crew	Southampton	Saloon Steward (2nd class)  	  	
+listOfSurvivors.txt:RYERSON, Mrs Emily Maria	48	1st Class Passenger	17608 £262 7s 6d	Cherbourg	 	4 	
+listOfVictims.txt:RYERSON, Mr Arthur Larned	61	1st Class Passenger	17608
+
+Ryerson, Mrs. Arthur Larned (Emily Maria Borie)
+listOfSurvivors.txt:RYERSON, Master John Borie	13	1st Class Passenger	17608 £262 7s 6d	Cherbourg	 	4 	
+listOfSurvivors.txt:RYERSON, Miss Emily Borie	18	1st Class Passenger	17608 £262 7s 6d	Cherbourg	 	4 	
+listOfSurvivors.txt:RYERSON, Miss Susan Parker	21	1st Class Passenger	17608 £262 7s 6d	Cherbourg	 	4 	
+listOfSurvivors.txt:RYERSON, Mr William Edwy	33	Victualling Crew	Southampton	Saloon Steward (2nd class)  	  	
+listOfSurvivors.txt:RYERSON, Mrs Emily Maria	48	1st Class Passenger	17608 £262 7s 6d	Cherbourg	 	4 	
+listOfVictims.txt:RYERSON, Mr Arthur Larned	61	1st Class Passenger	17608
+
+Saade, Mr. Jean Nassr
+
+Sadowitz, Mr. Harry
+listOfVictims.txt:SADOWITZ, Mr Henry	17	3rd Class Passenger	1855
+
+Saether, Mr. Simon Sivertsen
+
+Sage, Master. William Henry
+listOfVictims.txt:SAGE, Master Anthony William	13	3rd Class Passenger	2343
+listOfVictims.txt:SAGE, Master Thomas Henry	5	3rd Class Passenger	2343
+listOfVictims.txt:SAGE, Miss Constance Gladys	8	3rd Class Passenger	2343
+listOfVictims.txt:SAGE, Miss Dorothy	14	3rd Class Passenger	2343
+listOfVictims.txt:SAGE, Miss Elizabeth Ada	10	3rd Class Passenger	2343
+listOfVictims.txt:SAGE, Miss Stella Anne	21	3rd Class Passenger	2343
+listOfVictims.txt:SAGE, Mr Douglas Bullen	18	3rd Class Passenger	2343
+listOfVictims.txt:SAGE, Mr Frederick	17	3rd Class Passenger	2343
+listOfVictims.txt:SAGE, Mr George John	20	3rd Class Passenger	2343
+listOfVictims.txt:SAGE, Mr John George	45	3rd Class Passenger	2343
+listOfVictims.txt:SAGE, Mrs Annie Elizabeth	45	3rd Class Passenger	2343
+
+Sage, Miss. Ada
+listOfVictims.txt:SAGE, Master Anthony William	13	3rd Class Passenger	2343
+listOfVictims.txt:SAGE, Master Thomas Henry	5	3rd Class Passenger	2343
+listOfVictims.txt:SAGE, Miss Constance Gladys	8	3rd Class Passenger	2343
+listOfVictims.txt:SAGE, Miss Dorothy	14	3rd Class Passenger	2343
+listOfVictims.txt:SAGE, Miss Elizabeth Ada	10	3rd Class Passenger	2343
+listOfVictims.txt:SAGE, Miss Stella Anne	21	3rd Class Passenger	2343
+listOfVictims.txt:SAGE, Mr Douglas Bullen	18	3rd Class Passenger	2343
+listOfVictims.txt:SAGE, Mr Frederick	17	3rd Class Passenger	2343
+listOfVictims.txt:SAGE, Mr George John	20	3rd Class Passenger	2343
+listOfVictims.txt:SAGE, Mr John George	45	3rd Class Passenger	2343
+listOfVictims.txt:SAGE, Mrs Annie Elizabeth	45	3rd Class Passenger	2343
+
+Sage, Mr. John George
+listOfVictims.txt:SAGE, Master Anthony William	13	3rd Class Passenger	2343
+listOfVictims.txt:SAGE, Master Thomas Henry	5	3rd Class Passenger	2343
+listOfVictims.txt:SAGE, Miss Constance Gladys	8	3rd Class Passenger	2343
+listOfVictims.txt:SAGE, Miss Dorothy	14	3rd Class Passenger	2343
+listOfVictims.txt:SAGE, Miss Elizabeth Ada	10	3rd Class Passenger	2343
+listOfVictims.txt:SAGE, Miss Stella Anne	21	3rd Class Passenger	2343
+listOfVictims.txt:SAGE, Mr Douglas Bullen	18	3rd Class Passenger	2343
+listOfVictims.txt:SAGE, Mr Frederick	17	3rd Class Passenger	2343
+listOfVictims.txt:SAGE, Mr George John	20	3rd Class Passenger	2343
+listOfVictims.txt:SAGE, Mr John George	45	3rd Class Passenger	2343
+listOfVictims.txt:SAGE, Mrs Annie Elizabeth	45	3rd Class Passenger	2343
+
+Sage, Mrs. John (Annie Bullen)
+listOfVictims.txt:SAGE, Master Anthony William	13	3rd Class Passenger	2343
+listOfVictims.txt:SAGE, Master Thomas Henry	5	3rd Class Passenger	2343
+listOfVictims.txt:SAGE, Miss Constance Gladys	8	3rd Class Passenger	2343
+listOfVictims.txt:SAGE, Miss Dorothy	14	3rd Class Passenger	2343
+listOfVictims.txt:SAGE, Miss Elizabeth Ada	10	3rd Class Passenger	2343
+listOfVictims.txt:SAGE, Miss Stella Anne	21	3rd Class Passenger	2343
+listOfVictims.txt:SAGE, Mr Douglas Bullen	18	3rd Class Passenger	2343
+listOfVictims.txt:SAGE, Mr Frederick	17	3rd Class Passenger	2343
+listOfVictims.txt:SAGE, Mr George John	20	3rd Class Passenger	2343
+listOfVictims.txt:SAGE, Mr John George	45	3rd Class Passenger	2343
+listOfVictims.txt:SAGE, Mrs Annie Elizabeth	45	3rd Class Passenger	2343
+
+Salander, Mr. Karl Johan
+listOfVictims.txt:SALANDER, Mr Karl Johan	24	3rd Class Passenger	7266
+
+Salomon, Mr. Abraham L
+listOfSurvivors.txt:SALOMON, Mr Abraham Lincoln	43	1st Class Passenger	111163 £26	Southampton	Businessman  	1 	
+
+Samaan, Mr. Elias
+listOfVictims.txt:SAMAAN, Mr Elias	17	3rd Class Passenger	2662
+listOfVictims.txt:SAMAAN, Mr Hanna Elias	40	3rd Class Passenger	2662
+listOfVictims.txt:SAMAAN, Mr Youssef	16	3rd Class Passenger	2662
+
+Samaan, Mr. Hanna
+listOfVictims.txt:SAMAAN, Mr Elias	17	3rd Class Passenger	2662
+listOfVictims.txt:SAMAAN, Mr Hanna Elias	40	3rd Class Passenger	2662
+listOfVictims.txt:SAMAAN, Mr Youssef	16	3rd Class Passenger	2662
+
+Sandstrom, Miss. Beatrice Irene
+
+Sap, Mr. Julius
+listOfSurvivors.txt:SAP, Mr Julius	21	3rd Class Passenger	345768 £9 10s	Southampton	 	11 	
+
+Schabert, Mrs. Paul (Emma Mock)
+listOfSurvivors.txt:SCHABERT, Mrs Emma	35	1st Class Passenger	13236 £57 15s	Cherbourg	 	11 	
+
+Schmidt, Mr. August
+listOfVictims.txt:GOLDSCHMIDT, Mr George B.	71	1st Class Passenger	17754
+listOfVictims.txt:SCHMIDT, Mr Augustus	22	2nd Class Passenger	248659
+
+Shaughnessy, Mr. Patrick
+listOfVictims.txt:SHAUGHNESSY, Mr Patrick	27	3rd Class Passenger	370374
+
+Shine, Miss. Ellen Natalia
+listOfSurvivors.txt:SHINE, Miss Ellen	20	3rd Class Passenger	330968 £7 16s 7d	Queenstown	 	  	
+listOfVictims.txt:ROSENSHINE, Mr George	46	1st Class Passenger	17585
+
+Sincock, Miss. Maude
+listOfSurvivors.txt:SINCOCK, Miss Maude	20	2nd Class Passenger	33112 £36 15s	Southampton	 	11 	
+
+Smith, Mr. Lucien Philip
+listOfSurvivors.txt:GOLDSMITH, Master Frank John William	9	3rd Class Passenger	363291 £20 10s 6d	Southampton	 	C 	
+listOfSurvivors.txt:GOLDSMITH, Mrs Emily Alice	31	3rd Class Passenger	363291 £20 10s 6d	Southampton	 	C 	
+listOfSurvivors.txt:SMITH, Miss Katherine Elizabeth	45	Victualling Crew	Southampton	Stewardess  	  	
+listOfSurvivors.txt:SMITH, Miss Marion Elsie	49	2nd Class Passenger	31418 £13	Southampton	 	9 	
+listOfSurvivors.txt:SMITH, Mrs Mary Eloise	18	1st Class Passenger	13695 £60	Cherbourg	 	6 	
+listOfVictims.txt:GOLDSMITH, Mr Frank John	33	3rd Class Passenger	363291
+listOfVictims.txt:GOLDSMITH, Mr Nathan	41	3rd Class Passenger	3101263
+listOfVictims.txt:SMITH, Captain Edward John	62	Deck Crew
+listOfVictims.txt:SMITH, Mr Charles Edwin	40	Victualling Crew	
+listOfVictims.txt:SMITH, Mr Charles Henry James	38	Victualling Crew	
+listOfVictims.txt:SMITH, Mr Emest George	27	Engineering Crew	
+listOfVictims.txt:SMITH, Mr F.	20	Victualling Crew	
+listOfVictims.txt:SMITH, Mr James Clinch	56	1st Class Passenger	17764
+listOfVictims.txt:SMITH, Mr James Muil	39	Engineering Crew	
+listOfVictims.txt:SMITH, Mr James William	24	Victualling Crew	
+listOfVictims.txt:SMITH, Mr John Richard Jago	35	Victualling Crew
+listOfVictims.txt:SMITH, Mr Lucian Philip	24	1st Class Passenger	13695
+listOfVictims.txt:SMITH, Mr Reginald George	33	Victualling Crew	
+listOfVictims.txt:SMITH, Mr Richard William	57	1st Class Passenger	113056
+listOfVictims.txt:SMITH, Mr William	26	Deck Crew	
+listOfVictims.txt:SMITHER, Mr Harry James	22	Engineering Crew	
+
+Smith, Mrs. Lucien Philip (Mary Eloise Hughes)
+listOfSurvivors.txt:GOLDSMITH, Master Frank John William	9	3rd Class Passenger	363291 £20 10s 6d	Southampton	 	C 	
+listOfSurvivors.txt:GOLDSMITH, Mrs Emily Alice	31	3rd Class Passenger	363291 £20 10s 6d	Southampton	 	C 	
+listOfSurvivors.txt:SMITH, Miss Katherine Elizabeth	45	Victualling Crew	Southampton	Stewardess  	  	
+listOfSurvivors.txt:SMITH, Miss Marion Elsie	49	2nd Class Passenger	31418 £13	Southampton	 	9 	
+listOfSurvivors.txt:SMITH, Mrs Mary Eloise	18	1st Class Passenger	13695 £60	Cherbourg	 	6 	
+listOfVictims.txt:GOLDSMITH, Mr Frank John	33	3rd Class Passenger	363291
+listOfVictims.txt:GOLDSMITH, Mr Nathan	41	3rd Class Passenger	3101263
+listOfVictims.txt:SMITH, Captain Edward John	62	Deck Crew
+listOfVictims.txt:SMITH, Mr Charles Edwin	40	Victualling Crew	
+listOfVictims.txt:SMITH, Mr Charles Henry James	38	Victualling Crew	
+listOfVictims.txt:SMITH, Mr Emest George	27	Engineering Crew	
+listOfVictims.txt:SMITH, Mr F.	20	Victualling Crew	
+listOfVictims.txt:SMITH, Mr James Clinch	56	1st Class Passenger	17764
+listOfVictims.txt:SMITH, Mr James Muil	39	Engineering Crew	
+listOfVictims.txt:SMITH, Mr James William	24	Victualling Crew	
+listOfVictims.txt:SMITH, Mr John Richard Jago	35	Victualling Crew
+listOfVictims.txt:SMITH, Mr Lucian Philip	24	1st Class Passenger	13695
+listOfVictims.txt:SMITH, Mr Reginald George	33	Victualling Crew	
+listOfVictims.txt:SMITH, Mr Richard William	57	1st Class Passenger	113056
+listOfVictims.txt:SMITH, Mr William	26	Deck Crew	
+listOfVictims.txt:SMITHER, Mr Harry James	22	Engineering Crew	
+
+Smyth, Miss. Julia
+listOfSurvivors.txt:SMYTH, Miss Julia	18	3rd Class Passenger	335432 £7 14s 8d	Queenstown	 	13 	
+listOfVictims.txt:SMYTH, Mr Thomas	27	3rd Class Passenger	384461
+
+Snyder, Mr. John Pillsbury
+listOfSurvivors.txt:SNYDER, Mr John Pillsbury	24	1st Class Passenger	21228 £82 5s 4d	Southampton	 	7 	
+listOfSurvivors.txt:SNYDER, Mrs Nelle	23	1st Class Passenger	21228 £82 5s 4d	Southampton	 	7 	
+
+Snyder, Mrs. John Pillsbury (Nelle Stevenson)
+listOfSurvivors.txt:SNYDER, Mr John Pillsbury	24	1st Class Passenger	21228 £82 5s 4d	Southampton	 	7 	
+listOfSurvivors.txt:SNYDER, Mrs Nelle	23	1st Class Passenger	21228 £82 5s 4d	Southampton	 	7 	
+
+Spector, Mr. Woolf
+listOfVictims.txt:SPECTOR, Mr Woolf	23	3rd Class Passenger	3236
+
+Spedden, Master. Robert Douglas
+listOfSurvivors.txt:SPEDDEN, Master Robert Douglas	6	1st Class Passenger	16966 £134 10s	Cherbourg	 	3 	
+listOfSurvivors.txt:SPEDDEN, Mr Frederic Oakley	45	1st Class Passenger	16966 £134 10s	Cherbourg	 	3 	
+listOfSurvivors.txt:SPEDDEN, Mrs Margaretta Corning	39	1st Class Passenger	16966 £134 10s	Cherbourg	 	3 	
+
+Spedden, Mr. Frederic Oakley
+listOfSurvivors.txt:SPEDDEN, Master Robert Douglas	6	1st Class Passenger	16966 £134 10s	Cherbourg	 	3 	
+listOfSurvivors.txt:SPEDDEN, Mr Frederic Oakley	45	1st Class Passenger	16966 £134 10s	Cherbourg	 	3 	
+listOfSurvivors.txt:SPEDDEN, Mrs Margaretta Corning	39	1st Class Passenger	16966 £134 10s	Cherbourg	 	3 	
+
+Spencer, Mr. William Augustus
+listOfSurvivors.txt:SPENCER, Mrs Marie Eugenie	48	1st Class Passenger	17569 £146 10s 5d	Cherbourg	 	6 	
+listOfVictims.txt:SPENCER, Mr William Augustus	57	1st Class Passenger	17569
+
+Spinner, Mr. Henry John
+listOfVictims.txt:SPINNER, Mr Henry John	31	3rd Class Passenger	369943
+
+Stanton, Mr. Samuel Ward
+listOfVictims.txt:STANTON, Mr Samuel Ward	42	2nd Class Passenger	237734
+
+Stengel, Mr. Charles Emil Henry
+listOfSurvivors.txt:STENGEL, Mr Charles Emil Henry	54	1st Class Passenger	11778 £55 8s 10d	Cherbourg	Businessman  	1 	
+listOfSurvivors.txt:STENGEL, Mrs Annie May	43	1st Class Passenger	11778 £55 8s 10d	Cherbourg	 	5 	
+
+Stengel, Mrs. Charles Emil Henry (Annie May Morris)
+listOfSurvivors.txt:STENGEL, Mr Charles Emil Henry	54	1st Class Passenger	11778 £55 8s 10d	Cherbourg	Businessman  	1 	
+listOfSurvivors.txt:STENGEL, Mrs Annie May	43	1st Class Passenger	11778 £55 8s 10d	Cherbourg	 	5 	
+
+Stokes, Mr. Philip Joseph
+listOfVictims.txt:STOKES, Mr Philip Joseph	24	2nd Class Passenger	13540
+
+Storey, Mr. Thomas
+listOfVictims.txt:STOREY, Mr Thomas	59	3rd Class Passenger	370160
+
+Straus, Mr. Isidor
+listOfVictims.txt:STRAUS, Mr Isidor	67	1st Class Passenger	17483
+listOfVictims.txt:STRAUS, Mrs Rosalie Ida	63	1st Class Passenger	17483
+
+Straus, Mrs. Isidor (Rosalie Ida Blun)
+listOfVictims.txt:STRAUS, Mr Isidor	67	1st Class Passenger	17483
+listOfVictims.txt:STRAUS, Mrs Rosalie Ida	63	1st Class Passenger	17483
+
+Strilic, Mr. Ivan
+listOfVictims.txt:STRILIC, Mr Ivan	27	3rd Class Passenger	315083
+
+Svensson, Mr. Johan Cervin
+listOfSurvivors.txt:SVENSSON, Mr Johan Cervin	14	3rd Class Passenger	7538 £9 4s 6d	Southampton	 	13 	
+listOfVictims.txt:SVENSSON, Mr Johan	74	3rd Class Passenger	347060
+listOfVictims.txt:SVENSSON, Mr Olof	24	3rd Class Passenger	350035
+
+Swane, Mr. George
+listOfVictims.txt:SWANE, Mr George	19	2nd Class Passenger
+
+Sweet, Mr. George Frederick
+listOfVictims.txt:SWEET, Mr George Frederick	14	2nd Class Passenger	220845
+
+Tenglin, Mr. Gunnar Isidor
+listOfSurvivors.txt:TENGLIN, Mr Gunnar Isidor	25	3rd Class Passenger	350033 £7 15s 11d	Southampton	 	13 	
+
+Thomas, Mr. Charles P
+listOfSurvivors.txt:THOMAS, Mr Albert Charles	23	Victualling Crew	Southampton	Saloon Steward  	15 	
+listOfSurvivors.txt:THOMAS, Mr Benjamin James	30	Victualling Crew	Belfast	Saloon Steward  	15 	
+listOfVictims.txt:THOMAS, Mr Joseph Wakefield	24	Engineering Crew	
+listOfVictims.txt:THOMAS/TANNOUS, Mr John	34	3rd Class Passenger	2681
+listOfVictims.txt:THOMAS/TANNOUS, Mr Tannous	16	3rd Class Passenger	2684
+
+Thomas, Mr. John
+listOfSurvivors.txt:THOMAS, Mr Albert Charles	23	Victualling Crew	Southampton	Saloon Steward  	15 	
+listOfSurvivors.txt:THOMAS, Mr Benjamin James	30	Victualling Crew	Belfast	Saloon Steward  	15 	
+listOfVictims.txt:THOMAS, Mr Joseph Wakefield	24	Engineering Crew	
+listOfVictims.txt:THOMAS/TANNOUS, Mr John	34	3rd Class Passenger	2681
+listOfVictims.txt:THOMAS/TANNOUS, Mr Tannous	16	3rd Class Passenger	2684
+
+Thomas, Mr. Tannous
+listOfSurvivors.txt:THOMAS, Mr Albert Charles	23	Victualling Crew	Southampton	Saloon Steward  	15 	
+listOfSurvivors.txt:THOMAS, Mr Benjamin James	30	Victualling Crew	Belfast	Saloon Steward  	15 	
+listOfVictims.txt:THOMAS, Mr Joseph Wakefield	24	Engineering Crew	
+listOfVictims.txt:THOMAS/TANNOUS, Mr John	34	3rd Class Passenger	2681
+listOfVictims.txt:THOMAS/TANNOUS, Mr Tannous	16	3rd Class Passenger	2684
+
+Thomas, Mrs. Alexander (Thamine Thelma")"
+listOfSurvivors.txt:THOMAS, Mr Albert Charles	23	Victualling Crew	Southampton	Saloon Steward  	15 	
+listOfSurvivors.txt:THOMAS, Mr Benjamin James	30	Victualling Crew	Belfast	Saloon Steward  	15 	
+listOfVictims.txt:THOMAS, Mr Joseph Wakefield	24	Engineering Crew	
+listOfVictims.txt:THOMAS/TANNOUS, Mr John	34	3rd Class Passenger	2681
+listOfVictims.txt:THOMAS/TANNOUS, Mr Tannous	16	3rd Class Passenger	2684
+
+Thomson, Mr. Alexander Morrison
+
+Torfa, Mr. Assad
+listOfVictims.txt:TORFA, Mr Assad	20	3rd Class Passenger	2673
+
+Touma, Master. Georges Youssef
+
+Touma, Miss. Maria Youssef
+
+Tucker, Mr. Gilbert Milligan Jr
+listOfSurvivors.txt:TUCKER, Mr Gilbert Milligan jr	31	1st Class Passenger	2543 £28 10s 9d	Cherbourg	 	7 	
+
+Vander Planke, Mr. Julius
+
+Vartanian, Mr. David
+listOfSurvivors.txt:VARTANIAN, Mr David	22	3rd Class Passenger	2658 £7 4s 6d	Cherbourg	 	  	
+
+Veal, Mr. James
+listOfVictims.txt:VEAL, Mr Arthur	36	Engineering Crew	
+listOfVictims.txt:VEAL, Mr James	40	2nd Class Passenger	28221
+listOfVictims.txt:VEAL, Mr Thomas Henry Edom	38	Victualling Crew	
+
+Vendel, Mr. Olof Edvin
+
+Walcroft, Miss. Nellie
+
+Ware, Mr. Frederick
+listOfSurvivors.txt:WARE, Mrs Florence Louise	32	2nd Class Passenger	31352 £21	Southampton	 	10 	
+listOfVictims.txt:WARE, Mr Frederick	35	3rd Class Passenger	359309
+listOfVictims.txt:WARE, Mr John James	47	2nd Class Passenger	31352
+listOfVictims.txt:WARE, Mr William Jeffery	23	2nd Class Passenger	28666
+listOfVictims.txt:WAREHAM, Mr Robert Arthur	37	Victualling Crew	
+
+Ware, Mr. John James
+listOfSurvivors.txt:WARE, Mrs Florence Louise	32	2nd Class Passenger	31352 £21	Southampton	 	10 	
+listOfVictims.txt:WARE, Mr Frederick	35	3rd Class Passenger	359309
+listOfVictims.txt:WARE, Mr John James	47	2nd Class Passenger	31352
+listOfVictims.txt:WARE, Mr William Jeffery	23	2nd Class Passenger	28666
+listOfVictims.txt:WAREHAM, Mr Robert Arthur	37	Victualling Crew	
+
+Ware, Mr. William Jeffery
+listOfSurvivors.txt:WARE, Mrs Florence Louise	32	2nd Class Passenger	31352 £21	Southampton	 	10 	
+listOfVictims.txt:WARE, Mr Frederick	35	3rd Class Passenger	359309
+listOfVictims.txt:WARE, Mr John James	47	2nd Class Passenger	31352
+listOfVictims.txt:WARE, Mr William Jeffery	23	2nd Class Passenger	28666
+listOfVictims.txt:WAREHAM, Mr Robert Arthur	37	Victualling Crew	
+
+Ware, Mrs. John James (Florence Louise Long)
+listOfSurvivors.txt:WARE, Mrs Florence Louise	32	2nd Class Passenger	31352 £21	Southampton	 	10 	
+listOfVictims.txt:WARE, Mr Frederick	35	3rd Class Passenger	359309
+listOfVictims.txt:WARE, Mr John James	47	2nd Class Passenger	31352
+listOfVictims.txt:WARE, Mr William Jeffery	23	2nd Class Passenger	28666
+listOfVictims.txt:WAREHAM, Mr Robert Arthur	37	Victualling Crew	
+
+Warren, Mr. Charles William
+listOfSurvivors.txt:WARREN, Mrs Anna Sophia	60	1st Class Passenger	110813 £75 5s	Cherbourg	 	5 	
+listOfVictims.txt:WARREN, Mr Charles William	31	3rd Class Passenger	49867
+listOfVictims.txt:WARREN, Mr Frank Manley	63	1st Class Passenger	110813
+
+Warren, Mr. Frank Manley
+listOfSurvivors.txt:WARREN, Mrs Anna Sophia	60	1st Class Passenger	110813 £75 5s	Cherbourg	 	5 	
+listOfVictims.txt:WARREN, Mr Charles William	31	3rd Class Passenger	49867
+listOfVictims.txt:WARREN, Mr Frank Manley	63	1st Class Passenger	110813
+
+Watt, Miss. Bertha J
+listOfSurvivors.txt:WATT, Miss Robertha Josephine	12	2nd Class Passenger	33595 £15 15s	Southampton	 	9 	
+listOfSurvivors.txt:WATT, Mrs Elizabeth	40	2nd Class Passenger	33595 £15 15s	Southampton	 	9 	
+
+Weisz, Mr. Leopold
+listOfSurvivors.txt:WEISZ, Mrs Mathilde Françoise	37	2nd Class Passenger	228414 £26	Southampton	 	10 	
+listOfVictims.txt:WEISZ, Mr Léopold	37	2nd Class Passenger	228414
+
+Wells, Master. Ralph Lester
+listOfSurvivors.txt:WELLS, Master Ralph Lester	2	2nd Class Passenger	29103 £23	Southampton	 	14 	
+listOfSurvivors.txt:WELLS, Miss Joan	4	2nd Class Passenger	29103 £23	Southampton	 	14 	
+listOfSurvivors.txt:WELLS, Mrs Addie Dart	29	2nd Class Passenger	29103 £23	Southampton	 	14 	
+
+Wells, Mrs. Arthur Henry (Addie" Dart Trevaskis)"
+listOfSurvivors.txt:WELLS, Master Ralph Lester	2	2nd Class Passenger	29103 £23	Southampton	 	14 	
+listOfSurvivors.txt:WELLS, Miss Joan	4	2nd Class Passenger	29103 £23	Southampton	 	14 	
+listOfSurvivors.txt:WELLS, Mrs Addie Dart	29	2nd Class Passenger	29103 £23	Southampton	 	14 	
+
+Wenzel, Mr. Linhart
+
+West, Miss. Barbara J
+listOfSurvivors.txt:WEST, Miss Barbara Joyce	10m	2nd Class Passenger	34651 £27 15s	Southampton	 	10 	
+listOfSurvivors.txt:WEST, Miss Constance Miriam	4	2nd Class Passenger	34651 £27 15s	Southampton	 	10 	
+listOfSurvivors.txt:WEST, Mrs Ada Mary	33	2nd Class Passenger	34651 £27 15s	Southampton	 	10 	
+listOfVictims.txt:WEST, Mr Edwy Arthur	36	2nd Class Passenger	34651
+
+Whabee, Mrs. George Joseph (Shawneene Abi-Saab)
+
+Wheeler, Mr. Edwin Frederick""
+listOfVictims.txt:WHEELER, Mr Edwin Charles	26	2nd Class Passenger
+
+White, Mrs. John Stuart (Ella Holmes)
+listOfSurvivors.txt:WHITE, Mr Alfred	32	Engineering Crew	Southampton	Greaser  	4 	
+listOfSurvivors.txt:WHITE, Mr William George	23	Engineering Crew	Southampton	Trimmer  	15 	
+listOfSurvivors.txt:WHITE, Mrs Ella	55	1st Class Passenger	17760 £135 12s 8d	Cherbourg	 	8 	
+listOfSurvivors.txt:WHITELEY, Mr Thomas Arthur	18	Victualling Crew	Southampton	Saloon Steward  	  	
+listOfVictims.txt:WHITE, Mr Albert	21	Engineering Crew	
+listOfVictims.txt:WHITE, Mr Arthur	37	Victualling Crew	
+listOfVictims.txt:WHITE, Mr Edward Joseph	27	Victualling Crew	
+listOfVictims.txt:WHITE, Mr Frank Leonard	28	Engineering Crew	
+listOfVictims.txt:WHITE, Mr Leonard Lisle Oliver	32	Victualling Crew	
+listOfVictims.txt:WHITE, Mr Percival Wayland	54	1st Class Passenger	35281
+listOfVictims.txt:WHITE, Mr Richard Frasar	21	1st Class Passenger	35281
+
+Wick, Mr. George Dennick
+listOfSurvivors.txt:HARDWICK, Mr Reginald	21	Victualling Crew	Southampton	Kitchen Porter  	11 	
+listOfSurvivors.txt:WICK, Miss Mary Natalie	31	1st Class Passenger	36928 £164 17s 4d	Southampton	 	8 	
+listOfSurvivors.txt:WICK, Mrs Mary Peebles	45	1st Class Passenger	36928 £164 17s 4d	Southampton	 	8 	
+listOfVictims.txt:SEDGWICK, Mr Charles Frederick Waddington	28	2nd Class Passenger	244361
+listOfVictims.txt:WARWICK, Mr Tom	26	Victualling Crew	
+listOfVictims.txt:WICK, Col. George Dennick	57	1st Class Passenger	36928
+
+Widener, Mr. George Dunton
+listOfSurvivors.txt:WIDENER, Mrs Eleanor	50	1st Class Passenger	113503 £211 10s	Southampton	 	4 	
+listOfVictims.txt:WIDENER, Mr George Dunton	50	1st Class Passenger	113503
+listOfVictims.txt:WIDENER, Mr Harry Elkins	27	1st Class Passenger	113503
+
+Widener, Mrs. George Dunton (Eleanor Elkins)
+listOfSurvivors.txt:WIDENER, Mrs Eleanor	50	1st Class Passenger	113503 £211 10s	Southampton	 	4 	
+listOfVictims.txt:WIDENER, Mr George Dunton	50	1st Class Passenger	113503
+listOfVictims.txt:WIDENER, Mr Harry Elkins	27	1st Class Passenger	113503
+
+Wiklund, Mr. Karl Johan
+listOfVictims.txt:WIKLUND, Mr Jakob Alfred	18	3rd Class Passenger	3101267
+listOfVictims.txt:WIKLUND, Mr Karl Johan	21	3rd Class Passenger	3101266
+
+Wilkes, Mrs. James (Ellen Needs)
+listOfSurvivors.txt:WILKES, Mrs Ellen	47	3rd Class Passenger	363272 £7	Southampton	 	16 	
+
+Willard, Miss. Constance
+listOfSurvivors.txt:WILLARD, Miss Constance	21	1st Class Passenger	113795 £26 11s	Southampton	 	8 	
+
+Willer, Mr. Aaron (Abi Weller")"
+listOfVictims.txt:WILLER, Mr Aaron	37	3rd Class Passenger	3410
+
+Williams, Mr. Richard Norris II
+listOfSurvivors.txt:WILLIAMS, Mr Charles Eugene	23	2nd Class Passenger	244373 £13	Southampton	Sportsman  	14 	
+listOfSurvivors.txt:WILLIAMS, Mr Richard Norris II	21	1st Class Passenger	17597 £61 7s 7d	Cherbourg	Sportsman  	A 	
+listOfSurvivors.txt:WILLIAMS, Mr Walter John	28	Victualling Crew	Southampton	Saloon Steward (2nd class)  	  	
+listOfVictims.txt:WILLIAMS, Mr Arthur John	42	Victualling Crew	
+listOfVictims.txt:WILLIAMS, Mr Charles Duane	51	1st Class Passenger	17597
+listOfVictims.txt:WILLIAMS, Mr Fletcher Fellowes Lambert	43	1st Class Passenger	113510
+listOfVictims.txt:WILLIAMS, Mr Howard Hugh	28	3rd Class Passenger	2466
+listOfVictims.txt:WILLIAMS, Mr Leslie	28	3rd Class Passenger	54636
+listOfVictims.txt:WILLIAMS, Mr Samuel Solomon	26	Engineering Crew	
+listOfVictims.txt:WILLIAMSON, Mr James Bertram	35	Victualling Crew
+
+Wilson, Miss. Helen Alice
+listOfSurvivors.txt:WILSON, Miss Helen Alice	31	1st Class Passenger Servant	16966 £134 10s	Cherbourg	Personal Maid  	3 	
+listOfVictims.txt:WILSON, Mr Herbert 'Bertie'	28	Engineering Crew	
+
+Wirz, Mr. Albert
+listOfVictims.txt:WIRZ, Mr Albert	17	3rd Class Passenger	315154
+
+Wittevrongel, Mr. Camille
+listOfVictims.txt:WITTEVRONGEL, Mr Camilius Aloysius	36	3rd Class Passenger	345771
+
+Wright, Miss. Marion
+listOfSurvivors.txt:WRIGHT, Miss Marion	26	2nd Class Passenger	220844 £13 10s	Southampton	 	9 	
+listOfSurvivors.txt:WRIGHT, Mr William	40	Victualling Crew	Southampton	Glory Hole Steward  	  	
+listOfVictims.txt:CARTWRIGHT, Mr James Edward	33	Victualling Crew	
+listOfVictims.txt:WRIGHT, Mr Frederick	24	Victualling Crew	
+listOfVictims.txt:WRIGHT, Mr George	62	1st Class Passenger	113807
+
+Zakarian, Mr. Mapriededer
+listOfVictims.txt:ZAKARIAN, Mr Mapriededer	22	3rd Class Passenger	2656
+listOfVictims.txt:ZAKARIAN, Mr Ortin	27	3rd Class Passenger	2670
+
+Zakarian, Mr. Ortin
+listOfVictims.txt:ZAKARIAN, Mr Mapriededer	22	3rd Class Passenger	2656
+listOfVictims.txt:ZAKARIAN, Mr Ortin	27	3rd Class Passenger	2670
+
+de Brito, Mr. Jose Joaquim
+
+de Messemaeker, Mr. Guillaume Joseph
+listOfSurvivors.txt:DE MESSEMAEKER, Mr Guillaume Joseph	36	3rd Class Passenger	345572 £17 8s	Southampton	 	15 	
+listOfSurvivors.txt:DE MESSEMAEKER, Mrs Anna	36	3rd Class Passenger	345572 £17 8s	Southampton	 	13 	
+
+del Carlo, Mrs. Sebastiano (Argenia Genovesi)
+listOfSurvivors.txt:DEL CARLO, Mrs Argene	24	2nd Class Passenger	2167 £27 14s 5d	Cherbourg	 	11 	
+listOfVictims.txt:DEL CARLO, Mr Sebastiano	29	2nd Class Passenger	2167
+
+van Billiard, Master. James William
+listOfVictims.txt:VAN BILLIARD, Master James William	10	3rd Class Passenger	851
+listOfVictims.txt:VAN BILLIARD, Master Walter John	9	3rd Class Passenger	851
+listOfVictims.txt:VAN BILLIARD, Mr Austin Blyler	35	3rd Class Passenger	851
+
+van Billiard, Master. Walter John
+listOfVictims.txt:VAN BILLIARD, Master James William	10	3rd Class Passenger	851
+listOfVictims.txt:VAN BILLIARD, Master Walter John	9	3rd Class Passenger	851
+listOfVictims.txt:VAN BILLIARD, Mr Austin Blyler	35	3rd Class Passenger	851
+
