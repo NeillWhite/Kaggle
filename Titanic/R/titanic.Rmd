@@ -295,6 +295,7 @@ edaTrain$CabinAssignment[ edaTrain$Cabin != "" ] <- "Assigned";
 edaTrain$CabinAssignment[ edaTrain$Cabin == "" ] <- "Unassigned";
 data_combined$CabinAssignment[ data_combined$Cabin != "" ] <- "Assigned";
 data_combined$CabinAssignment[ data_combined$Cabin == "" ] <- "Unassigned";
+data_combined$CabinAssignment = factor( data_combined$CabinAssignment );
 ggplot(edaTrain, aes(x=CabinAssignment, fill=factor(Survived))) +
   geom_bar() + 
   facet_wrap(~Pclass) + 
@@ -454,6 +455,21 @@ ageNA = is.na( data_combined$Age );
 titleNA = data_combined$Title[ageNA];
 # The set of titles that have missing age values
 data_combined$FixedTitle = data_combined$Title;
+
+FIX_TITLES = TRUE;
+if ( FIX_TITLES ){
+  # change the following titles to "Mr." or "Mrs."
+  titlesToChange = c("Capt.", "Col.", "Countess.", "Don.", "Dona.", "Dr.", "Jonkheer.", "Lady.", "Major.", "Mlle.", "Mme.", "Ms.", "Rev.", "Sir.");
+  for ( title in titlesToChange ){
+    idxChange = which( data_combined$FixedTitle == title );
+    idxChangeMale = intersect( idxChange, data_combined$Sex == "male");
+    idxChangeFemale = setdiff( idxChange, idxChangeMale );
+    data_combined[idxChangeMale,"FixedTitle"] = "Mr.";
+    data_combined[idxChangeFemale,"FixedTitle"] = "Mrs.";
+  }
+  data_combined$FixedTitle = factor( data_combined$FixedTitle );
+}
+
 data_combined$AgeTitle = data_combined$Title;
 data_combined$AgeTitle[ which( data_combined$Title == "Ms." & ageNA )] = as.factor( "Mrs." );
 age_lm = lm( Age~AgeTitle, data=data_combined);
@@ -755,6 +771,7 @@ for (thisRow in idxSibSp){
 }
 
 data_combined$Spouses = numSpouses;
+data_combined$SpousesFactor = factor( numSpouses );
 data_combined$Siblings = numSiblings;
 ```
 
@@ -852,6 +869,7 @@ The canonical model for a sinking ship is that women and children get preferenti
 Since the Age variable is missing for 177 of the train set cases and 86 test set cases, the imputed Age values from above will be used.  For this application, a child will be defined as a person under 15 years of age.
 ```{r womenAndChildrenFirstTrain, echo=FALSE}
 femaleIndices = which( train$Sex == 'female' );
+data_combined[["SurvivedFactor"]] = factor(data_combined[["Survived"]]);
 newTrain = subset( data_combined, PassengerId <= nrow(train) );
 newTest = subset( data_combined, PassengerId > nrow(train) );
 childIndices = which( newTrain$FixedAge < 15 );
@@ -883,8 +901,8 @@ Upon submission to Kaggle, the Women and Children First model scored 0.76076.
 
 A logistic regression model is fit using the train data.  Selected variables are shown below.  Some variables could be treated as either numeric or factors (i.e., NumPassengersOnTicket and NumChildren).  Because there was a natural ordering of these variables, they are treated as numeric values rather than factors.  This was done to capture the linear dependence of each variable to the survival response.
 
-```{r logisticRegression1, echo=FALSE}
-glm.fit = glm( Survived~pclass+Sex+FixedAge+FarePerPassenger+FixedTitle+CabinAssignment+Embarked+NumPassengersOnTicket+NumParents+NumChildren+as.factor(Spouses)+Siblings,data=newTrain,family=binomial);
+```{r logisticRegression1, echo=FALSE, warning=FALSE}
+glm.fit = glm( Survived~pclass+Sex+FixedAge+FarePerPassenger+FixedTitle+CabinAssignment+Embarked+NumPassengersOnTicket+NumParents+NumChildren+SpousesFactor+Siblings,data=newTrain,family=binomial);
 summary( glm.fit );
 trainSetProbs = predict( glm.fit, newTrain, type="response");  # now a vector of probabilities
 # probabilities >= 0.5 mean survived, < 0.5 mean perished
@@ -897,10 +915,6 @@ correctRate = mean( predictions == newTrain$Survived );
 # scored a 0.8338945
 
 # now, how'd we do against the test set?
-# first, need to change dona. to Lady.
-newTest$FixedTitle = newTest$Title;
-idxDona = which( newTest$FixedTitle == "Dona." );
-newTest[idxDona,"FixedTitle"] = "Lady.";
 testSetProbs = predict( glm.fit, newTest, type="response");
 testPredictions = as.numeric( testSetProbs >= threshold );
 fullLogisticRegressionModel = data.frame(PassengerId=test$PassengerId, Survived=testPredictions);
@@ -911,7 +925,7 @@ write.csv( fullLogisticRegressionModel, "FullLogisticRegressionModel.csv", row.n
 
 After fitting the model to the training data, the model was run on the training set yielding a training set test error of 0.1661055 (0.8338945 accuracy rate).  The first run of the model against the test set failed because the training set had no instances of any passengers with the title "Dona.", an Italian honorific.  The model must have at least one instance of each factor in the training set if the factors are present in the test set.  The closest title that is represented in the training set is "Lady." so the passenger with the "Dona." title was given the "Lady." title so the model would run.
 
-```{r logisticRegression2, echo=FALSE}
+```{r logisticRegression2, echo=FALSE, warning=FALSE}
 cat( "Training Set performance:\n");
 table( newTrain$Survived, predictions);
 ```
@@ -925,8 +939,8 @@ library( glmnet );
 lambdas = c();
 set.seed(1);
 # use ridge regression
-xTrain = model.matrix( Survived~pclass+Sex+FixedAge+FarePerPassenger+FixedTitle+CabinAssignment+Embarked+NumPassengersOnTicket+NumParents+NumChildren+as.factor(Spouses)+Siblings,data=newTrain,family=binomial);
-xTest = model.matrix( ~pclass+Sex+FixedAge+FarePerPassenger+FixedTitle+CabinAssignment+Embarked+NumPassengersOnTicket+NumParents+NumChildren+as.factor(Spouses)+Siblings,data=newTest,family=binomial);
+xTrain = model.matrix( Survived~pclass+Sex+FixedAge+FarePerPassenger+FixedTitle+CabinAssignment+Embarked+NumPassengersOnTicket+NumParents+NumChildren+SpousesFactor+Siblings,data=newTrain,family=binomial);
+xTest = model.matrix( ~pclass+Sex+FixedAge+FarePerPassenger+FixedTitle+CabinAssignment+Embarked+NumPassengersOnTicket+NumParents+NumChildren+SpousesFactor+Siblings,data=newTest,family=binomial);
 cv.out = cv.glmnet( xTrain, newTrain$Survived, alpha=0);
 plot( cv.out );
 lambdaMin = cv.out$lambda.min;
@@ -951,8 +965,8 @@ Similar to ridge regression, lasso regularization introduces a penalty to reduce
 
 ```{r lassoRegression, echo=FALSE, warning=FALSE}
 # on to the lasso
-xTrain = model.matrix( Survived~pclass+Sex+FixedAge+FarePerPassenger+FixedTitle+CabinAssignment+Embarked+NumPassengersOnTicket+NumParents+NumChildren+as.factor(Spouses)+Siblings,data=newTrain,family=binomial);
-xTest = model.matrix( ~pclass+Sex+FixedAge+FarePerPassenger+FixedTitle+CabinAssignment+Embarked+NumPassengersOnTicket+NumParents+NumChildren+as.factor(Spouses)+Siblings,data=newTest,family=binomial);
+xTrain = model.matrix( Survived~pclass+Sex+FixedAge+FarePerPassenger+FixedTitle+CabinAssignment+Embarked+NumPassengersOnTicket+NumParents+NumChildren+SpousesFactor+Siblings,data=newTrain,family=binomial);
+xTest = model.matrix( ~pclass+Sex+FixedAge+FarePerPassenger+FixedTitle+CabinAssignment+Embarked+NumPassengersOnTicket+NumParents+NumChildren+SpousesFactor+Siblings,data=newTest,family=binomial);
 cv.out = cv.glmnet( xTrain, newTrain$Survived, alpha=1);
 plot( cv.out );
 lambdaMin = cv.out$lambda.min;
@@ -966,7 +980,7 @@ write.csv( lassoRegressionModel, "LassoRegressionModel.csv", row.names=FALSE, qu
 
 The lasso model performed very similarly to the ridge regression model, differing only in a single case.  Compared to the full least-squares logistic regression model, the lasso agreed with the logistic predictions in 408/418 cases (97.6%). 
 
-```{r lassoRegression2, echo=FALSE}
+```{r lassoRegression2, echo=FALSE, warning=FALSE}
 table( logisticPredictions, lassoPredictions );
 table( ridgePredictions, lassoPredictions );
 # score is 0.78947
@@ -974,9 +988,94 @@ table( ridgePredictions, lassoPredictions );
 
 As was the case with the Logistic Regression and Ridge Regression models, the Lasso model scored a 0.78947 upon submission to the Kaggle site.  This, despite differing from the Logistic Regression predictions for 10 passengers.
 
+### K-Nearest Neighbors model
+```{r knnTest, echo=FALSE, warning=FALSE}
+library(caret);
+set.seed(1);
+idxTrain = createDataPartition(y=newTrain$Survived,p=0.8,list=FALSE);
+trainTrain = newTrain[idxTrain,];
+testTrain = newTrain[-idxTrain,];
+trainCtrl = trainControl( method="repeatedcv", number=8, repeats = 30);
+knn_fit = train( SurvivedFactor~pclass+Sex+FixedAge+FarePerPassenger+FixedTitle+CabinAssignment+Embarked+NumPassengersOnTicket+NumParents+NumChildren+SpousesFactor+Siblings,data=trainTrain,method="knn", trControl=trainCtrl, preProcess=c("center","scale"), tuneLength=20 );
+test_pred = predict( knn_fit, newdata=testTrain);
+#confusionMatrix( test_pred, testTrain$SurvivedFactor)
+```
+
+```{r knn, echo=FALSE, warning=FALSE}
+# now the whole training set
+set.seed(1);
+knnTrain = newTrain;
+knnTest = newTest;
+trainCtrl = trainControl( method="repeatedcv", number=8, repeats = 100);
+knn_fit = train( SurvivedFactor~pclass+Sex+FixedAge+FarePerPassenger+FixedTitle+CabinAssignment+Embarked+NumPassengersOnTicket+NumParents+NumChildren+SpousesFactor+Siblings,data=knnTrain,method="knn", trControl=trainCtrl, preProcess=c("center","scale"), tuneLength=20 );
+knn_fit
+plot( knn_fit )
+knn_pred = predict( knn_fit, newdata=knnTest);
+knnModel = data.frame(PassengerId=knnTest$PassengerId, Survived=as.numeric(knn_pred)-1);
+write.csv( knnModel, "knnModel.csv", row.names=FALSE, quote=FALSE );
+```
+
+KNN Score is 0.76555
+
+### Decision Tree Model
+```{r treeModel, echo=FALSE, warning=FALSE}
+library(tree);
+tree_model = tree( SurvivedFactor~pclass+Sex+FixedAge+FarePerPassenger+FixedTitle+CabinAssignment+Embarked+NumPassengersOnTicket+NumParents+NumChildren+SpousesFactor+Siblings,data=newTrain );
+summary( tree_model )
+plot( tree_model )
+text( tree_model, pretty=0);
+tree_pred = predict( tree_model, newTest, type="class");
+treeModel = data.frame(PassengerId=knnTest$PassengerId, Survived=as.numeric(tree_pred)-1);
+write.csv( treeModel, "treeModel.csv", row.names=FALSE, quote=FALSE );
+```
+scored 0.80382, best so far
+
+### Bootstrap Aggregation (Bagging) Tree Model
+```{r baggingModel, echo=FALSE, warning=FALSE}
+library(randomForest);
+set.seed(1);
+bag_model = randomForest( SurvivedFactor~pclass+Sex+FixedAge+FarePerPassenger+FixedTitle+CabinAssignment+Embarked+NumPassengersOnTicket+NumParents+NumChildren+SpousesFactor+Siblings,data=newTrain, mtry=12, importance=TRUE );
+bag_model
+plot( bag_model )
+bag_pred = predict( bag_model, newdata=newTest);
+bagModel = data.frame(PassengerId=newTest$PassengerId, Survived=as.numeric(bag_pred)-1);
+write.csv( bagModel, "bagModel.csv", row.names=FALSE, quote=FALSE );
+# scored 0.73205
+```
+
+### Random Forest Model
+```{r rfModel, echo=FALSE, warning=FALSE}
+library(randomForest);
+set.seed(1);
+rf_model = randomForest( SurvivedFactor~pclass+Sex+FixedAge+FarePerPassenger+FixedTitle+CabinAssignment+Embarked+NumPassengersOnTicket+NumParents+NumChildren+SpousesFactor+Siblings,data=newTrain, importance=TRUE );
+rf_model
+importance( rf_model );
+varImpPlot( rf_model );
+plot( rf_model )
+rf_pred = predict( rf_model, newdata=newTest);
+rfModel = data.frame(PassengerId=newTest$PassengerId, Survived=as.numeric(rf_pred)-1);
+write.csv( rfModel, "RandomForestModel.csv", row.names=FALSE, quote=FALSE );
+# scored 0.73205
+```
+
+### Boosted Classification Tree Model
+```{r boostedModel, echo=FALSE, warning=FALSE}
+library(gbm);
+set.seed(1);
+boosted_model = gbm( Survived~pclass+Sex+FixedAge+FarePerPassenger+FixedTitle+CabinAssignment+Embarked+NumPassengersOnTicket+NumParents+NumChildren+SpousesFactor+Siblings,data=newTrain, distribution="bernoulli", n.trees=5000, interaction.depth=4 );
+#summary( boosted_model );
+#plot( boosted_model );
+boosted_pred = predict( boosted_model, newdata=newTest, n.trees=5000, type="response");
+# probabilities >= 0.5 mean survived, < 0.5 mean perished
+threshold = 0.5;
+boosted_predictions = as.numeric( boosted_pred >= threshold );
+boostedModel = data.frame(PassengerId=newTest$PassengerId, Survived=boosted_predictions);
+write.csv( boostedModel, "BoostedTreeModel.csv", row.names=FALSE, quote=FALSE );
+# scored 0.76076
+```
 ### Cheating Model
 
-```{r cheatModel, echo=FALSE}
+```{r cheatModel, echo=FALSE, warning=FALSE}
 library(RCurl);
 library(XML);
 library(readr);
