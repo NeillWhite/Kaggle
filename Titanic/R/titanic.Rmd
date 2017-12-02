@@ -385,6 +385,7 @@ Two passengers had no information for their port of embarcation, Miss. Amelie Ic
 ```{r impute_embarked}
 data_combined[62,"Embarked"] = as.factor("S");
 data_combined[830,"Embarked"] = as.factor("S");
+data_combined$Embarked = factor( data_combined$Embarked );  # removes empty factor ""
 ```
 
 #### Cabin
@@ -902,12 +903,14 @@ Upon submission to Kaggle, the Women and Children First model scored 0.76076.
 A logistic regression model is fit using the train data.  Selected variables are shown below.  Some variables could be treated as either numeric or factors (i.e., NumPassengersOnTicket and NumChildren).  Because there was a natural ordering of these variables, they are treated as numeric values rather than factors.  This was done to capture the linear dependence of each variable to the survival response.
 
 ```{r logisticRegression1, echo=FALSE, warning=FALSE}
-glm.fit = glm( Survived~pclass+Sex+FixedAge+FarePerPassenger+FixedTitle+CabinAssignment+Embarked+NumPassengersOnTicket+NumParents+NumChildren+SpousesFactor+Siblings,data=newTrain,family=binomial);
-summary( glm.fit );
-trainSetProbs = predict( glm.fit, newTrain, type="response");  # now a vector of probabilities
+all_features = c("pclass", "Sex", "FixedAge", "FarePerPassenger", "FixedTitle", "Siblings", "CabinAssignment", "Embarked", "NumPassengersOnTicket", "NumParents", "NumChildren", "SpousesFactor");
+full_df = newTrain[, c("Survived", all_features)];
+full.glm.fit = glm( Survived~., data=full_df, family=binomial);
+trainSetProbs = predict( full.glm.fit, newTrain, type="response");  # now a vector of probabilities
 # probabilities >= 0.5 mean survived, < 0.5 mean perished
 threshold = 0.5;
 predictions = as.numeric( trainSetProbs >= threshold );
+summary( full.glm.fit );
 
 # How'd we do?
 # now calculate the training set error
@@ -915,50 +918,199 @@ correctRate = mean( predictions == newTrain$Survived );
 # scored a 0.8338945
 
 # now, how'd we do against the test set?
-testSetProbs = predict( glm.fit, newTest, type="response");
-testPredictions = as.numeric( testSetProbs >= threshold );
-fullLogisticRegressionModel = data.frame(PassengerId=test$PassengerId, Survived=testPredictions);
+testSetProbs = predict( full.glm.fit, newTest, type="response");
+fullLogisticPredictions = as.numeric( testSetProbs >= threshold );
+fullLogisticRegressionModel = data.frame(PassengerId=test$PassengerId, Survived=fullLogisticPredictions);
 
 write.csv( fullLogisticRegressionModel, "FullLogisticRegressionModel.csv", row.names=FALSE, quote=FALSE );
 # scored a 0.78947 - not what we expected
 ```
 
-After fitting the model to the training data, the model was run on the training set yielding a training set test error of 0.1661055 (0.8338945 accuracy rate).  The first run of the model against the test set failed because the training set had no instances of any passengers with the title "Dona.", an Italian honorific.  The model must have at least one instance of each factor in the training set if the factors are present in the test set.  The closest title that is represented in the training set is "Lady." so the passenger with the "Dona." title was given the "Lady." title so the model would run.
+The logistic regression model was first fit with all 12 possible covariates. After fitting the model to the training data, the model was run on the training set yielding a training set test error of 0.1661055 (0.8338945 accuracy rate).  The model had an overall accuracy of 0.78947 on the test set (the score from Kaggle).  Since this was lower than the expected score (the training set yielded a score of 0.8338945), it appears the model may be overfitting the training data.  
 
 ```{r logisticRegression2, echo=FALSE, warning=FALSE}
+library(caret);
 cat( "Training Set performance:\n");
-table( newTrain$Survived, predictions);
+confusionMatrix( newTrain$Survived, predictions);
 ```
 
-The model had an overall accuracy of 0.78947 on the test set (the score from Kaggle).  Since this was lower than the expected score (the training set yielded a score of 0.8338945), it appears the model may be slightly overfitting the training data.  To reduce the variance, the regularization methods of ridge regression and lasso are considered.
+Because the logistic regression model with all 12 predictors has a test set error somewhat larger than the training set error, the model is likely fitting to variance in the training set.  It's very likely that some of the features are co-linear, for instance, Passenger Class (pclass) and FarePerPassenger.  If the number of predictors can be reduced, the variance of the model can likely be lowered.  After running the full set of predictors, the model shows several variables as significant: FixedTitle, Sex, and Siblings.  Other variables that show nearly significant correlation to the response are FixedAge, pclass, CabinAssignment, and NumChildren.  If those variables are brought forward and tested separately in different combinations, a model with a lower cross validation error might result.  As a final measure, a separate model was run with the remaining "leftover" features: FarePerPassenger, Embarked, NumPassengersOnTicket, SpousesFactor, and NumParents.  The idea is to see if any significant features can be determined in the absence of the significant features of the full model.
+
+```{r logisticRegression3, echo=FALSE, warning=FALSE}
+leftoverFeatures = c("FarePerPassenger","Embarked","NumPassengersOnTicket","SpousesFactor","NumParents");
+leftover_df = newTrain[, c("Survived", leftoverFeatures)];
+leftover.glm.fit = glm( Survived ~., data = leftover_df, family=binomial);
+summary(leftover.glm.fit);
+```
+
+The logistic regression model with the "leftover" features yielded two new feature possibilities: FarePerPassenger and NumParents.  These features are likely proxies for passenger class (pclass) and age (FixedAge).  i.e., passengers travelling with their parents are more likely to be children and thus, have a higher survival probability.  Similarly, FarePerPassenger is likely to reflect the passenger class separation.  However, unlike pclass, FarePerPassenger is a continuous variable and possibly more informative than the three passenger classes.  So, combined with the significant features from the full logistic regression model, a set of features can be drawn upon in different combinations in order to select the model with the lowest cross validation error.
+
+```{r logisticRegression4, echo=FALSE, warning=FALSE}
+library(boot);
+significant_features = c("FixedTitle", "Sex", "Siblings", "FixedAge", "CabinAssignment", "pclass", "NumChildren", "FarePerPassenger", "Embarked");
+all_combinations_of_significant_features = lapply(1:length(significant_features), function(x) combn(length(significant_features),x));
+numFeatureSetClasses = length( all_combinations_of_significant_features );
+correct = list();
+accuracies = list();
+errors = list();
+features = list();
+numFeatures = list();
+counter = 1;
+for ( featureClass in 1:numFeatureSetClasses){
+  featClassColumns = dim( all_combinations_of_significant_features[[featureClass]] )[2];
+  for ( thisCol in 1:featClassColumns ){
+    feature_set = significant_features[ all_combinations_of_significant_features[[featureClass]][,thisCol]];
+    nFeatures = length( feature_set );
+    df = newTrain[, c("Survived", feature_set)]
+    glm.fit = glm( Survived~.,data=df,family=binomial);
+    cv.glm.fit = cv.glm(df,glm.fit,K=10);
+    cv.error = cv.glm.fit$delta[1];
+    trainSetProbs = predict( glm.fit, newTrain, type="response");  # now a vector of probabilities
+    predictions = as.numeric( trainSetProbs >= threshold );
+    numRight = sum( predictions == newTrain$Survived );
+    accuracy = mean( predictions == newTrain$Survived );
+    features[counter] = list( feature_set );
+    numFeatures[counter] = nFeatures;
+    accuracies[counter] = accuracy;
+    correct[counter] = numRight;
+    errors[counter] = cv.error;
+    counter = counter + 1;
+  }
+}
+cvResults = data.frame( NumFeatures=unlist(numFeatures), CVError=unlist(errors), TrainingScore=unlist(accuracies), NumCorrect=unlist(correct), Features=I(features) );
+cvResults = cvResults[order(cvResults$CVError),];
+knitr::kable( head(cvResults,n=20L), format="markdown", longtable=TRUE)
+```
+
+Of the 512 different feature combinations, the top 20 are listed.  The cross validation error estimates were made using 10-fold cross validation.  The top 10 are retested using LOOCV:
+
+```{r logisticRegression5, echo=FALSE, warning=FALSE}
+correct = list();
+accuracies = list();
+errors = list();
+features = list();
+numFeatures = list();
+counter = 1;
+for ( rowNum in 502:511){
+    feature_set = cvResults$Features[[rowNum]];
+    nFeatures = cvResults$NumFeatures[rowNum];
+    df = newTrain[, c("Survived", feature_set)]
+    glm.fit = glm( Survived~.,data=df,family=binomial);
+    cv.glm.fit = cv.glm(df,glm.fit);
+    cv.error = cv.glm.fit$delta[1];
+    trainSetProbs = predict( glm.fit, newTrain, type="response");  # now a vector of probabilities
+    predictions = as.numeric( trainSetProbs >= threshold );
+    numRight = sum( predictions == newTrain$Survived );
+    accuracy = mean( predictions == newTrain$Survived );
+    features[counter] = list( feature_set );
+    numFeatures[counter] = nFeatures;
+    accuracies[counter] = accuracy;
+    correct[counter] = numRight;
+    errors[counter] = cv.error;
+    counter = counter + 1;
+}
+loocvResults = data.frame( NumFeatures=unlist(numFeatures), CVError=unlist(errors), TrainingScore=unlist(accuracies), NumCorrect=unlist(correct), Features=I(features) );
+loocvResults = loocvResults[order(loocvResults$CVError),];
+knitr::kable( head(loocvResults,n=10L), format="markdown", longtable=TRUE)
+```
+
+The model with the lowest cross validation error is a model with 8 features: FixedTitle, Sex, Siblings, FixedAge, CabinAssignment, pclass, NumChildren, and Embarked.  A logistic regression model is fit using these features and submitted to Kaggle.
+
+```{r logisticRegression6, echo=FALSE, warning=FALSE}
+best_features = c("pclass", "Sex", "FixedAge", "FixedTitle", "Siblings", "CabinAssignment", "Embarked", "NumChildren" );
+best_df = newTrain[, c("Survived", best_features)];
+best.glm.fit = glm( Survived~., data=best_df, family=binomial);
+trainSetProbs = predict( best.glm.fit, newTrain, type="response");  # now a vector of probabilities
+# probabilities >= 0.5 mean survived, < 0.5 mean perished
+threshold = 0.5;
+predictions = as.numeric( trainSetProbs >= threshold );
+summary( best.glm.fit );
+
+# How'd we do?
+# now calculate the training set error
+correctRate = mean( predictions == newTrain$Survived );
+# scored a 0.8395062
+
+# now, how'd we do against the test set?
+testSetProbs = predict( best.glm.fit, newTest, type="response");
+bestTestPredictions = as.numeric( testSetProbs >= threshold );
+bestLogisticRegressionModel = data.frame(PassengerId=test$PassengerId, Survived=bestTestPredictions);
+
+write.csv( bestLogisticRegressionModel, "BestLogisticRegressionModel.csv", row.names=FALSE, quote=FALSE );
+# scored a 0.77990 - not as good as the full model
+```
+The model based on significant features scored lower on the test set than the full model.  To reduce the model fit to noise in the training data, the regularization methods of ridge regression and lasso are considered.
 
 ### Logistic Regression with Ridge Regression Regularization
 Ridge regression introduces a coefficient penalty that reduces the effect of the covariates.  This can help with variance by making the solution slightly less flexible.  The glmnet package includes a method for determining the lambda penalty coefficient using cross validation (default is 10-fold cross validation).
-```{r ridgeRegression, echo=FALSE, warning=FALSE}
+```{r ridgeRegression1, echo=FALSE, warning=FALSE}
 library( glmnet );
 lambdas = c();
 set.seed(1);
 # use ridge regression
 xTrain = model.matrix( Survived~pclass+Sex+FixedAge+FarePerPassenger+FixedTitle+CabinAssignment+Embarked+NumPassengersOnTicket+NumParents+NumChildren+SpousesFactor+Siblings,data=newTrain,family=binomial);
 xTest = model.matrix( ~pclass+Sex+FixedAge+FarePerPassenger+FixedTitle+CabinAssignment+Embarked+NumPassengersOnTicket+NumParents+NumChildren+SpousesFactor+Siblings,data=newTest,family=binomial);
-cv.out = cv.glmnet( xTrain, newTrain$Survived, alpha=0);
+#xTrain = model.matrix( Survived~.,data=full_df,family=binomial);
+full_df_test = newTest[, all_features];
+#xTest = model.matrix( ~.,data=full_df_test,family=binomial);
+cv.out = cv.glmnet( xTrain, newTrain$Survived, alpha=0, type.measure="class");
 plot( cv.out );
 lambdaMin = cv.out$lambda.min;
-cat( "lambda = ", lambdaMin );
 rrmodel = glmnet( xTrain, newTrain$Survived, alpha=0);
+train.ridge.pred = predict( rrmodel, s=lambdaMin, newx=xTrain);
+trainRidgePredictions = as.numeric( train.ridge.pred >= threshold );
+numCorrect = sum(trainRidgePredictions == newTrain$Survived);
+accuracy = numCorrect/nrow(newTrain);
 ridge.pred = predict( rrmodel, s=lambdaMin, newx=xTest);
-ridgePredictions = as.numeric( ridge.pred >= threshold );
-ridgeRegressionModel = data.frame(PassengerId=test$PassengerId, Survived=ridgePredictions);
-write.csv( ridgeRegressionModel, "RidgeRegressionModel.csv", row.names=FALSE, quote=FALSE );
+fullRidgePredictions = as.numeric( ridge.pred >= threshold );
+fullRidgeRegressionModel = data.frame(PassengerId=test$PassengerId, Survived=fullRidgePredictions);
+write.csv( fullRidgeRegressionModel, "FullRidgeRegressionModel.csv", row.names=FALSE, quote=FALSE );
 # score is 0.78947
 ```
 
-The training set mean squared error is the smallest at a lambda value of 0.06771608.  When comparing to the full logistic regression solution, the ridge predictions are the same as the least-squares logistic regression in 409 of the 418 cases (97.8% of the test set).  Despite differing on the survived prediction for 9 passengers, the ridge solution scored a 0.78947 upon submission to the Kaggle site - the same score as the full logistic regression solution.
+The training set mean squared error is the smallest at a lambda value of 0.02931267.  Against the training data, the model achieved an accuracy of 0.8226712.
+
+```{r ridgeRegression1b, echo=FALSE}
+confusionMatrix(newTrain$Survived,trainRidgePredictions);
+```
+
+When comparing to the full logistic regression solution, the ridge predictions are the same as the least-squares logistic regression in 398 of the 418 cases (95.2% of the test set).  The model scored a 0.78468 upon submission to the Kaggle site - slightly less than the full logistic regression solution (see comparison below).
 
 ```{r ridgeRegression2, echo=FALSE}
-logisticPredictions = testPredictions;
-table( testPredictions, ridgePredictions );
+fullLogisticPredictions = bestTestPredictions;
+confusionMatrix( Logistic=fullLogisticPredictions, Ridge=fullRidgePredictions );
 ```
+Next, a ridge regression model is fit using only the significant features determined from the logistic regression solution.  From the training data, lambda was determined to be 0.02931267.  Against the training data, the model achieved an accuracy of 0.8249158.
+
+```{r ridgeRegression3, echo=FALSE, warning=FALSE}
+library( glmnet );
+lambdas = c();
+set.seed(1);
+# use ridge regression
+xTrain = model.matrix( Survived~.,data=best_df,family=binomial);
+best_df_test = newTest[, best_features];
+xTest = model.matrix( ~.,data=best_df_test,family=binomial);
+cv.out = cv.glmnet( xTrain, newTrain$Survived, alpha=0, type.measure="class");
+plot( cv.out );
+lambdaMin = cv.out$lambda.min;
+rrmodel = glmnet( xTrain, newTrain$Survived, alpha=0);
+train.ridge.pred = predict( rrmodel, s=lambdaMin, newx=xTrain);
+trainRidgePredictions = as.numeric( train.ridge.pred >= threshold );
+numCorrect = sum(trainRidgePredictions == newTrain$Survived);
+accuracy = numCorrect/nrow(newTrain);
+ridge.pred = predict( rrmodel, s=lambdaMin, newx=xTest);
+bestRidgePredictions = as.numeric( ridge.pred >= threshold );
+bestRidgeRegressionModel = data.frame(PassengerId=test$PassengerId, Survived=bestRidgePredictions);
+write.csv( bestRidgeRegressionModel, "BestRidgeRegressionModel.csv", row.names=FALSE, quote=FALSE );
+```
+
+When comparing to the full logistic regression solution, the best feature ridge predictions are the same as the least-squares logistic regression in 399 of the 418 cases (95.4% of the test set).  The model scored a 0.77990 upon submission to the Kaggle site - which is less than both the full logistic regression and full ridge regression models.
+
+```{r ridgeRegression4, echo=FALSE}
+fullLogisticPredictions = bestTestPredictions;
+confusionMatrix( Logistic=fullLogisticPredictions, Ridge=bestRidgePredictions );
+```
+
 
 ### Logistic Regression with Lasso Regularization
 Similar to ridge regression, lasso regularization introduces a penalty to reduce the magnitude of coefficient estimates.  As with ridge regression, the glmnet implementation of the lasso uses cross validation to estimate the best value of lambda.
@@ -967,58 +1119,222 @@ Similar to ridge regression, lasso regularization introduces a penalty to reduce
 # on to the lasso
 xTrain = model.matrix( Survived~pclass+Sex+FixedAge+FarePerPassenger+FixedTitle+CabinAssignment+Embarked+NumPassengersOnTicket+NumParents+NumChildren+SpousesFactor+Siblings,data=newTrain,family=binomial);
 xTest = model.matrix( ~pclass+Sex+FixedAge+FarePerPassenger+FixedTitle+CabinAssignment+Embarked+NumPassengersOnTicket+NumParents+NumChildren+SpousesFactor+Siblings,data=newTest,family=binomial);
-cv.out = cv.glmnet( xTrain, newTrain$Survived, alpha=1);
+cv.out = cv.glmnet( xTrain, newTrain$Survived, alpha=1, type.measure = "class");
 plot( cv.out );
 lambdaMin = cv.out$lambda.min;
-cat( "lambda = ", lambdaMin);
 lassomodel = glmnet( xTrain, newTrain$Survived, alpha=1);
+train.lasso.pred = predict( lassomodel, s=lambdaMin, newx=xTrain);
+trainLassoPredictions = as.numeric( train.lasso.pred >= threshold );
+numCorrect = sum(trainLassoPredictions == newTrain$Survived);
+accuracy = numCorrect/nrow(newTrain);
 lasso.pred = predict( lassomodel, s=lambdaMin, newx=xTest);
 lassoPredictions = as.numeric( lasso.pred >= threshold );
-lassoRegressionModel = data.frame(PassengerId=test$PassengerId, Survived=lassoPredictions);
-write.csv( lassoRegressionModel, "LassoRegressionModel.csv", row.names=FALSE, quote=FALSE );
+fullLassoRegressionModel = data.frame(PassengerId=test$PassengerId, Survived=lassoPredictions);
+write.csv( fullLassoRegressionModel, "FullLassoRegressionModel.csv", row.names=FALSE, quote=FALSE );
 ```
 
-The lasso model performed very similarly to the ridge regression model, differing only in a single case.  Compared to the full least-squares logistic regression model, the lasso agreed with the logistic predictions in 408/418 cases (97.6%). 
+The Lasso model using all of the features had a training set error of 0.1638608 with a lambda of 0.00160114 (see confusion matrix below).  
 
 ```{r lassoRegression2, echo=FALSE, warning=FALSE}
-table( logisticPredictions, lassoPredictions );
-table( ridgePredictions, lassoPredictions );
+confusionMatrix( newTrain$Survived, trainLassoPredictions );
+```
+
+When comparing to the full logistic regression model against the test data, the lasso model differed from the full logistic regression model in 11 cases, predicting the same outcome in 407 of 419 rows.  Against the Kaggle test data, the model scored 0.78947.
+
+```{r lassoRegression3, echo=FALSE, warning=FALSE}
+confusionMatrix( Logistic=fullLogisticPredictions, Lasso=lassoPredictions );
+```
+
+The lasso model with only the significant features achieved a training set error of 0.1627385 using a lambda of 0.0002067951.
+```{r lassoRegression4, echo=FALSE, warning=FALSE}
+# on to the lasso
+xTrain = model.matrix( Survived~.,data=best_df,family=binomial);
+best_df_test = newTest[, best_features];
+xTest = model.matrix( ~.,data=best_df_test,family=binomial);
+cv.out = cv.glmnet( xTrain, newTrain$Survived, alpha=1, type.measure = "class");
+plot( cv.out );
+lambdaMin = cv.out$lambda.min;
+lassomodel = glmnet( xTrain, newTrain$Survived, alpha=1);
+train.lasso.pred = predict( lassomodel, s=lambdaMin, newx=xTrain);
+trainLassoPredictions = as.numeric( train.lasso.pred >= threshold );
+numCorrect = sum(trainLassoPredictions == newTrain$Survived);
+accuracy = numCorrect/nrow(newTrain);
+lasso.pred = predict( lassomodel, s=lambdaMin, newx=xTest);
+lassoPredictions = as.numeric( lasso.pred >= threshold );
+bestLassoRegressionModel = data.frame(PassengerId=test$PassengerId, Survived=lassoPredictions);
+write.csv( bestLassoRegressionModel, "BestLassoRegressionModel.csv", row.names=FALSE, quote=FALSE );
+```
+The "best" feature Lasso model had a training set error of 0.1616162 with a lambda of 0.0005754197 (see confusion matrix below).  
+
+```{r lassoRegression5, echo=FALSE, warning=FALSE}
+confusionMatrix( newTrain$Survived, trainLassoPredictions );
+```
+
+When comparing to the full logistic regression model against the test data, the "best feature" lasso model differed from the full logistic regression model in 11 cases, predicting the same outcome in 407 of 419 rows.  Against the Kaggle test data, the model scored 0.79425.
+
+```{r lassoRegression6, echo=FALSE, warning=FALSE}
+confusionMatrix( Logistic=fullLogisticPredictions, Lasso=lassoPredictions );
+```
+
+The best feature lasso model differed from the full logistic regression model in 11 cases and from the best feature ridge regression model in 12 cases (see confusion matrices below).
+
+```{r lassoRegression7, echo=FALSE, warning=FALSE}
+confusionMatrix( Logistic=logisticPredictions, Lasso=lassoPredictions );
+confusionMatrix( Ridge=bestRidgePredictions, Lasso=lassoPredictions );
 # score is 0.78947
 ```
 
-As was the case with the Logistic Regression and Ridge Regression models, the Lasso model scored a 0.78947 upon submission to the Kaggle site.  This, despite differing from the Logistic Regression predictions for 10 passengers.
-
 ### K-Nearest Neighbors model
-```{r knnTest, echo=FALSE, warning=FALSE}
+```{r knn1, echo=FALSE, warning=FALSE}
 library(caret);
-set.seed(1);
-idxTrain = createDataPartition(y=newTrain$Survived,p=0.8,list=FALSE);
-trainTrain = newTrain[idxTrain,];
-testTrain = newTrain[-idxTrain,];
-trainCtrl = trainControl( method="repeatedcv", number=8, repeats = 30);
-knn_fit = train( SurvivedFactor~pclass+Sex+FixedAge+FarePerPassenger+FixedTitle+CabinAssignment+Embarked+NumPassengersOnTicket+NumParents+NumChildren+SpousesFactor+Siblings,data=trainTrain,method="knn", trControl=trainCtrl, preProcess=c("center","scale"), tuneLength=20 );
-test_pred = predict( knn_fit, newdata=testTrain);
-#confusionMatrix( test_pred, testTrain$SurvivedFactor)
+#trainCtrl = trainControl( method="repeatedcv", number=8, repeats = 30);
+trainCtrl = trainControl( method="LOOCV");
+knn_fit = train( SurvivedFactor~pclass+Sex+FixedAge+FarePerPassenger+FixedTitle+CabinAssignment+Embarked+NumPassengersOnTicket+NumParents+NumChildren+SpousesFactor+Siblings,data=newTrain,method="knn", trControl=trainCtrl, preProcess=c("center","scale"), tuneLength=20 );
+test_pred = predict( knn_fit, newdata=newTrain);
+confusionMatrix( newTrain$SurvivedFactor, test_pred)
 ```
 
-```{r knn, echo=FALSE, warning=FALSE}
+```{r knn2, echo=FALSE, warning=FALSE}
 # now the whole training set
-set.seed(1);
 knnTrain = newTrain;
 knnTest = newTest;
-trainCtrl = trainControl( method="repeatedcv", number=8, repeats = 100);
+trainCtrl = trainControl( method="LOOCV" );
 knn_fit = train( SurvivedFactor~pclass+Sex+FixedAge+FarePerPassenger+FixedTitle+CabinAssignment+Embarked+NumPassengersOnTicket+NumParents+NumChildren+SpousesFactor+Siblings,data=knnTrain,method="knn", trControl=trainCtrl, preProcess=c("center","scale"), tuneLength=20 );
 knn_fit
 plot( knn_fit )
 knn_pred = predict( knn_fit, newdata=knnTest);
-knnModel = data.frame(PassengerId=knnTest$PassengerId, Survived=as.numeric(knn_pred)-1);
-write.csv( knnModel, "knnModel.csv", row.names=FALSE, quote=FALSE );
+fullKNNModel = data.frame(PassengerId=knnTest$PassengerId, Survived=as.numeric(knn_pred)-1);
+write.csv( fullKNNModel, "fullKNNModel.csv", row.names=FALSE, quote=FALSE );
 ```
 
-KNN Score is 0.76555
+KNN Score is 0.76555.  Let's try to use cross validation to choose a better model
 
-### Decision Tree Model
-```{r treeModel, echo=FALSE, warning=FALSE}
+```{r knn3, echo=FALSE, warning=FALSE}
+# now the whole training set
+significant_features = c("FixedTitle", "Sex", "Siblings", "FixedAge", "CabinAssignment", "pclass", "NumChildren", "FarePerPassenger", "Embarked");
+all_combinations_of_significant_features = lapply(1:length(significant_features), function(x) combn(length(significant_features),x));
+numFeatureSetClasses = length( all_combinations_of_significant_features );
+correct = list();
+accuracies = list();
+errors = list();
+features = list();
+numFeatures = list();
+k = list();
+counter = 1;
+numTrain = nrow( newTrain );
+trainCtrl = trainControl( method="repeatedcv", number = 8, repeats = 3 );
+for ( featureClass in 1:numFeatureSetClasses){
+  featClassColumns = dim( all_combinations_of_significant_features[[featureClass]] )[2];
+  for ( thisCol in 1:featClassColumns ){
+    feature_set = significant_features[ all_combinations_of_significant_features[[featureClass]][,thisCol]];
+    nFeatures = length( feature_set );
+    df = newTrain[, c("SurvivedFactor", feature_set)]
+    knn_fit = train( SurvivedFactor~.,data=df,method="knn", trControl=trainCtrl, preProcess=c("center","scale"), tuneLength=20 );
+    knn_pred = predict( knn_fit, newdata=newTrain);
+    numRight = sum( knn_pred == newTrain$SurvivedFactor );
+    cv.error = ( numTrain - numRight )/numTrain;
+    accuracy = mean( knn_pred == newTrain$SurvivedFactor );
+    features[counter] = list( feature_set );
+    numFeatures[counter] = nFeatures;
+    accuracies[counter] = accuracy;
+    correct[counter] = numRight;
+    errors[counter] = cv.error;
+    k[counter] = knn_fit$bestTune$k;
+    counter = counter + 1;
+    cat( counter, "\n")
+  }
+}
+cvResults = data.frame( NumFeatures=unlist(numFeatures), CVError=unlist(errors), TrainingScore=unlist(accuracies), NumCorrect=unlist(correct), K=unlist(k), Features=I(features) );
+cvResults = cvResults[order(cvResults$CVError),];
+knitr::kable( head(cvResults,n=20L), format="markdown", longtable=TRUE);
+```
+
+```{r knn4, echo=FALSE, warning=FALSE}
+# now the whole training set
+correct = list();
+accuracies = list();
+errors = list();
+features = list();
+numFeatures = list();
+k = list();
+counter = 1;
+numTrain = nrow( newTrain );
+trainCtrl = trainControl( method="LOOCV" );
+for ( rowNum in 1:10 ){
+  feature_set = cvResults$Features[[rowNum]];
+  nFeatures = cvResults$NumFeatures[rowNum];
+  df = newTrain[, c("SurvivedFactor", feature_set)]
+  knn_fit = train( SurvivedFactor~.,data=df,method="knn", trControl=trainCtrl, preProcess=c("center","scale"), tuneLength=20 );
+  knn_pred = predict( knn_fit, newdata=newTrain);
+  numRight = sum( knn_pred == newTrain$SurvivedFactor );
+  cv.error = ( numTrain - numRight )/numTrain;
+  accuracy = mean( knn_pred == newTrain$SurvivedFactor );
+  features[counter] = list( feature_set );
+  numFeatures[counter] = nFeatures;
+  accuracies[counter] = accuracy;
+  correct[counter] = numRight;
+  errors[counter] = cv.error;
+  k[counter] = knn_fit$bestTune$k;
+  counter = counter + 1;
+  cat( counter, "\n")
+}
+loocvResults = data.frame( NumFeatures=unlist(numFeatures), CVError=unlist(errors), TrainingScore=unlist(accuracies), NumCorrect=unlist(correct), K=unlist(k), Features=I(features) );
+loocvResults = loocvResults[order(loocvResults$CVError),];
+knitr::kable( head(loocvResults,n=10L), format="markdown", longtable=TRUE);
+```
+Now, take the best 9, 8, 7, and 6 knn models
+```{r knn5, echo=FALSE, warning=FALSE}
+# best 9
+knnTrain = newTrain;
+knnTest = newTest;
+trainCtrl = trainControl( method="LOOCV" );
+knn_fit = train( SurvivedFactor~pclass+Sex+FixedAge+FarePerPassenger+FixedTitle+CabinAssignment+Embarked+NumChildren+Siblings,data=knnTrain,method="knn", trControl=trainCtrl, preProcess=c("center","scale"), tuneLength=20 );
+knn_fit
+plot( knn_fit )
+knn_pred = predict( knn_fit, newdata=knnTest);
+best9KNNModel = data.frame(PassengerId=knnTest$PassengerId, Survived=as.numeric(knn_pred)-1);
+write.csv( best9KNNModel, "best9KNNModel.csv", row.names=FALSE, quote=FALSE );
+```
+9 scored 0.76076
+
+```{r knn6, echo=FALSE, warning=FALSE}
+# best 8
+trainCtrl = trainControl( method="LOOCV" );
+knn_fit = train( SurvivedFactor~pclass+Sex+FixedAge+FarePerPassenger+FixedTitle+CabinAssignment+Embarked+Siblings,data=knnTrain,method="knn", trControl=trainCtrl, preProcess=c("center","scale"), tuneLength=20 );
+knn_fit
+plot( knn_fit )
+knn_pred = predict( knn_fit, newdata=knnTest);
+best8KNNModel = data.frame(PassengerId=knnTest$PassengerId, Survived=as.numeric(knn_pred)-1);
+write.csv( best8KNNModel, "best8KNNModel.csv", row.names=FALSE, quote=FALSE );
+```
+8 scored 0.73684
+
+```{r knn7, echo=FALSE, warning=FALSE}
+# best 7
+trainCtrl = trainControl( method="LOOCV" );
+knn_fit = train( SurvivedFactor~pclass+Sex+FixedAge+FarePerPassenger+FixedTitle+CabinAssignment+Siblings,data=knnTrain,method="knn", trControl=trainCtrl, preProcess=c("center","scale"), tuneLength=20 );
+knn_fit
+plot( knn_fit )
+knn_pred = predict( knn_fit, newdata=knnTest);
+best7KNNModel = data.frame(PassengerId=knnTest$PassengerId, Survived=as.numeric(knn_pred)-1);
+write.csv( best7KNNModel, "best7KNNModel.csv", row.names=FALSE, quote=FALSE );
+```
+
+7 scored 0.73684
+```{r knn8, echo=FALSE, warning=FALSE}
+# best 6
+trainCtrl = trainControl( method="LOOCV" );
+knn_fit = train( SurvivedFactor~pclass+Sex+FixedAge+FarePerPassenger+FixedTitle+Siblings,data=knnTrain,method="knn", trControl=trainCtrl, preProcess=c("center","scale"), tuneLength=20 );
+knn_fit
+plot( knn_fit )
+knn_pred = predict( knn_fit, newdata=knnTest);
+best6KNNModel = data.frame(PassengerId=knnTest$PassengerId, Survived=as.numeric(knn_pred)-1);
+write.csv( best6KNNModel, "best6KNNModel.csv", row.names=FALSE, quote=FALSE );
+```
+6 scored 0.71770
+
+### Decision Tree Models
+```{r treeModel1, echo=FALSE, warning=FALSE}
 library(tree);
 tree_model = tree( SurvivedFactor~pclass+Sex+FixedAge+FarePerPassenger+FixedTitle+CabinAssignment+Embarked+NumPassengersOnTicket+NumParents+NumChildren+SpousesFactor+Siblings,data=newTrain );
 summary( tree_model )
@@ -1030,8 +1346,21 @@ write.csv( treeModel, "treeModel.csv", row.names=FALSE, quote=FALSE );
 ```
 scored 0.80382, best so far
 
+#### Tree model with significant features
+```{r treeModel2, echo=FALSE, warning=FALSE}
+library(tree);
+tree_model = tree( SurvivedFactor~pclass+Sex+FixedAge+FarePerPassenger+FixedTitle+CabinAssignment+Embarked+NumChildren+Siblings,data=newTrain );
+summary( tree_model )
+plot( tree_model )
+text( tree_model, pretty=0);
+tree_pred = predict( tree_model, newTest, type="class");
+treeModel = data.frame(PassengerId=knnTest$PassengerId, Survived=as.numeric(tree_pred)-1);
+write.csv( treeModel, "sigTreeModel.csv", row.names=FALSE, quote=FALSE );
+```
+Scored 0.77990
+
 ### Bootstrap Aggregation (Bagging) Tree Model
-```{r baggingModel, echo=FALSE, warning=FALSE}
+```{r baggingModel1, echo=FALSE, warning=FALSE}
 library(randomForest);
 set.seed(1);
 bag_model = randomForest( SurvivedFactor~pclass+Sex+FixedAge+FarePerPassenger+FixedTitle+CabinAssignment+Embarked+NumPassengersOnTicket+NumParents+NumChildren+SpousesFactor+Siblings,data=newTrain, mtry=12, importance=TRUE );
@@ -1043,8 +1372,20 @@ write.csv( bagModel, "bagModel.csv", row.names=FALSE, quote=FALSE );
 # scored 0.73205
 ```
 
+```{r baggingModel2, echo=FALSE, warning=FALSE}
+library(randomForest);
+set.seed(1);
+bag_model = randomForest( SurvivedFactor~pclass+Sex+FixedAge+FarePerPassenger+FixedTitle+CabinAssignment+Embarked+NumChildren+Siblings,data=newTrain, mtry=12, importance=TRUE );
+bag_model
+plot( bag_model )
+bag_pred = predict( bag_model, newdata=newTest);
+bagModel = data.frame(PassengerId=newTest$PassengerId, Survived=as.numeric(bag_pred)-1);
+write.csv( bagModel, "sigBagModel.csv", row.names=FALSE, quote=FALSE );
+# scored 0.74641
+```
+
 ### Random Forest Model
-```{r rfModel, echo=FALSE, warning=FALSE}
+```{r rfModel1, echo=FALSE, warning=FALSE}
 library(randomForest);
 set.seed(1);
 rf_model = randomForest( SurvivedFactor~pclass+Sex+FixedAge+FarePerPassenger+FixedTitle+CabinAssignment+Embarked+NumPassengersOnTicket+NumParents+NumChildren+SpousesFactor+Siblings,data=newTrain, importance=TRUE );
@@ -1058,11 +1399,59 @@ write.csv( rfModel, "RandomForestModel.csv", row.names=FALSE, quote=FALSE );
 # scored 0.73205
 ```
 
+### Random Forest Model
+```{r rfModel2, echo=FALSE, warning=FALSE}
+library(randomForest);
+set.seed(1);
+rf_model = randomForest( SurvivedFactor~pclass+Sex+FixedAge+FarePerPassenger+FixedTitle+CabinAssignment+Embarked+NumChildren+Siblings,data=newTrain, importance=TRUE );
+rf_model
+importance( rf_model );
+varImpPlot( rf_model );
+plot( rf_model )
+rf_pred = predict( rf_model, newdata=newTest);
+rfModel = data.frame(PassengerId=newTest$PassengerId, Survived=as.numeric(rf_pred)-1);
+write.csv( rfModel, "SigRandomForestModel.csv", row.names=FALSE, quote=FALSE );
+# scored 0.76555
+```
+
+#### Random Forest Model
+```{r rfModel3, echo=FALSE, warning=FALSE}
+library(randomForest);
+set.seed(1);
+rf_model = randomForest( SurvivedFactor~pclass+Sex+FixedAge+FarePerPassenger+FixedTitle+CabinAssignment+Embarked+Siblings,data=newTrain, importance=TRUE );
+rf_model
+importance( rf_model );
+varImpPlot( rf_model );
+plot( rf_model )
+rf_pred = predict( rf_model, newdata=newTest);
+rfModel = data.frame(PassengerId=newTest$PassengerId, Survived=as.numeric(rf_pred)-1);
+write.csv( rfModel, "TrimmedRandomForestModel.csv", row.names=FALSE, quote=FALSE );
+# scored 0.78947
+```
+
+#### Random Forest Model
+```{r rfModel4, echo=FALSE, warning=FALSE}
+library(randomForest);
+set.seed(1);
+rf_model = randomForest( SurvivedFactor~pclass+Sex+FixedAge+FarePerPassenger+FixedTitle+Siblings,data=newTrain, importance=TRUE );
+rf_model
+importance( rf_model );
+varImpPlot( rf_model );
+plot( rf_model )
+rf_pred = predict( rf_model, newdata=newTest);
+rfModel = data.frame(PassengerId=newTest$PassengerId, Survived=as.numeric(rf_pred)-1);
+write.csv( rfModel, "MinimalRandomForestModel.csv", row.names=FALSE, quote=FALSE );
+# scored 0.77511
+```
+
 ### Boosted Classification Tree Model
-```{r boostedModel, echo=FALSE, warning=FALSE}
+```{r boostedModel1, echo=FALSE, warning=FALSE}
 library(gbm);
 set.seed(1);
-boosted_model = gbm( Survived~pclass+Sex+FixedAge+FarePerPassenger+FixedTitle+CabinAssignment+Embarked+NumPassengersOnTicket+NumParents+NumChildren+SpousesFactor+Siblings,data=newTrain, distribution="bernoulli", n.trees=5000, interaction.depth=4 );
+
+xTrain = model.matrix( SurvivedFactor~pclass+Sex+FixedAge+FarePerPassenger+FixedTitle+CabinAssignment+Embarked+NumPassengersOnTicket+NumParents+NumChildren+SpousesFactor+Siblings,data=newTrain,family=binomial);
+xTest = model.matrix( ~pclass+Sex+FixedAge+FarePerPassenger+FixedTitle+CabinAssignment+Embarked+NumPassengersOnTicket+NumParents+NumChildren+SpousesFactor+Siblings,data=newTest,family=binomial);
+boosted_model = gbm( formula=SurvivedFactor~pclass+Sex+FixedAge+FarePerPassenger+FixedTitle+CabinAssignment+Embarked+NumPassengersOnTicket+NumParents+NumChildren+SpousesFactor+Siblings,data=newTrain, distribution="bernoulli", n.trees=5000, interaction.depth=1, cv.folds=10 );
 #summary( boosted_model );
 #plot( boosted_model );
 boosted_pred = predict( boosted_model, newdata=newTest, n.trees=5000, type="response");
@@ -1071,6 +1460,21 @@ threshold = 0.5;
 boosted_predictions = as.numeric( boosted_pred >= threshold );
 boostedModel = data.frame(PassengerId=newTest$PassengerId, Survived=boosted_predictions);
 write.csv( boostedModel, "BoostedTreeModel.csv", row.names=FALSE, quote=FALSE );
+# scored 0.76076 with interaction depth =4, 0.77990 with interaction depth = 1
+```
+
+```{r boostedModel2, echo=FALSE, warning=FALSE}
+library(gbm);
+set.seed(1);
+boosted_model = gbm( Survived~pclass+Sex+FixedAge+FarePerPassenger+FixedTitle+CabinAssignment+Embarked+NumChildren+Siblings,data=newTrain, distribution="bernoulli", n.trees=5000, interaction.depth=4 );
+#summary( boosted_model );
+#plot( boosted_model );
+boosted_pred = predict( boosted_model, newdata=newTest, n.trees=5000, type="response");
+# probabilities >= 0.5 mean survived, < 0.5 mean perished
+threshold = 0.5;
+boosted_predictions = as.numeric( boosted_pred >= threshold );
+boostedModel = data.frame(PassengerId=newTest$PassengerId, Survived=boosted_predictions);
+write.csv( boostedModel, "SigBoostedTreeModel.csv", row.names=FALSE, quote=FALSE );
 # scored 0.76076
 ```
 ### Cheating Model
